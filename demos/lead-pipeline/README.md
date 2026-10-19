@@ -6,7 +6,7 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/).
 >
-> **Business benefit:** SDRs work a short ranked list, not a dirty dump. Pricing on quote.
+> **Business benefit:** Your sales team works from a short, ranked list instead of a raw export. Pricing on quote.
 >
 > **Ethics:** this demo does **not** collect personal emails.
 
