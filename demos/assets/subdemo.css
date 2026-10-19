@@ -1,0 +1,81 @@
+/* Shared layer for the /demos/ sub-pages, on top of ../design-system.css (palette B · Ink & Cobalt).
+   Tokens only: no hard-coded colours, no gradients, weights 400/500/600, no content text under 13 px. */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial"), local("ArialMT"), local("Arimo"), local("Liberation Sans"), local("Helvetica Neue");
+  size-adjust: 107.12%; ascent-override: 90.44%; descent-override: 22.52%; line-gap-override: 0%;
+}
+:root { --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.nowrap { white-space: nowrap; }
+[hidden] { display: none !important; }
+@media (max-width: 719.98px) { .site-header__cta { display: none; } }   /* under 720 the CTA bar holds the one Request a quote */
+.back-link { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: 44px; color: var(--text-muted); font-size: var(--fs-14); font-weight: var(--fw-medium); text-decoration: none; }
+.back-link:hover { color: var(--text); }
+.site-footer li a, .site-footer li a:visited { color: var(--text-muted); }
+.badge, .eyebrow, .steps li::before { font-size: var(--fs-13); }
+.site-footer__legal { font-size: var(--fs-13); }
+
+/* page body */
+.sd-main { padding-bottom: var(--sp-12); }
+.sd-hero { padding-block: var(--sp-8) var(--sp-6); }
+.sd-hero h1 { font-size: var(--fs-display); font-weight: var(--fw-semibold); line-height: var(--lh-tight); letter-spacing: var(--tracking-tight); margin: var(--sp-3) 0 var(--sp-3); max-width: 22ch; }
+.sd-hero .lead { max-width: 60ch; }
+.sd-meta { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: var(--sp-4); }
+.sd-section { margin-top: var(--sp-8); }
+.sd-section > h2, .sd-section .panel > h2 { font-size: var(--fs-24); margin: 0 0 var(--sp-3); }
+@media (min-width: 1024px) { .sd-section > h2 { font-size: var(--fs-32); } }
+.sd-section h3 { font-size: var(--fs-20); margin: 0 0 var(--sp-2); }
+.sd-sub { color: var(--text-muted); margin: 0 0 var(--sp-4); }
+.sd-grid-2 { display: grid; gap: var(--sp-4); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 720px) { .sd-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.sd-grid-3 { display: grid; gap: var(--sp-4); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 720px) { .sd-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* KPI tiles */
+.kpis { display: grid; gap: var(--sp-3); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.kpi { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-md, 12px); padding: var(--sp-3); min-width: 0; }
+.kpi__label { color: var(--text-muted); font-size: var(--fs-13); }
+.kpi__value { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: var(--fs-24); font-weight: var(--fw-semibold); color: var(--text); overflow-wrap: anywhere; }
+
+/* plain data table (scrolls inside its wrapper only) */
+.table-wrap { overflow-x: auto; max-width: 100%; border: 1px solid var(--border); border-radius: var(--r-md, 12px); background: var(--surface); }
+.data-table { width: 100%; border-collapse: collapse; font-size: var(--fs-14); font-variant-numeric: tabular-nums; }
+.data-table th, .data-table td { padding: var(--sp-2) var(--sp-3); border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.data-table thead th { background: var(--surface-2); font-weight: var(--fw-semibold); color: var(--text); position: sticky; top: 0; }
+.data-table tbody tr:last-child td { border-bottom: 0; }
+.data-table a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* integration chips, setup steps, hosting cards */
+.plug-list { list-style: none; margin: 0 0 var(--sp-4); padding: 0; display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.plug-list li { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: 36px; padding: 0 var(--sp-3); border: 1px solid var(--border); border-radius: var(--r-pill); background: var(--surface-2); font-size: var(--fs-14); }
+.plug-list .ic { font-family: var(--font-mono); font-size: var(--fs-13); color: var(--text-muted); }
+.card-plain { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md, 12px); padding: var(--sp-4); min-width: 0; }
+.card-plain h3 { font-size: var(--fs-16); margin: 0 0 var(--sp-1); }
+.card-plain p { margin: 0; color: var(--text-muted); font-size: var(--fs-14); }
+
+/* forms */
+.field { display: grid; gap: var(--sp-1); margin-bottom: var(--sp-3); }
+.field label, .field .label { font-size: var(--fs-14); font-weight: var(--fw-medium); }
+.field input, .field select, .field textarea, textarea.input, input.input, select.input {
+  width: 100%; min-height: 44px; font: inherit; font-size: var(--fs-16); color: var(--text); background: var(--surface);
+  border: 1px solid var(--border-strong); border-radius: var(--r-sm, 8px); padding: var(--sp-2) var(--sp-3); }
+textarea.input, .field textarea { min-height: 200px; line-height: var(--lh-body); resize: vertical; }
+.chip-btn { min-height: 44px; }
+
+/* result blocks */
+.result-pre { font-family: var(--font-mono); font-size: var(--fs-13); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-sm, 8px); padding: var(--sp-3); white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text); margin: 0; }
+.status-pill { display: inline-flex; align-items: center; gap: var(--sp-1); min-height: 28px; padding: 0 var(--sp-3); border-radius: var(--r-pill); background: var(--tint-accent); color: var(--accent-text); font-size: var(--fs-13); font-weight: var(--fw-semibold); text-transform: none; }
+.status-pill--warn { background: var(--tint-warn); color: var(--warn); }
+.status-pill--ok { background: var(--tint-success); color: var(--success); }
+
+/* paused products */
+.paused-banner { display: flex; gap: var(--sp-3); align-items: flex-start; background: var(--tint-warn); border-left: 3px solid var(--warn); border-radius: var(--r-sm, 8px); padding: var(--sp-3) var(--sp-4); margin-top: var(--sp-4); }
+.paused-banner svg { flex: none; color: var(--warn); margin-top: 2px; }
+.paused-banner p { margin: 0; color: var(--text); }
+
+/* map */
+.map-box { height: 340px; border: 1px solid var(--border); border-radius: var(--r-md, 12px); overflow: hidden; background: var(--surface-2); }
+.leaflet-container { font-family: var(--font-sans); }
+.data-table .mono, .kpi .mono { font-size: 1em; }
+.leaflet-touch .leaflet-bar a, .leaflet-bar a { width: 44px !important; height: 44px !important; line-height: 44px !important; font-size: 20px; }
+@media (max-width: 719.98px) { .hide-sm { display: none; } }
