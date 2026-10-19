@@ -2,66 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230a0f2c%22/%3E%3Ctext x=%2232%22 y=%2245%22 font-size=%2238%22 font-family=%22Arial%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%2339ff88%22%3EN%3C/text%3E%3C/svg%3E" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Voice receptionist (browser) — Nyyo Automation</title>
+  <title>Voice receptionist — Nyyo Automation live demo</title>
+  <meta name="description" content="Browser AI receptionist with neural voice that books a demo slot. From $80. Nyyo Automation." />
+  <meta name="theme-color" content="#050814" />
+  <meta property="og:title" content="Voice receptionist — Nyyo Automation" />
+  <meta property="og:description" content="Neural voice · books a slot · no cloud key in this demo. From $80." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/assets/logo.png" />
+  <link rel="icon" href="../assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
   <style>
-    :root{--bg:#0b1220;--panel:#121a2b;--text:#e8eefc;--muted:#9aa8c7;--accent:#5b8cff;--ok:#3dd6c6;--border:#243049;--busy:#ff6b8a}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
-    .wrap{max-width:820px;margin:0 auto;padding:24px 16px 48px}
-    .hero,.explainer,.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px}
-    .hero{background:linear-gradient(145deg,#13203a,#0c1628)}
-    .tag{font-size:.75rem;color:var(--ok);border:1px solid rgba(61,214,198,.35);background:rgba(61,214,198,.12);padding:3px 10px;border-radius:999px}
-    .explainer ol{color:var(--muted)}
-    .benefit{margin-top:12px;padding:10px;border-radius:10px;background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.3)}
-    #chat{min-height:180px;max-height:280px;overflow:auto}
-    .bubble{padding:10px 12px;border-radius:12px;margin:8px 0;max-width:90%;white-space:pre-wrap}
-    .bubble.user{background:#1e3a5f;margin-left:auto}.bubble.bot{background:#162033;border:1px solid var(--border)}
-    .row{display:flex;gap:8px;flex-wrap:wrap}
-    button,input{border-radius:10px;border:1px solid var(--border);padding:12px;background:#0b1220;color:var(--text)}
-    button{background:var(--accent);border:0;color:#fff;font-weight:600;cursor:pointer}
-    .slot{display:inline-block;padding:8px 10px;margin:4px;border-radius:8px;border:1px solid var(--border)}
-    .slot.free{color:var(--ok)}.slot.busy{color:var(--busy);text-decoration:line-through}
-    .footer{text-align:center;color:var(--muted);font-size:.85rem}.footer a{color:var(--ok)}
-    .chips button{background:transparent;border:1px solid var(--border);color:var(--muted);font-weight:500}
+    #chat{min-height:200px;max-height:300px;overflow:auto;padding:4px}
+    .bubble{padding:12px 14px;border-radius:14px;margin:8px 0;max-width:92%;white-space:pre-wrap;line-height:1.45;animation:fadeUp .28s ease}
+    .bubble.user{background:rgba(61,139,255,.22);border:1px solid rgba(61,139,255,.35);margin-left:auto}
+    .bubble.bot{background:rgba(255,255,255,.04);border:1px solid var(--border)}
+    .row{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
+    .row input{flex:1;min-width:160px}
+    .slot{display:inline-flex;align-items:center;gap:6px;padding:10px 12px;margin:4px;border-radius:10px;border:1px solid var(--border);font-family:"JetBrains Mono",monospace;font-size:.82rem}
+    .slot.free{color:var(--lime);border-color:rgba(57,255,136,.35)}
+    .slot.busy{color:var(--bad);text-decoration:line-through;opacity:.75}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chips button{background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--muted);border-radius:999px;padding:8px 14px;cursor:pointer;font-family:inherit;font-weight:500}
+    .chips button:hover{color:var(--text);border-color:rgba(61,139,255,.45)}
+    #mic.recording{background:var(--bad)!important;box-shadow:0 0 0 3px rgba(255,107,138,.25)}
   </style>
 </head>
 <body>
+<!-- NYYO_PREMIUM_V1 -->
   <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="https://github.com/nyyoautomation">
+        <img src="../assets/logo.png" alt="" width="34" height="34" />
+        <span>Nyyo Automation</span>
+      </a>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a class="btn btn-ghost" href="../">All demos</a>
+        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me</a>
+      </div>
+    </div>
+
     <header class="hero">
-      <span class="tag">Neural voice · no Vapi/Twilio key · nothing uploaded · FIX-VOICE1</span>
-      <h1 style="margin:8px 0">AI receptionist that books a slot</h1>
-      <p style="margin:0;color:#9aa8c7">Speak or type. Demo books into a fake agenda board (local only).</p>
+      <div class="hero-inner">
+        <span class="tag"><span class="dot"></span> Neural voice · no cloud key · FIX-VOICE1</span>
+        <h1>AI receptionist that <span class="grad">books a slot</span></h1>
+        <p class="lead">Speak or type. Demo books into a local agenda board — same pattern as Synthflow/Vapi try-it demos, sized for small businesses.</p>
+        <div class="meta">
+          <span><strong>From $80</strong></span>
+          <span><strong>Neural MP3s</strong></span>
+          <span><strong>Crypto OK</strong></span>
+          <span><strong>Remote · Worldwide</strong></span>
+        </div>
+      </div>
     </header>
+
+    <section class="steps">
+      <div class="step"><span class="n">1</span><h3>Try</h3><p>Tap a suggestion, type, or press Speak (Chrome/Edge).</p></div>
+      <div class="step"><span class="n">2</span><h3>Hear</h3><p>Natural pre-recorded neural voice replies (offline MP3s).</p></div>
+      <div class="step"><span class="n">3</span><h3>Book</h3><p>Watch the agenda mark the slot — local only.</p></div>
+    </section>
+
     <section class="explainer">
       <h2>What is this? (plain English)</h2>
-      <p style="margin:0 0 8px;color:#9aa8c7">A phone-style assistant for small businesses: answers, offers times, writes the appointment. Production versions connect to real calendars (Vapi/Retell at your cost).</p>
-      <ol>
-        <li>Click a suggestion or press 🎤 (Chrome/Edge) / type.</li>
-        <li>Watch the agenda board mark the slot as booked.</li>
-        <li>Replies use a natural pre-recorded neural voice (offline MP3s) — no cloud key in this demo.</li>
-      </ol>
-      <div class="benefit"><strong>Business benefit:</strong> fewer missed calls after hours. Demo-style builds from <strong>$80</strong>; full phone agents <strong>$300+</strong>.</div>
+      <p style="margin:0 0 8px;color:var(--muted)">A phone-style assistant for small businesses: answers FAQs, offers times, writes the appointment. Production builds connect real calendars (Vapi/Retell at your telephony cost).</p>
+      <div class="benefit"><strong>Business benefit (example):</strong> fewer missed after-hours calls. Demo-style from <strong>$80</strong>; full phone agents <strong>$300+</strong>.</div>
     </section>
-    <div class="panel chips">
-      <button type="button" data-say="I want an appointment on Thursday">Book Thursday</button>
-      <button type="button" data-say="What are your opening hours?">Hours</button>
-      <button type="button" data-say="Book Friday please">Book Friday</button>
+
+    <div class="panel chips" aria-label="Suggested prompts">
+      <button type="button" data-say="I want an appointment on Thursday"><i data-lucide="calendar" style="width:14px;height:14px"></i> Book Thursday</button>
+      <button type="button" data-say="What are your opening hours?"><i data-lucide="clock" style="width:14px;height:14px"></i> Hours</button>
+      <button type="button" data-say="Book Friday please"><i data-lucide="calendar-check" style="width:14px;height:14px"></i> Book Friday</button>
     </div>
+
     <div class="panel">
-      <div id="chat"></div>
-      <div class="row">
-        <input id="q" style="flex:1" placeholder="Type: book Thursday…" />
-        <button id="send" type="button">Send</button>
-        <button id="mic" type="button">🎤 Speak</button>
+      <div id="chat" role="log" aria-live="polite"></div>
+      <div class="row" style="margin-top:10px">
+        <input id="q" placeholder="Type: book Thursday…" aria-label="Message" autocomplete="off" />
+        <button id="send" class="btn btn-primary icon-btn" type="button"><i data-lucide="send"></i> Send</button>
+        <button id="mic" class="btn btn-ghost icon-btn" type="button"><i data-lucide="mic"></i> Speak</button>
       </div>
-      <p id="micHint" style="color:#9aa8c7;font-size:.85rem"></p>
-      <h3>Agenda board (demo)</h3>
+      <p id="micHint" style="color:var(--muted);font-size:.85rem;margin:8px 0 0"></p>
+      <h3 style="margin:16px 0 8px">Agenda board <span class="example-label">demo</span></h3>
       <div id="board"></div>
-      <p id="log" style="color:#3dd6c6"></p>
+      <p id="log" style="color:var(--lime);font-family:'JetBrains Mono',monospace;font-size:.82rem"></p>
     </div>
-    <p class="footer"><a href="https://laborx.com/freelancers/users/id475124">Hire Nyyo Automation</a> · <a href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/voice-receptionist">Repo</a></p>
+
+    <section class="metrics">
+      <div class="metric"><div class="v">$80</div><div class="l"><strong>From</strong> · browser demo</div></div>
+      <div class="metric"><div class="v">$300+</div><div class="l"><strong>Phone</strong> · full agent</div></div>
+      <div class="metric"><div class="v">0</div><div class="l"><strong>API keys</strong> · in this demo</div></div>
+    </section>
+    <p class="metrics-note">Example figures for illustration — not a client case study.</p>
+    <div class="badges"><span>edge-tts neural</span><span>Web Speech API</span><span>Local agenda</span><span>No upload</span></div>
+
+    <section class="cta-band">
+      <div>
+        <h2>Want a receptionist for your business?</h2>
+        <p>From <strong>$80</strong> · fixed scope · crypto welcome</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124">Hire me on LaborX</a>
+        <a class="btn btn-ghost" href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/voice-receptionist">Repo</a>
+      </div>
+    </section>
+    <p class="footer"><a href="../">All demos</a> · <a href="https://laborx.com/freelancers/users/id475124">LaborX</a></p>
   </div>
+  <div class="mobile-cta"><a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124">Hire me on LaborX</a></div>
   <script src="./js/receptionist.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{ if(window.lucide) lucide.createIcons(); });</script>
 </body>
 </html>

@@ -1,3 +1,28 @@
+
+const NYYO_CHART = {
+  color: "#e8eefc",
+  borderColor: "rgba(120,160,255,0.14)",
+  grid: "rgba(120,160,255,0.08)",
+  muted: "#8b9bb8",
+  azure: "#3d8bff",
+  lime: "#39ff88",
+  font: { family: "Inter, system-ui, sans-serif", size: 11 },
+};
+function nyyoScales() {
+  return {
+    x: {
+      ticks: { color: NYYO_CHART.muted, font: NYYO_CHART.font },
+      grid: { color: NYYO_CHART.grid },
+      border: { color: NYYO_CHART.borderColor },
+    },
+    y: {
+      ticks: { color: NYYO_CHART.muted, font: NYYO_CHART.font },
+      grid: { color: NYYO_CHART.grid },
+      border: { color: NYYO_CHART.borderColor },
+    },
+  };
+}
+
 function parseCSV(text) {
   const lines = text.replace(/\r/g, "").trim().split("\n");
   const headers = splitCSVLine(lines[0]);
@@ -55,13 +80,32 @@ function render(rows) {
   if (chartTime) chartTime.destroy();
   chartCat = new Chart(document.getElementById("chartCat"), {
     type: "bar",
-    data: { labels: catLabels, datasets: [{ label: value, data: catData, backgroundColor: "#5b8cff" }] },
-    options: { plugins: { legend: { display: false } }, scales: { x: { ticks: { color: "#9aa8c7" } }, y: { ticks: { color: "#9aa8c7" } } } },
+    data: { labels: catLabels, datasets: [{
+      label: value, data: catData,
+      backgroundColor: catLabels.map((_, i) => i % 2 ? "rgba(57,255,136,0.75)" : "rgba(61,139,255,0.85)"),
+      borderRadius: 8, borderSkipped: false, maxBarThickness: 42,
+    }] },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: "#121c34", titleFont: NYYO_CHART.font, bodyFont: NYYO_CHART.font, padding: 10, cornerRadius: 10 } },
+      scales: nyyoScales(),
+      animation: { duration: 550, easing: "easeOutQuart" },
+    },
   });
   chartTime = new Chart(document.getElementById("chartTime"), {
     type: "line",
-    data: { labels: dateLabels, datasets: [{ label: value, data: dateData, borderColor: "#3dd6c6", tension: 0.25, fill: false }] },
-    options: { plugins: { legend: { display: false } }, scales: { x: { ticks: { color: "#9aa8c7", maxRotation: 45 } }, y: { ticks: { color: "#9aa8c7" } } } },
+    data: { labels: dateLabels, datasets: [{
+      label: value, data: dateData,
+      borderColor: NYYO_CHART.lime, backgroundColor: "rgba(57,255,136,0.12)",
+      tension: 0.35, fill: true, pointRadius: 3, pointHoverRadius: 5,
+      pointBackgroundColor: NYYO_CHART.lime, borderWidth: 2,
+    }] },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: "#121c34", titleFont: NYYO_CHART.font, bodyFont: NYYO_CHART.font, padding: 10, cornerRadius: 10 } },
+      scales: { ...nyyoScales(), x: { ...nyyoScales().x, ticks: { ...nyyoScales().x.ticks, maxRotation: 45 } } },
+      animation: { duration: 550, easing: "easeOutQuart" },
+    },
   });
 
   const tb = document.getElementById("tbody");

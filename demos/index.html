@@ -6,6 +6,10 @@
   <title>Nyyo Automation — Live demos</title>
   <meta name="description" content="Try live automation, AI and scraping demos. No signup. Fixed price. Hire Nyyo Automation on LaborX." />
   <meta name="theme-color" content="#050814" />
+  <meta property="og:title" content="Nyyo Automation — Live demos" />
+  <meta property="og:description" content="Try automation & AI demos. Fixed price. Crypto welcome." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/assets/logo.png" />
   <link rel="icon" href="./assets/logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -244,6 +248,7 @@
     }
     .card.hidden { display: none; }
     .card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .icon svg, .icon i { width: 20px; height: 20px; stroke: #7eb6ff; }
     .icon {
       width: 40px; height: 40px; border-radius: 12px;
       display: grid; place-items: center; font-size: 1.15rem;
@@ -326,6 +331,7 @@
       .bubble, .typing { opacity: 1; transform: none; }
     }
   </style>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 </head>
 <body>
   <div class="shell">
@@ -397,87 +403,94 @@
     <div class="grid" id="grid">
       <!-- Flagship / separate repos -->
       <a class="card" data-cat="ai" href="https://nyyoautomation.github.io/nyyo-docs-chatbot/">
-        <div class="card-top"><div class="icon" aria-hidden="true">💬</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="message-square"></i></div><span class="live">Live</span></div>
         <h3>Docs chatbot (RAG)</h3>
         <p>Ask questions on your business docs — answers with source citations. Widget or Telegram.</p>
         <div class="card-foot"><span class="price">from $250</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="automation" href="https://nyyoautomation.github.io/nyyo-n8n-workflows/">
-        <div class="card-top"><div class="icon" aria-hidden="true">🔗</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="workflow"></i></div><span class="live">Live</span></div>
         <h3>n8n / Make AI workflows</h3>
         <p>Production-shape automations with visible steps, retries and run history.</p>
         <div class="card-foot"><span class="price">from $100</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="web" href="https://nyyoautomation.github.io/nyyo-vibe-code-rescue/">
-        <div class="card-top"><div class="icon" aria-hidden="true">🩹</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="wrench"></i></div><span class="live">Live</span></div>
         <h3>Vibe-code rescue</h3>
         <p>Before/after: fix broken Lovable / Cursor / v0 landings fast.</p>
         <div class="card-foot"><span class="price">from $50</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="data" href="https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/">
-        <div class="card-top"><div class="icon" aria-hidden="true">📡</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="radio"></i></div><span class="live">Live</span></div>
         <h3>Live scrape dashboard</h3>
         <p>Watch a scraper fill a live KPI board — prices, stock, alerts.</p>
         <div class="card-foot"><span class="price">from $120</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="bots" href="https://nyyoautomation.github.io/nyyo-telegram-demo/simulator/">
-        <div class="card-top"><div class="icon" aria-hidden="true">🤖</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="bot"></i></div><span class="live">Live</span></div>
         <h3>Telegram / Discord bots</h3>
         <p>Browser simulator of alert &amp; support bots — menus, buttons, flows.</p>
         <div class="card-foot"><span class="price">from $79</span><span class="open">Open demo →</span></div>
       </a>
-      <a class="card" data-cat="data" href="https://github.com/nyyoautomation/nyyo-invoice-to-excel">
-        <div class="card-top"><div class="icon" aria-hidden="true">📄</div><span class="live">Live</span></div>
+      <a class="card" data-cat="data" href="https://nyyoautomation.github.io/nyyo-invoice-to-excel/">
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="file-text"></i></div><span class="live">Live</span></div>
         <h3>Invoice → Excel</h3>
-        <p>Messy PDFs to a clean spreadsheet. Script + sample files in the repo.</p>
-        <div class="card-foot"><span class="price">from $60</span><span class="open">Open repo →</span></div>
+        <p>Messy PDFs to a clean spreadsheet — try sample extraction in-browser.</p>
+        <div class="card-foot"><span class="price">from $80</span><span class="open">Open demo →</span></div>
+      </a>
+
+            <a class="card" data-cat="data" href="https://nyyoautomation.github.io/nyyo-spreadsheet-demo/">
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="table-2"></i></div><span class="live">Live</span></div>
+        <h3>Spreadsheet cleanup</h3>
+        <p>Messy sheet → clean table. Before/after example you can toggle.</p>
+        <div class="card-foot"><span class="price">from $35</span><span class="open">Open demo →</span></div>
       </a>
 
       <!-- Profile-hosted demos -->
       <a class="card" data-cat="ai" href="./inbox-ai/">
-        <div class="card-top"><div class="icon" aria-hidden="true">📥</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="inbox"></i></div><span class="live">Live</span></div>
         <h3>Inbox AI</h3>
         <p>Sort, draft and tag support tickets — fewer repetitive replies.</p>
         <div class="card-foot"><span class="price">from $300</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="data" href="./instant-dashboard/">
-        <div class="card-top"><div class="icon" aria-hidden="true">📊</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="bar-chart-3"></i></div><span class="live">Live</span></div>
         <h3>Instant CSV dashboard</h3>
         <p>Drop a CSV → KPIs and charts in the browser. No backend.</p>
         <div class="card-foot"><span class="price">from $50</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="data" href="./shopify-importer/">
-        <div class="card-top"><div class="icon" aria-hidden="true">🛒</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="shopping-cart"></i></div><span class="live">Live</span></div>
         <h3>Shopify import cleaner</h3>
         <p>Normalize product CSVs before import — fewer failed uploads.</p>
         <div class="card-foot"><span class="price">from $80</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="data" href="./lead-pipeline/">
-        <div class="card-top"><div class="icon" aria-hidden="true">🎯</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="map-pin"></i></div><span class="live">Live</span></div>
         <h3>B2B lead pipeline</h3>
         <p>OpenStreetMap business leads — no personal emails scraped.</p>
         <div class="card-foot"><span class="price">from $50</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="bots" href="./voice-receptionist/">
-        <div class="card-top"><div class="icon" aria-hidden="true">🎙️</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="mic"></i></div><span class="live">Live</span></div>
         <h3>Voice receptionist</h3>
         <p>Browser voice flow for booking / FAQ — hands-free demo.</p>
         <div class="card-foot"><span class="price">from $80</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="web" href="./landing-kit/">
-        <div class="card-top"><div class="icon" aria-hidden="true">🚀</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="rocket"></i></div><span class="live">Live</span></div>
         <h3>Landing page kit</h3>
         <p>SaaS, local business &amp; crypto templates — shipped in 24h.</p>
         <div class="card-foot"><span class="price">from $100</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="data" href="./wallet-tracker/">
-        <div class="card-top"><div class="icon" aria-hidden="true">👀</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="eye"></i></div><span class="live">Live</span></div>
         <h3>Wallet tracker</h3>
         <p>Read-only portfolio board for public addresses — alerts ready.</p>
         <div class="card-foot"><span class="price">from $60</span><span class="open">Open demo →</span></div>
       </a>
       <a class="card" data-cat="automation" href="./sheets-automations/">
-        <div class="card-top"><div class="icon" aria-hidden="true">📑</div><span class="live">Live</span></div>
+        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="sheet"></i></div><span class="live">Live</span></div>
         <h3>Sheets automations</h3>
         <p>Google Apps Script pack — clean, notify, sync without Zapier.</p>
         <div class="card-foot"><span class="price">from $30/script</span><span class="open">Open demo →</span></div>
@@ -538,6 +551,7 @@
         }, 1600);
       }
       runPreview();
+      if (window.lucide) lucide.createIcons();
 
       // Filters
       var buttons = document.querySelectorAll(".filters button");
