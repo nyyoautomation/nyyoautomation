@@ -37,7 +37,9 @@ I help founders, operators and Web3 teams who need **scraping → CSV**, **sprea
 | Voice receptionist (browser) | On quote | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/voice-receptionist/) |
 | Landing page | Paused | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/) |
 | Wallet tracker (read-only) | On quote | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/) |
-| Google Sheets Apps Script pack | **$45** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) |
+| Google Sheets Apps Script pack | **$49** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) |
+
+**Telegram bots, firm scope:** Starter $149 — 1 Telegram bot, simple commands and menus (FAQ, alerts, links), no AI, no payments, about 3.5 h of work max. Bigger bots → quote.
 
 Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoautomation/demos/)
 
