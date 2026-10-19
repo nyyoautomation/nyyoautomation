@@ -1,11 +1,11 @@
 [
   {
     "osm_id": "node/100000",
-    "name": "Olive Garden Demo",
+    "name": "Juniper Grove Cafe (fictional)",
     "amenity": "cafe",
     "cuisine": "american",
     "phone": "",
-    "website": "https://example.invalid/olive-garden-demo",
+    "website": "https://example.invalid/juniper-grove-cafe",
     "lat": 30.278354,
     "lon": -97.790599,
     "city": "Austin",

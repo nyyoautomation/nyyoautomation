@@ -1,5 +1,5 @@
 osm_id,name,amenity,cuisine,phone,website,lat,lon,city,source
-node/100000,Olive Garden Demo,cafe,american,,https://example.invalid/olive-garden-demo,30.278354,-97.790599,Austin,OpenStreetMap (ODbL) — demo sample
+node/100000,Juniper Grove Cafe (fictional),cafe,american,,https://example.invalid/juniper-grove-cafe,30.278354,-97.790599,Austin,OpenStreetMap (ODbL) — demo sample
 node/100001,Sakura Sushi Demo,restaurant,italian,,,30.246791,-97.779146,Austin,OpenStreetMap (ODbL) — demo sample
 node/100002,Parkside Bistro,restaurant,italian,,https://example.invalid/parkside-bistro,30.281336,-97.703882,Austin,OpenStreetMap (ODbL) — demo sample
 node/100003,Casa Pasta Demo,cafe,italian,,,30.274439,-97.789922,Austin,OpenStreetMap (ODbL) — demo sample
@@ -19,5 +19,5 @@ node/100016,River Side Grill,restaurant,japanese,,https://example.invalid/river-
 node/100017,Old Town Deli,restaurant,,,,30.289045,-97.694578,Austin,OpenStreetMap (ODbL) — demo sample
 node/100018,Canvas Coffee,cafe,american,,https://example.invalid/canvas-coffee,30.245823,-97.783,Austin,OpenStreetMap (ODbL) — demo sample
 node/100019,Pilot Wings Pub,restaurant,japanese,,,30.263473,-97.709689,Austin,OpenStreetMap (ODbL) — demo sample
-node/dup1, olive garden demo ,cafe,american,,https://example.invalid/olive-garden-demo,30.278354,-97.790599,Austin,OpenStreetMap (ODbL) — demo sample
+node/dup1, juniper grove cafe (fictional) ,cafe,american,,https://example.invalid/juniper-grove-cafe,30.278354,-97.790599,Austin,OpenStreetMap (ODbL) — demo sample
 node/100001,SAKURA SUSHI DEMO,restaurant,italian,,,30.246791,-97.779146,Austin,OpenStreetMap (ODbL) — demo sample
