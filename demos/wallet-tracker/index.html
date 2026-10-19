@@ -1,172 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="../assets/logo.png" type="image/png" /><meta name="theme-color" content="#050814" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta property="og:title" content="Wallet tracker — Nyyo Automation" />
-  <meta property="og:description" content="Read-only portfolio board." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/assets/logo.png" />
-
-  <title>Wallet tracker (read-only) — Nyyo Automation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <style>
-    :root{--bg:#0b1220;--panel:#121a2b;--text:#e8eefc;--muted:#9aa8c7;--accent:#5b8cff;--ok:#3dd6c6;--bad:#ff6b8a;--border:#243049}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
-    .wrap{max-width:900px;margin:0 auto;padding:24px 16px}
-    .hero,.explainer,.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px}
-    .hero{background:linear-gradient(145deg,#13203a,#0c1628)}
-    .tag{color:var(--ok);font-size:.75rem}
-    .explainer ol{color:var(--muted)}
-    .benefit{margin-top:10px;padding:10px;border-radius:10px;background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.3)}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media(max-width:800px){.grid{grid-template-columns:1fr}}
-    .warn{color:var(--bad);font-weight:700}
-    .ok{color:var(--ok)}
-    code{font-size:.75rem;color:var(--muted);word-break:break-all}
-    table{width:100%;border-collapse:collapse;font-size:.85rem}
-    td,th{border-bottom:1px solid var(--border);padding:8px;text-align:left}
-    a{color:var(--ok)}
-  </style>
-  <link rel="stylesheet" href="./css/nyyo-kit.css" />
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wallet tracker (read-only) · Nyyo Automation</title>
+<meta name="description" content="Read-only board for public wallet addresses: balances, recent activity and low-balance alerts, with a CSV export. Demo addresses, never asks for a seed.">
+<meta property="og:title" content="Wallet tracker (read-only) · Nyyo Automation">
+<meta property="og:description" content="Read-only board for public wallet addresses: balances, recent activity and low-balance alerts, with a CSV export. Demo addresses, never asks for a seed.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/">
+<meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/assets/og-gallery.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nyyo Automation demos: AI assistants and automations, fictional data">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F7F7F5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=optional" rel="stylesheet">
+<link rel="stylesheet" href="../design-system.css">
+<link rel="stylesheet" href="../assets/subdemo.css">
 </head>
-<body>
-<!-- NYYO_PREMIUM_V1 -->
-  <div class="wrap">
-            <div class="topbar">
-      <a class="brand" href="https://github.com/nyyoautomation">
-        <img src="../assets/logo.png" alt="" width="34" height="34" />
-        <span>Nyyo Automation</span>
-      </a>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
-        <a class="btn btn-ghost btn-sm" href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a>
-        <a class="btn btn-primary btn-sm" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-      </div>
-    </div>
-<header class="hero">
-      <div class="tag">Read-only · demo addresses · never paste a seed</div>
-      <h1 style="margin:8px 0">Treasury / airdrop wallets in one board</h1>
-      <p style="margin:0;color:#9aa8c7">Balances + recent activity + low-balance alerts. Demo data is illustrative.</p>
-          <div class="meta" aria-label="Offer">
-        <span><strong>Available on LaborX</strong></span>
-        <span><strong>Remote · Worldwide</strong></span>
-        <span><strong>Example data</strong> labeled</span>
-      </div>
-</header>
-    <section class="explainer">
-      <h2>What is this? (plain English)</h2>
-      <p style="margin:0 0 8px;color:#9aa8c7">A dashboard that watches public wallet addresses so finance sees balances without logging into five explorers.</p>
-      <ol>
-        <li>Read the cards (demo wallets only).</li>
-        <li>Note the red alert when under the USD threshold.</li>
-        <li>Export CSV for accounting.</li>
-      </ol>
-      <div class="benefit"><strong>Business benefit:</strong> fewer “we ran out of gas” surprises.</div>
-    </section>
-
-<section class="steps" aria-label="How it works">
-<div class="step"><span class="n">1</span><h3>Paste</h3><p>Use the sample public address (or yours).</p></div>
-<div class="step"><span class="n">2</span><h3>Track</h3><p>Read-only balances & activity board.</p></div>
-<div class="step"><span class="n">3</span><h3>Alert</h3><p>Optional threshold / whale alerts.</p></div>
+<body class="has-cta-bar">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container site-header__inner">
+  <a class="brand" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg class="brand__mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" style="fill:var(--accent)"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" style="fill:var(--on-accent)"/></svg><span>Nyyo Automation</span></a>
+  <nav class="nav" aria-label="Main"><a class="back-link" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>All demos</span></a></nav>
+  <div class="site-header__actions"><a class="btn btn--primary site-header__cta" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+</div></header>
+<main id="main" class="sd-main">
+<section class="container sd-hero">
+  <div class="sd-meta"><span class="badge badge--sector">Data</span><span class="badge badge--live">Live demo</span><span class="badge">Read-only</span></div>
+  <h1>Treasury wallets in one board</h1>
+  <p class="lead">Balances, recent activity and low-balance alerts for public addresses. Demo data is illustrative; never paste a seed.</p>
+  <div class="sd-meta"><span class="badge">On quote</span><span class="badge">Available on LaborX</span><span class="badge"><span class="nowrap">Remote · Worldwide</span></span></div>
 </section>
-    <p id="meta" style="color:#9aa8c7"></p>
-    <div class="grid" id="cards"></div>
-    <div class="card">
-      <button id="csv" style="background:#5b8cff;color:#fff;border:0;border-radius:10px;padding:10px 14px;font-weight:600;cursor:pointer">Export CSV</button>
-      <table style="margin-top:12px"><thead><tr><th>Label</th><th>Chain</th><th>USD</th><th>Alert</th></tr></thead><tbody id="tb"></tbody></table>
-    </div>
-    <p style="text-align:center;color:#9aa8c7;font-size:.85rem"><a href="https://github.com/nyyoautomation">Available on LaborX</a> · <a href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/wallet-tracker">Repo</a></p>
-  <section class="metrics" aria-label="Example metrics">
-<div class="metric"><div class="v">Quote</div><div class="l"><strong>Pricing</strong> · on request</div></div>
-<div class="metric"><div class="v">Read-only</div><div class="l"><strong>Mode</strong> · never asks for keys</div></div>
-<div class="metric"><div class="v">EVM/SOL</div><div class="l"><strong>Chain</strong> · as scoped</div></div>
-</section>
-<p class="metrics-note">Example figures for illustration — not a client case study.</p>
-<div class="badges" aria-label="Tech stack"><span>JavaScript</span><span>Public RPCs</span><span>Read-only</span></div>
-    <!-- NYYO_INTEGRATE_START -->
 
-<section class="nyyo-integrate" aria-label="Integration and setup">
-  <div class="block">
-    <h2>Where it plugs in</h2>
-    <p class="sub">Read-only boards for public chain addresses you choose.</p>
-    <div class="plug-chips" role="list">
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">Web</span>Web dashboard</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">Tg</span>Telegram alerts</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">GS</span>Google Sheets log</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">API</span>Webhook</span>
-</div>
-    
-    <p class="honest-note">Read-only. We never ask for seed phrases or private keys.</p>
-  </div>
-  <div class="block">
-    <h2>How we set it up</h2>
-    <p class="sub">Fixed scope · handover included</p>
-    <ol class="setup-steps">
-      <li><span class="n">1</span><h3>You send us</h3><p>public addresses to watch and alert thresholds.</p></li>
-      <li><span class="n">2</span><h3>We build &amp; connect</h3><p>we wire read-only RPCs / public APIs and the board.</p></li>
-      <li><span class="n">3</span><h3>You get the result</h3><p>dashboard + alert channel, handover + video.</p></li>
-    </ol>
-  </div>
-  <div class="block">
-    <h2>Hosting — no lock-in</h2>
-    <p class="sub">Pick what fits your stack. We never hold your data hostage.</p>
-    <div class="host-grid">
-      <div class="host-card"><strong>We host it</strong><p>Optional hosted board.</p></div>
-      <div class="host-card"><strong>On your account</strong><p>Static+API on your Cloudflare Worker; keys stay yours.</p></div>
+<section class="container sd-section" id="demo" aria-labelledby="demo-title">
+  <div class="panel">
+    <h2 id="demo-title">The demo board</h2>
+    <p id="meta" class="sd-sub"></p>
+    <div class="sd-grid-3" id="cards" aria-live="polite"><article class="card-plain wallet-card" aria-hidden="true"></article><article class="card-plain wallet-card" aria-hidden="true"></article><article class="card-plain wallet-card" aria-hidden="true"></article></div>
+    <div class="btn-row" style="margin:var(--sp-4) 0">
+      <button id="csv" class="btn btn--primary" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg><span>Export CSV</span></button>
+    </div>
+    <div class="table-wrap" role="region" aria-label="Wallet totals" tabindex="0">
+      <table class="data-table"><caption class="sr-only">Wallet totals and alerts</caption>
+        <thead><tr><th scope="col">Label</th><th scope="col">Chain</th><th scope="col">USD</th><th scope="col">Alert</th></tr></thead><tbody id="tb"><tr><td colspan="4">Loading…</td></tr><tr><td colspan="4">&nbsp;</td></tr><tr><td colspan="4">&nbsp;</td></tr></tbody></table>
     </div>
   </div>
 </section>
 
-<!-- NYYO_INTEGRATE_END -->
+<section class="container sd-section" aria-labelledby="how-title">
+  <h2 id="how-title">How it works</h2>
+  <ol class="steps">
+    <li><strong>Add</strong>Public addresses to watch (demo addresses here).</li>
+    <li><strong>Track</strong>Read-only balances and activity board.</li>
+    <li><strong>Alert</strong>Flag when a wallet goes under the USD threshold; export CSV for accounting.</li>
+  </ol>
+</section>
 
-<section class="cta-band" aria-label="Hire">
-      <div>
-        <h2>Want this for your stack?</h2>
-        <p>Fixed scope · 7-day bugfix · available on LaborX · Remote · Worldwide</p>
-        <p style="margin:8px 0 0;font-size:.88rem">The kit is free and included — you only pay for the build.</p>
-      </div>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-        <a class="btn btn-ghost" href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/wallet-tracker">Repo</a>
-      </div>
-    </section>
+<section class="container sd-section" aria-labelledby="plug-title">
+  <h2 id="plug-title">Where it plugs in</h2>
+  <p class="sd-sub">Read-only boards for public chain addresses you choose.</p>
+  <ul class="plug-list" aria-label="Outputs">
+    <li><span class="ic" aria-hidden="true">Web</span>Web dashboard</li><li><span class="ic" aria-hidden="true">Tg</span>Telegram alerts</li>
+    <li><span class="ic" aria-hidden="true">GS</span>Google Sheets log</li><li><span class="ic" aria-hidden="true">API</span>Webhook</li>
+  </ul>
+  <div class="notice"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><p><strong>Read-only.</strong> We never ask for seed phrases or private keys.</p></div>
+</section>
 
+<section class="container sd-section" aria-labelledby="setup-title">
+  <h2 id="setup-title">How the build works</h2>
+  <div class="sd-grid-3">
+    <div class="card-plain"><h3>1 · You send</h3><p>The public addresses to watch and the alert thresholds.</p></div>
+    <div class="card-plain"><h3>2 · We build</h3><p>Read-only RPCs or public APIs wired to the board.</p></div>
+    <div class="card-plain"><h3>3 · You get</h3><p>The dashboard and alert channel, and a handover.</p></div>
   </div>
-  <script>
-    (async function(){
-      const data = await (await fetch("./data/wallets.json")).json();
-      document.getElementById("meta").textContent = data.disclaimer + " · threshold $" + data.threshold_usd;
-      const cards = document.getElementById("cards");
-      const tb = document.getElementById("tb");
-      data.wallets.forEach(w => {
-        const usd = w.assets.reduce((s,a)=>s+a.usd,0);
-        const low = usd < data.threshold_usd;
-        cards.innerHTML += `<div class="card"><h3>${w.label}</h3><div style="font-size:1.4rem;font-weight:700">$${usd.toLocaleString()}</div>
-          <p class="${low?"warn":"ok"}">${low?"⚠ below threshold":"OK"}</p>
-          <code>${w.address}</code>
-          <ul>${w.assets.map(a=>`<li>${a.amount} ${a.symbol} ($${a.usd})</li>`).join("")}</ul>
-          <p style="color:#9aa8c7;font-size:.85rem">${(w.recent||[]).map(r=>r.when+": "+r.note).join(" · ")}</p></div>`;
-        tb.innerHTML += `<tr><td>${w.label}</td><td>${w.chain}</td><td>$${usd}</td><td class="${low?"warn":"ok"}">${low?"LOW":"ok"}</td></tr>`;
-      });
-      document.getElementById("csv").onclick = () => {
-        const lines = [["label","chain","address","usd_total"].join(",")].concat(
-          data.wallets.map(w => [w.label,w.chain,w.address,w.assets.reduce((s,a)=>s+a.usd,0)].join(","))
-        );
-        const a = document.createElement("a");
-        a.href = URL.createObjectURL(new Blob([lines.join("\n")], {type:"text/csv"}));
-        a.download = "nyyo_wallets_demo.csv"; a.click();
-      };
-    })();
-  </script>
-  <div class="mobile-cta" aria-label="Hire shortcut">
-    <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
+  <div class="sd-grid-2" style="margin-top:var(--sp-4)">
+    <div class="card-plain"><h3>We run it</h3><p>Optional hosted board.</p></div>
+    <div class="card-plain"><h3>On your account</h3><p>Static page and API on your Cloudflare Worker; keys stay yours.</p></div>
   </div>
+</section>
 
-  <script>document.addEventListener("DOMContentLoaded",function(){if(window.lucide)lucide.createIcons();});</script>
+<section class="container sd-section" aria-labelledby="quote-title">
+  <div class="panel">
+    <h2 id="quote-title">Want a board for your wallets?</h2>
+    <p class="sd-sub">Fixed scope, priced on quote. Questions? Ask in your order chat.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="site-footer__grid">
+    <div><a class="brand" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg class="brand__mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" style="fill:var(--accent)"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" style="fill:var(--on-accent)"/></svg><span>Nyyo Automation</span></a>
+      <p style="margin-top:12px;max-width:42ch">AI assistants and automations built on your own documents. Fixed scope, a human always signs off. <span class="nowrap">Remote · Worldwide</span>.</p></div>
+    <div><h2 class="site-footer__title">Demos</h2><ul><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a></li><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/#industry">Industry demos</a></li><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/#tools">Automation &amp; data</a></li></ul></div>
+    <div><h2 class="site-footer__title">Contact</h2><ul><li><a href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></li><li><a href="https://laborx.com/freelancers/users/id475124" rel="noopener">LaborX</a></li><li><a href="https://github.com/nyyoautomation">GitHub</a></li></ul></div>
+  </div>
+  <div class="site-footer__legal"><span>© 2026 Nyyo Automation · Noah Vasseur</span><span>All demo data is fictional.</span></div>
+</div></footer>
+<div class="cta-bar"><a class="btn btn--secondary" href="#demo">See the board</a><a class="btn btn--primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+<script>
+(async function () {
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const usd = (n) => "$" + Number(n).toLocaleString("en-US");
+  const data = await (await fetch("./data/wallets.json")).json();
+  document.getElementById("meta").textContent = data.disclaimer + " Alert threshold: " + usd(data.threshold_usd) + ".";
+  let cards = "", rows = "";
+  data.wallets.forEach((w) => {
+    const total = w.assets.reduce((s, a) => s + a.usd, 0);
+    const low = total < data.threshold_usd;
+    const pill = low ? '<span class="status-pill status-pill--warn">Below threshold</span>' : '<span class="status-pill status-pill--ok">OK</span>';
+    cards += `<article class="card-plain wallet-card"><h3>${esc(w.label)}</h3><p class="kpi__value">${usd(total)}</p>${pill}
+      <p class="mono wallet-addr">${esc(w.address)}</p>
+      <ul class="wallet-assets">${w.assets.map((a) => `<li><span>${esc(a.amount)} ${esc(a.symbol)}</span><span class="mono">${usd(a.usd)}</span></li>`).join("")}</ul>
+      <p class="muted">${(w.recent || []).map((r) => esc(r.when + ": " + r.note)).join(" · ")}</p></article>`;
+    rows += `<tr><td>${esc(w.label)}</td><td>${esc(w.chain)}</td><td class="mono">${usd(total)}</td><td>${low ? '<span class="status-pill status-pill--warn">Low</span>' : '<span class="status-pill status-pill--ok">OK</span>'}</td></tr>`;
+  });
+  document.getElementById("cards").innerHTML = cards;
+  document.getElementById("tb").innerHTML = rows;
+  document.getElementById("csv").onclick = () => {
+    const q = (v) => `"${String(v).replace(/"/g, '""')}"`;
+    const lines = [["label", "chain", "address", "usd_total"].join(",")].concat(
+      data.wallets.map((w) => [w.label, w.chain, w.address, w.assets.reduce((s, a) => s + a.usd, 0)].map(q).join(",")));
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
+    a.download = "nyyo_wallets_demo.csv"; a.click();
+  };
+})();
+</script>
 </body>
 </html>

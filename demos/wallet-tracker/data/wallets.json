@@ -9,10 +9,10 @@
       "address": "0x000000000000000000000000000000000000dEaD",
       "assets": [
         {"symbol": "ETH", "amount": 12.5, "usd": 29975},
-        {"symbol": "USDC", "amount": 4200, "usd": 4200}
+        {"symbol": "USDT", "amount": 4200, "usd": 4200}
       ],
       "recent": [
-        {"when": "2026-10-18", "note": "inbound USDC +500 (demo)"},
+        {"when": "2026-10-18", "note": "inbound USDT +500 (demo)"},
         {"when": "2026-10-12", "note": "outbound ETH -0.4 (demo)"}
       ]
     },
@@ -22,7 +22,7 @@
       "address": "11111111111111111111111111111111",
       "assets": [
         {"symbol": "SOL", "amount": 85.2, "usd": 8882},
-        {"symbol": "USDC", "amount": 1500, "usd": 1500}
+        {"symbol": "USDT", "amount": 1500, "usd": 1500}
       ],
       "recent": [
         {"when": "2026-10-17", "note": "stake reward +0.3 SOL (demo)"}
@@ -34,7 +34,7 @@
       "address": "0x1111111111111111111111111111111111111111",
       "assets": [
         {"symbol": "ETH", "amount": 0.12, "usd": 288},
-        {"symbol": "USDC", "amount": 40, "usd": 40}
+        {"symbol": "USDT", "amount": 40, "usd": 40}
       ],
       "recent": [
         {"when": "2026-10-19", "note": "gas spend -0.01 ETH (demo)"}

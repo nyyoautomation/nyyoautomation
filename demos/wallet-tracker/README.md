@@ -6,15 +6,17 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/).
 >
-> **Business benefit:** spot empty gas tanks early.
+> **Pricing:** on quote.
 
-![Demo](docs/demo.gif)
+![Wallet tracker demo: read-only balances, alerts and CSV export](docs/demo.png)
 
 **Live:** https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/
 
+**Run locally:** `python3 -m http.server 8000` from the repository root, then open http://localhost:8000/demos/wallet-tracker/ (opening `index.html` directly does not load the data).
+
 ## How to order
 
-Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
+Available on LaborX · [Request a quote](https://laborx.com/freelancers/users/id475124)
 
 Questions? Ask in your order chat.
 

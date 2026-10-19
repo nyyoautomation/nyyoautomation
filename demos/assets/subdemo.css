@@ -108,3 +108,14 @@ input.sr-only:focus-visible + *, .drop input:focus-visible { outline: 2px solid 
 .script-card .btn { align-self: flex-start; }
 details summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; font-weight: var(--fw-medium); color: var(--accent-text); }
 details .result-pre { max-height: 280px; overflow: auto; white-space: pre; }
+
+/* wallet cards */
+.wallet-card { min-height: 290px; display: flex; flex-direction: column; gap: var(--sp-2); }
+.wallet-card .kpi__value { margin: 0; }
+.wallet-card .status-pill { align-self: flex-start; }
+.wallet-addr { font-size: var(--fs-13); color: var(--text-muted); overflow-wrap: anywhere; margin: 0; }
+.wallet-assets { list-style: none; padding: 0; margin: 0; font-size: var(--fs-14); }
+.wallet-assets li { display: flex; justify-content: space-between; gap: var(--sp-2); padding: var(--sp-1) 0; border-bottom: 1px solid var(--border); }
+.wallet-card p.muted { font-size: var(--fs-13); margin: 0; }
+.wallet-assets .mono { font-size: 1em; }
+#tb td { height: 45px; }
