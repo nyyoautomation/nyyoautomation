@@ -82,7 +82,7 @@ function run(text) {
   const a = document.getElementById("dl");
   a.href = URL.createObjectURL(blob);
   a.download = "shopify_products_import.csv";
-  a.style.display = "inline-block";
+  a.style.visibility = "visible";
   // fake stock sync log
   const sync = cleaned.map((r) => ({ sku: r["Variant SKU"], qty: r["Variant Inventory Qty"], status: "synced" }));
   document.getElementById("sync").textContent = JSON.stringify(sync.slice(0, 5), null, 2);
