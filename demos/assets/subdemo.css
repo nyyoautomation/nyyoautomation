@@ -94,3 +94,11 @@ textarea.input, .field textarea { min-height: 200px; line-height: var(--lh-body)
 .code-box { margin: var(--sp-3) 0; }
 .code-box .label { display: flex; justify-content: space-between; font-size: var(--fs-13); color: var(--text-muted); margin-bottom: var(--sp-1); }
 .result-pre code { font-size: inherit; font-family: inherit; }
+
+/* CSV drop zone + charts (instant dashboard) */
+.drop { border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: var(--sp-5); background: var(--surface-2); text-align: center; }
+.drop .btn-row { justify-content: center; }
+.drop.hot { border-color: var(--accent); background: var(--tint-accent); }
+.chart-frame { position: relative; height: 240px; }
+label.btn { cursor: pointer; }
+input.sr-only:focus-visible + *, .drop input:focus-visible { outline: 2px solid var(--focus, var(--accent)); }

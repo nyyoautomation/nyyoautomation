@@ -1,27 +1,19 @@
 
-const NYYO_CHART = {
-  color: "#e8eefc",
-  borderColor: "rgba(120,160,255,0.14)",
-  grid: "rgba(120,160,255,0.08)",
-  muted: "#8b9bb8",
-  azure: "#3d8bff",
-  lime: "#39ff88",
-  font: { family: "Inter, system-ui, sans-serif", size: 11 },
-};
-function nyyoScales() {
-  return {
-    x: {
-      ticks: { color: NYYO_CHART.muted, font: NYYO_CHART.font },
-      grid: { color: NYYO_CHART.grid },
-      border: { color: NYYO_CHART.borderColor },
-    },
-    y: {
-      ticks: { color: NYYO_CHART.muted, font: NYYO_CHART.font },
-      grid: { color: NYYO_CHART.grid },
-      border: { color: NYYO_CHART.borderColor },
-    },
-  };
+// Chart colours come from the page tokens (palette B), read once at load.
+function nyyoTokens() {
+  const css = getComputedStyle(document.documentElement);
+  const v = (n) => css.getPropertyValue(n).trim();
+  return { text: v("--text"), muted: v("--text-muted"), border: v("--border"), accent: v("--accent"), accentTint: v("--tint-accent"),
+           neutral: v("--border-strong"), surface: v("--surface"),
+           font: { family: "Inter, \"Inter Fallback\", system-ui, sans-serif", size: 13 } };
 }
+let NYYO_CHART = null;
+function nyyoScales() {
+  const t = NYYO_CHART;
+  const axis = { ticks: { color: t.muted, font: t.font }, grid: { color: t.border }, border: { color: t.border } };
+  return { x: { ...axis }, y: { ...axis } };
+}
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
 function parseCSV(text) {
   const lines = text.replace(/\r/g, "").trim().split("\n");
@@ -54,10 +46,11 @@ function detect(rows) {
   const cat = keys.find((k) => /region|product|category|channel|segment/i.test(k) && k !== date && k !== value) || keys[1];
   return { date, cat, value };
 }
-function num(v) { return Number(String(v).replace(/[,$€\s]/g, "")) || 0; }
+function num(v) { return Number(String(v).replace(/[,$\u20ac\s]/g, "")) || 0; }
 
 let chartCat, chartTime;
 function render(rows) {
+  NYYO_CHART = NYYO_CHART || nyyoTokens();
   const { date, cat, value } = detect(rows);
   const total = rows.reduce((s, r) => s + num(r[value]), 0);
   const byCat = {};
@@ -82,36 +75,36 @@ function render(rows) {
     type: "bar",
     data: { labels: catLabels, datasets: [{
       label: value, data: catData,
-      backgroundColor: catLabels.map((_, i) => i % 2 ? "rgba(57,255,136,0.75)" : "rgba(61,139,255,0.85)"),
-      borderRadius: 8, borderSkipped: false, maxBarThickness: 42,
+      backgroundColor: NYYO_CHART.accent,
+      borderRadius: 4, borderSkipped: false, maxBarThickness: 42,
     }] },
     options: {
-      responsive: true, maintainAspectRatio: true,
-      plugins: { legend: { display: false }, tooltip: { backgroundColor: "#121c34", titleFont: NYYO_CHART.font, bodyFont: NYYO_CHART.font, padding: 10, cornerRadius: 10 } },
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: NYYO_CHART.text, titleFont: NYYO_CHART.font, bodyFont: NYYO_CHART.font, padding: 10, cornerRadius: 10 } },
       scales: nyyoScales(),
-      animation: { duration: 550, easing: "easeOutQuart" },
+      animation: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? false : { duration: 300 },
     },
   });
   chartTime = new Chart(document.getElementById("chartTime"), {
     type: "line",
     data: { labels: dateLabels, datasets: [{
       label: value, data: dateData,
-      borderColor: NYYO_CHART.lime, backgroundColor: "rgba(57,255,136,0.12)",
-      tension: 0.35, fill: true, pointRadius: 3, pointHoverRadius: 5,
-      pointBackgroundColor: NYYO_CHART.lime, borderWidth: 2,
+      borderColor: NYYO_CHART.accent, backgroundColor: NYYO_CHART.accentTint,
+      tension: 0.25, fill: true, pointRadius: 3, pointHoverRadius: 5,
+      pointBackgroundColor: NYYO_CHART.accent, borderWidth: 2,
     }] },
     options: {
-      responsive: true,
-      plugins: { legend: { display: false }, tooltip: { backgroundColor: "#121c34", titleFont: NYYO_CHART.font, bodyFont: NYYO_CHART.font, padding: 10, cornerRadius: 10 } },
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: NYYO_CHART.text, titleFont: NYYO_CHART.font, bodyFont: NYYO_CHART.font, padding: 10, cornerRadius: 10 } },
       scales: { ...nyyoScales(), x: { ...nyyoScales().x, ticks: { ...nyyoScales().x.ticks, maxRotation: 45 } } },
-      animation: { duration: 550, easing: "easeOutQuart" },
+      animation: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? false : { duration: 300 },
     },
   });
 
   const tb = document.getElementById("tbody");
   const headers = Object.keys(rows[0] || {});
-  document.getElementById("thead").innerHTML = "<tr>" + headers.map((h) => `<th>${h}</th>`).join("") + "</tr>";
-  tb.innerHTML = rows.slice(0, 50).map((r) => "<tr>" + headers.map((h) => `<td>${r[h]}</td>`).join("") + "</tr>").join("");
+  document.getElementById("thead").innerHTML = "<tr>" + headers.map((h) => `<th scope="col">${esc(h)}</th>`).join("") + "</tr>";
+  tb.innerHTML = rows.slice(0, 50).map((r) => "<tr>" + headers.map((h) => `<td>${esc(r[h])}</td>`).join("") + "</tr>").join("");
 }
 
 async function loadSample() {
