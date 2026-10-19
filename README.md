@@ -53,7 +53,7 @@ Custom quotes welcome. First **100 rows** of a scrape/sheet sample free so you c
 
 | Report | Topic |
 |---|---|
-| [FLAPJAX Q33 audit](https://gist.github.com/nyyoautomation/1fce34960d39de9afc6b6bbe32f76cfa) | Token / on-chain audit |
+| [FLAPJAX Q33 audit](https://gist.github.com/nyyoautomation/c89a7e7711544cf3314219e5d12a9acb) | Token / on-chain audit |
 | [WURK onboarding report for AIBTC](https://gist.github.com/nyyoautomation/3209df4dd2c32ca941e9158c6394aa0f) | Platform / agent-economy research |
 | [Knots analysis](https://gist.github.com/nyyoautomation/325306ed00c1dd152f27416b067f10a0) | Bitcoin ecosystem analysis |
 | [Gable Guardians analysis](https://gist.github.com/nyyoautomation/01af086217a5f5a5e5e4cd4a603d6219) | Project / community analysis |
