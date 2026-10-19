@@ -10,14 +10,16 @@
 >
 > **Ethics:** this demo does **not** collect personal emails.
 
-![Demo](docs/demo.gif)
+![Lead pipeline demo: scored leads, map and CSV export](docs/demo.png)
 
 **Live:** https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/  
 Data © OpenStreetMap contributors (ODbL).
 
+**Run locally:** `python3 -m http.server 8000` from the repository root, then open http://localhost:8000/demos/lead-pipeline/ (opening `index.html` directly does not load the data).
+
 ## How to order
 
-Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
+Available on LaborX · [Request a quote](https://laborx.com/freelancers/users/id475124)
 
 Questions? Ask in your order chat.
 
