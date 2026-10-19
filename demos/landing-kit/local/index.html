@@ -1,54 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230a0f2c%22/%3E%3Ctext x=%2232%22 y=%2245%22 font-size=%2238%22 font-family=%22Arial%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%2339ff88%22%3EN%3C/text%3E%3C/svg%3E" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BrightSmile Dental — Nyyo landing kit</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <style>
-    :root{--bg:#102418;--text:#f4f7ff;--muted:#b7c0d9;--accent:#5b8cff;--card:rgba(255,255,255,.06)}
-    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:920px;margin:0 auto;padding:48px 20px}
-    nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px}
-    .logo{font-weight:800}
-    a.cta,button{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:12px 18px;font-weight:700;text-decoration:none;cursor:pointer}
-    h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:0 0 12px}
-    .lead{color:var(--muted);font-size:1.15rem;max-width:560px}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
-    @media(max-width:800px){.hero{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
-    @media(max-width:800px){.grid{grid-template-columns:1fr}}
-    footer{margin-top:48px;color:var(--muted);font-size:.85rem}
-    .badge{display:inline-block;margin-top:10px;padding:4px 8px;border-radius:8px;background:rgba(61,214,198,.15);color:#3dd6c6;font-size:.75rem}
-  </style>
-  <link rel="stylesheet" href="../nyyo-kit.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BrightSmile Dental · Landing kit template · Nyyo Automation</title>
+<meta name="description" content="Landing page template preview (BrightSmile Dental, fictional). The form is a mock-up and sends nothing.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=optional" rel="stylesheet">
+<link rel="stylesheet" href="../../design-system.css">
+<link rel="stylesheet" href="../../assets/subdemo.css">
 </head>
 <body>
-  <div class="wrap">
-    <nav><div class="logo">BrightSmile Dental</div><a class="cta" href="#form">Book a visit</a></nav>
-    <div class="hero">
-      <div>
-        <h1>More appointments for local businesses</h1>
-        <p class="lead">Demo landing by <strong>Nyyo Automation</strong> — fast, accessible, ready to customize. Fake form (nothing is sent).</p>
-        <p style="color:#b7c0d9">Demo landing page — the form is a mock-up and isn't connected to anything.</p>
-        <p class="badge">Static HTML · Lighthouse-oriented · target 95+</p>
-      </div>
-      <div class="card" id="form">
-        <h3 style="margin-top:0">Book a visit</h3>
-        <label>Email<br/><input type="email" placeholder="you@company.com" style="width:100%;margin:8px 0 12px;padding:12px;border-radius:10px;border:1px solid #445;background:#0b1220;color:#fff"/></label>
-        <button type="button" onclick="this.textContent='Thanks — demo only'; this.disabled=true">Book a visit</button>
-      </div>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="tpl-bar"><div class="container"><span><span class="badge badge--warn">Paused</span> Template preview · fictional brand</span><a class="back-link" href="../"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Back to the kit</span></a></div></div>
+<main id="main" class="container">
+  <nav class="tpl-nav" aria-label="BrightSmile Dental"><span class="tpl-logo">BrightSmile Dental</span><a class="btn btn--primary" href="#form">Book a visit</a></nav>
+  <section class="tpl-hero">
+    <div>
+      <h1>Book a visit at BrightSmile Dental</h1>
+      <p class="lead">Demo landing page by Nyyo Automation, ready to customize. The form is a mock-up and isn't connected to anything.</p>
     </div>
-    <div class="grid">
-      <div class="card"><h3>Fast</h3><p style="color:#b7c0d9">Static HTML/CSS — ships in hours.</p></div>
-      <div class="card"><h3>Clear offer</h3><p style="color:#b7c0d9">One CTA, bilingual snippet.</p></div>
-      <div class="card"><h3>Yours</h3><p style="color:#b7c0d9">Edit copy &amp; colors — files handed over.</p></div>
+    <div class="card-plain" id="form">
+      <h2 style="font-size:var(--fs-20);margin:0 0 var(--sp-3)">Book a visit</h2>
+      <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" autocomplete="off"></div>
+      <button class="btn btn--primary" type="button" onclick="this.textContent='Thanks · demo only, nothing sent'; this.disabled=true">Book a visit</button>
     </div>
-    <footer>Template by Nyyo Automation · <a href="../index.html" style="color:#3dd6c6">Back to kit</a></footer>
-  </div>
+  </section>
+  <section class="sd-grid-3" style="padding-bottom:var(--sp-8)">
+    <div class="card-plain"><h3>Fast</h3><p>Static HTML and CSS.</p></div><div class="card-plain"><h3>Clear offer</h3><p>One call to action.</p></div><div class="card-plain"><h3>Yours</h3><p>Edit the copy and colours; the files are handed over.</p></div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container"><div class="site-footer__legal"><span>Template by Nyyo Automation · Noah Vasseur</span><span>Fictional brand, demo only.</span></div></div></footer>
 </body>
 </html>
