@@ -1,0 +1,9 @@
+sku,name,variant,price,stock,color,size,desc
+SUP-TEE-BLK-S,  cool tee  ,Black / S,19.90,12,Black,S,soft cotton tee
+SUP-TEE-BLK-M,Cool Tee,Black/M,19.9,8,black,M,soft cotton tee
+SUP-TEE-WHT-S,COOL TEE ,White S,19.90,0,White,S,soft cotton tee
+SUP-MUG-01,Ceramic Mug,Default,12,40,,,"  300ml mug, dishwasher safe "
+SUP-MUG-01-B,ceramic mug ,Blue,12.00,15,Blue,,300ml mug dishwasher safe
+SUP-HAT-RED, Dad Hat RED ,One Size,24,5,Red,OS,embroidered logo
+SUP-HAT-NVY,dad hat navy,onesize,24.00,3,Navy,OS,embroidered logo
+SUP-BAD,,broken row,,,

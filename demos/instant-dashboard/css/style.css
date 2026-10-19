@@ -1,0 +1,22 @@
+:root{--bg:#0b1220;--panel:#121a2b;--text:#e8eefc;--muted:#9aa8c7;--accent:#5b8cff;--ok:#3dd6c6;--border:#243049}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:24px 16px 48px}
+.hero{background:linear-gradient(145deg,#13203a,#0c1628);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:16px}
+.tag{display:inline-block;font-size:.75rem;color:var(--ok);border:1px solid rgba(61,214,198,.35);background:rgba(61,214,198,.12);padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.explainer{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:16px}
+.explainer ol{color:var(--muted)}
+.benefit{margin-top:12px;padding:10px;border-radius:10px;background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.3)}
+.drop{border:2px dashed var(--border);border-radius:14px;padding:28px;text-align:center;background:var(--panel);margin-bottom:16px;color:var(--muted)}
+.drop.hot{border-color:var(--accent);color:var(--text)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+@media(max-width:700px){.kpis{grid-template-columns:1fr}}
+.kpi{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px}
+.kpi .v{font-size:1.6rem;font-weight:700}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:800px){.charts{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px}
+button{border:0;border-radius:10px;background:var(--accent);color:#fff;padding:10px 14px;font-weight:600;cursor:pointer;margin:6px}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:12px}
+th,td{border-bottom:1px solid var(--border);padding:8px;text-align:left}
+.footer{text-align:center;color:var(--muted);margin-top:18px;font-size:.85rem}.footer a{color:var(--ok)}
+.meta{color:var(--muted);font-size:.85rem;margin:8px 0}

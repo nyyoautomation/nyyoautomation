@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instant CSV dashboard — Nyyo Automation</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="tag">100% in-browser · file never uploaded</span>
+      <h1 style="margin:0 0 8px">Drop a CSV → KPI dashboard in seconds</h1>
+      <p style="margin:0;color:#9aa8c7">Auto-detects date / category / revenue columns. Sample sales file included.</p>
+    </header>
+    <section class="explainer">
+      <h2>What is this? (plain English)</h2>
+      <p style="margin:0 0 8px;color:#9aa8c7">You export Excel/CSV from your tools; this page turns it into charts and totals — without sending your data to a server.</p>
+      <ol>
+        <li>Click <strong>Load sample</strong> (or drop your own CSV).</li>
+        <li>Read the KPI cards and charts.</li>
+        <li>That’s what we customize for your metrics (multi-page from $150).</li>
+      </ol>
+      <div class="benefit"><strong>Business benefit:</strong> stop rebuilding PivotTables every Monday. From <strong>$50</strong> for one page.</div>
+    </section>
+    <div class="drop" id="drop">Drop CSV here · or <label style="color:#5b8cff;cursor:pointer;text-decoration:underline"><input id="file" type="file" accept=".csv,text/csv" hidden />browse</label>
+      <div><button id="sample" type="button">Load sample</button></div>
+    </div>
+    <p class="meta" id="kpi-meta">—</p>
+    <div class="kpis">
+      <div class="kpi"><div class="muted">Rows</div><div class="v" id="kpi-rows">—</div></div>
+      <div class="kpi"><div class="muted">Total value</div><div class="v" id="kpi-total">—</div></div>
+      <div class="kpi"><div class="muted">Categories</div><div class="v" id="kpi-cats">—</div></div>
+    </div>
+    <div class="charts">
+      <div class="panel"><canvas id="chartCat" height="200"></canvas></div>
+      <div class="panel"><canvas id="chartTime" height="200"></canvas></div>
+    </div>
+    <div class="panel" style="margin-top:12px;overflow:auto">
+      <table><thead id="thead"></thead><tbody id="tbody"></tbody></table>
+    </div>
+    <p class="footer"><a href="https://laborx.com/freelancers/users/id475124">Hire Nyyo Automation</a> · <a href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/instant-dashboard">Repo</a></p>
+  </div>
+  <script src="./js/dash.js"></script>
+</body>
+</html>

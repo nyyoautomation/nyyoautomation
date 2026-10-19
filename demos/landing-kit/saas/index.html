@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nyyo Cloud — Nyyo landing kit</title>
+  <style>
+    :root{--bg:#0b1220;--text:#f4f7ff;--muted:#b7c0d9;--accent:#5b8cff;--card:rgba(255,255,255,.06)}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:920px;margin:0 auto;padding:48px 20px}
+    nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px}
+    .logo{font-weight:800}
+    a.cta,button{background:var(--accent);color:#fff;border:0;border-radius:999px;padding:12px 18px;font-weight:700;text-decoration:none;cursor:pointer}
+    h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:0 0 12px}
+    .lead{color:var(--muted);font-size:1.15rem;max-width:560px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+    @media(max-width:800px){.hero{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}}
+    footer{margin-top:48px;color:var(--muted);font-size:.85rem}
+    .badge{display:inline-block;margin-top:10px;padding:4px 8px;border-radius:8px;background:rgba(61,214,198,.15);color:#3dd6c6;font-size:.75rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav><div class="logo">Nyyo Cloud</div><a class="cta" href="#form">Join the waitlist</a></nav>
+    <div class="hero">
+      <div>
+        <h1>Ship your SaaS waitlist in 24 hours</h1>
+        <p class="lead">Demo landing by <strong>Nyyo Automation</strong> — fast, accessible, ready to customize. Fake form (nothing is sent).</p>
+        <p style="color:#b7c0d9">FR: page d'atterrissage démo — formulaire fictif.</p>
+        <p class="badge">Static HTML · Lighthouse-oriented · target 95+</p>
+      </div>
+      <div class="card" id="form">
+        <h3 style="margin-top:0">Join the waitlist</h3>
+        <label>Email<br/><input type="email" placeholder="you@company.com" style="width:100%;margin:8px 0 12px;padding:12px;border-radius:10px;border:1px solid #445;background:#0b1220;color:#fff"/></label>
+        <button type="button" onclick="this.textContent='Thanks — demo only'; this.disabled=true">Join the waitlist</button>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>Fast</h3><p style="color:#b7c0d9">Static HTML/CSS — ships in hours.</p></div>
+      <div class="card"><h3>Clear offer</h3><p style="color:#b7c0d9">One CTA, bilingual snippet.</p></div>
+      <div class="card"><h3>Yours</h3><p style="color:#b7c0d9">Edit copy &amp; colors — files handed over.</p></div>
+    </div>
+    <footer>Template by Nyyo Automation · <a href="../index.html" style="color:#3dd6c6">Back to kit</a></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voice receptionist (browser) — Nyyo Automation</title>
+  <style>
+    :root{--bg:#0b1220;--panel:#121a2b;--text:#e8eefc;--muted:#9aa8c7;--accent:#5b8cff;--ok:#3dd6c6;--border:#243049;--busy:#ff6b8a}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+    .wrap{max-width:820px;margin:0 auto;padding:24px 16px 48px}
+    .hero,.explainer,.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px}
+    .hero{background:linear-gradient(145deg,#13203a,#0c1628)}
+    .tag{font-size:.75rem;color:var(--ok);border:1px solid rgba(61,214,198,.35);background:rgba(61,214,198,.12);padding:3px 10px;border-radius:999px}
+    .explainer ol{color:var(--muted)}
+    .benefit{margin-top:12px;padding:10px;border-radius:10px;background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.3)}
+    #chat{min-height:180px;max-height:280px;overflow:auto}
+    .bubble{padding:10px 12px;border-radius:12px;margin:8px 0;max-width:90%;white-space:pre-wrap}
+    .bubble.user{background:#1e3a5f;margin-left:auto}.bubble.bot{background:#162033;border:1px solid var(--border)}
+    .row{display:flex;gap:8px;flex-wrap:wrap}
+    button,input{border-radius:10px;border:1px solid var(--border);padding:12px;background:#0b1220;color:var(--text)}
+    button{background:var(--accent);border:0;color:#fff;font-weight:600;cursor:pointer}
+    .slot{display:inline-block;padding:8px 10px;margin:4px;border-radius:8px;border:1px solid var(--border)}
+    .slot.free{color:var(--ok)}.slot.busy{color:var(--busy);text-decoration:line-through}
+    .footer{text-align:center;color:var(--muted);font-size:.85rem}.footer a{color:var(--ok)}
+    .chips button{background:transparent;border:1px solid var(--border);color:var(--muted);font-weight:500}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="tag">Web Speech API · no Vapi/Twilio key · nothing uploaded</span>
+      <h1 style="margin:8px 0">AI receptionist that books a slot</h1>
+      <p style="margin:0;color:#9aa8c7">Speak or type. Demo books into a fake agenda board (local only).</p>
+    </header>
+    <section class="explainer">
+      <h2>What is this? (plain English)</h2>
+      <p style="margin:0 0 8px;color:#9aa8c7">A phone-style assistant for small businesses: answers, offers times, writes the appointment. Production versions connect to real calendars (Vapi/Retell at your cost).</p>
+      <ol>
+        <li>Click a suggestion or press 🎤 (Chrome/Edge) / type.</li>
+        <li>Watch the agenda board mark the slot as booked.</li>
+        <li>Audio reply uses your browser’s voice — no cloud key in this demo.</li>
+      </ol>
+      <div class="benefit"><strong>Business benefit:</strong> fewer missed calls after hours. Demo-style builds from <strong>$80</strong>; full phone agents <strong>$300+</strong>.</div>
+    </section>
+    <div class="panel chips">
+      <button type="button" data-say="I want an appointment on Thursday">Book Thursday</button>
+      <button type="button" data-say="What are your opening hours?">Hours</button>
+      <button type="button" data-say="Book Friday please">Book Friday</button>
+    </div>
+    <div class="panel">
+      <div id="chat"></div>
+      <div class="row">
+        <input id="q" style="flex:1" placeholder="Type: book Thursday…" />
+        <button id="send" type="button">Send</button>
+        <button id="mic" type="button">🎤 Speak</button>
+      </div>
+      <p id="micHint" style="color:#9aa8c7;font-size:.85rem"></p>
+      <h3>Agenda board (demo)</h3>
+      <div id="board"></div>
+      <p id="log" style="color:#3dd6c6"></p>
+    </div>
+    <p class="footer"><a href="https://laborx.com/freelancers/users/id475124">Hire Nyyo Automation</a> · <a href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/voice-receptionist">Repo</a></p>
+  </div>
+  <script src="./js/receptionist.js"></script>
+</body>
+</html>

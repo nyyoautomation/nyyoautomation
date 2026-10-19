@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B2B lead pipeline (OSM) — Nyyo Automation</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    :root{--bg:#0b1220;--panel:#121a2b;--text:#e8eefc;--muted:#9aa8c7;--accent:#5b8cff;--ok:#3dd6c6;--border:#243049}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+    .wrap{max-width:960px;margin:0 auto;padding:24px 16px 48px}
+    .hero,.explainer,.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px}
+    .hero{background:linear-gradient(145deg,#13203a,#0c1628)}
+    .tag{display:inline-block;font-size:.75rem;color:var(--ok);border:1px solid rgba(61,214,198,.35);background:rgba(61,214,198,.12);padding:3px 10px;border-radius:999px}
+    .explainer ol{color:var(--muted)}
+    .benefit{margin-top:12px;padding:10px;border-radius:10px;background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.3)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .kpi{background:#0e1628;border-radius:12px;padding:14px;border:1px solid var(--border)}
+    .kpi .v{font-size:1.5rem;font-weight:700}
+    #map{height:340px;border-radius:12px;border:1px solid var(--border)}
+    table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:10px}
+    th,td{border-bottom:1px solid var(--border);padding:8px;text-align:left}
+    .footer{text-align:center;color:var(--muted);font-size:.85rem}.footer a{color:var(--ok)}
+    a.btn{display:inline-block;margin-top:8px;padding:10px 14px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="tag">OSM / ODbL demo · no personal emails</span>
+      <h1 style="margin:8px 0">Raw places → scored leads ready for CRM</h1>
+      <p style="margin:0;color:#9aa8c7">Not “2,000 dirty rows” — deduped, scored, mapped. Emails are intentionally empty in this ethical demo.</p>
+    </header>
+    <section class="explainer">
+      <h2>What is this? (plain English)</h2>
+      <p style="margin:0 0 8px;color:#9aa8c7">We start from open map data (businesses on OpenStreetMap), clean duplicates, score usefulness (website, cuisine, type), and give you a CSV for HubSpot/Sheets.</p>
+      <ol>
+        <li>Look at the counters: raw → clean.</li>
+        <li>Explore the map and the scored table.</li>
+        <li>Download the clean CSV.</li>
+      </ol>
+      <div class="benefit"><strong>Business benefit:</strong> outreach lists that don’t waste SDR time. Lists from <strong>$50</strong> · enriched pipelines from <strong>$150</strong>. We don’t sell scraped personal emails.</div>
+    </section>
+    <div class="panel">
+      <div class="kpis" id="kpis">
+        <div class="kpi"><div style="color:#9aa8c7">Raw rows</div><div class="v" id="k-raw">—</div></div>
+        <div class="kpi"><div style="color:#9aa8c7">Clean leads</div><div class="v" id="k-clean">—</div></div>
+        <div class="kpi"><div style="color:#9aa8c7">Deduped</div><div class="v" id="k-dup">—</div></div>
+      </div>
+      <p id="note" style="color:#9aa8c7;font-size:.85rem"></p>
+      <div id="map"></div>
+      <a class="btn" href="./data/leads_clean.csv" download>Download clean CSV</a>
+      <table><thead><tr><th>Score</th><th>Name</th><th>Type</th><th>Cuisine</th><th>Website</th></tr></thead><tbody id="tb"></tbody></table>
+    </div>
+    <p class="footer">Map data © OpenStreetMap contributors (ODbL). <a href="https://laborx.com/freelancers/users/id475124">Hire Nyyo Automation</a> · <a href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/lead-pipeline">Repo</a></p>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    (async function(){
+      const meta = await (await fetch("./data/meta.json")).json();
+      const leads = await (await fetch("./data/leads_clean.json")).json();
+      document.getElementById("k-raw").textContent = meta.raw_rows;
+      document.getElementById("k-clean").textContent = meta.clean_rows;
+      document.getElementById("k-dup").textContent = meta.deduped;
+      document.getElementById("note").textContent = meta.note;
+      const map = L.map("map").setView([45.75, 4.85], 12);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap",
+        maxZoom: 18,
+      }).addTo(map);
+      leads.forEach((l) => {
+        L.circleMarker([l.lat, l.lon], { radius: 6, color: "#5b8cff", fillColor: "#3dd6c6", fillOpacity: 0.8 })
+          .bindPopup(`<strong>${l.name}</strong><br>score ${l.lead_score}`)
+          .addTo(map);
+      });
+      document.getElementById("tb").innerHTML = leads
+        .slice()
+        .sort((a,b)=>b.lead_score-a.lead_score)
+        .map((l)=>`<tr><td>${l.lead_score}</td><td>${l.name}</td><td>${l.amenity}</td><td>${l.cuisine||"—"}</td><td>${l.website?`<a href="${l.website}" style="color:#3dd6c6">site</a>`:"—"}</td></tr>`)
+        .join("");
+    })();
+  </script>
+</body>
+</html>

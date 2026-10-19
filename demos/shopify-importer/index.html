@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shopify import cleaner — Nyyo Automation</title>
+  <style>
+    :root{--bg:#0b1220;--panel:#121a2b;--text:#e8eefc;--muted:#9aa8c7;--accent:#5b8cff;--ok:#3dd6c6;--border:#243049}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+    .wrap{max-width:900px;margin:0 auto;padding:24px 16px 48px}
+    .hero,.explainer,.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px}
+    .hero{background:linear-gradient(145deg,#13203a,#0c1628)}
+    .tag{display:inline-block;font-size:.75rem;color:var(--ok);border:1px solid rgba(61,214,198,.35);background:rgba(61,214,198,.12);padding:3px 10px;border-radius:999px;margin-bottom:10px}
+    .explainer ol{color:var(--muted)}
+    .benefit{margin-top:12px;padding:10px;border-radius:10px;background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.3)}
+    button,a.btn{border:0;border-radius:10px;background:var(--accent);color:#fff;padding:10px 14px;font-weight:600;text-decoration:none;display:inline-block;margin:6px 6px 0 0;cursor:pointer}
+    pre{background:#0e1628;padding:12px;border-radius:10px;overflow:auto;color:var(--muted);font-size:.8rem}
+    .footer{text-align:center;color:var(--muted);font-size:.85rem}.footer a{color:var(--ok)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="tag">Client-side · Shopify CSV format</span>
+      <h1 style="margin:0 0 8px">Messy supplier file → clean Shopify import</h1>
+      <p style="margin:0;color:#9aa8c7">Handles, variants, prices, stock, SEO titles — ready for Admin → Products → Import.</p>
+    </header>
+    <section class="explainer">
+      <h2>What is this? (plain English)</h2>
+      <p style="margin:0 0 8px;color:#9aa8c7">Suppliers send ugly spreadsheets. This turns them into the official Shopify product CSV so you can import in one go.</p>
+      <ol>
+        <li>Click <strong>Load sample</strong> (or upload your CSV).</li>
+        <li>Download <strong>shopify_products_import.csv</strong>.</li>
+        <li>Optional: see the fake stock-sync preview.</li>
+      </ol>
+      <div class="benefit"><strong>Business benefit:</strong> hours of copy-paste become one import. From <strong>$80</strong> · automated sync from <strong>$300</strong>.</div>
+    </section>
+    <div class="panel">
+      <button id="sample" type="button">Load sample</button>
+      <label class="btn" style="background:transparent;border:1px solid #243049;color:#9aa8c7"><input id="file" type="file" accept=".csv" hidden />Upload CSV</label>
+      <a class="btn" id="dl" style="display:none" href="#">Download Shopify CSV</a>
+      <p id="stats" style="color:#9aa8c7"></p>
+      <h3>Preview</h3>
+      <pre id="out">—</pre>
+      <h3>Stock sync simulation</h3>
+      <pre id="sync">—</pre>
+    </div>
+    <p class="footer"><a href="https://laborx.com/freelancers/users/id475124">Hire Nyyo Automation</a> · <a href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/shopify-importer">Repo</a></p>
+  </div>
+  <script src="./js/importer.js"></script>
+</body>
+</html>
