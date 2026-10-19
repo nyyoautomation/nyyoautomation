@@ -6,7 +6,7 @@
 >
 > **Try it:** open [**the guide**](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) and copy a `.gs` file into your Sheet.
 >
-> **Business benefit:** Sheets work while you sleep. From **$45** · full pack on quote.
+> **Business benefit:** Sheets work while you sleep. From **$49** · full pack on quote.
 
 ![Demo](docs/demo.gif)
 
