@@ -1,4 +1,17 @@
 /* Gallery-only additions on top of design-system.css (copied verbatim from Nyyo Design). Tokens only, no hard-coded colours. */
+/* Inter metric-matched fallback (Nyyo Design review v2 §1.1): Google Fonts load with display=optional, same mode as the demos. */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial"), local("ArialMT"), local("Arimo"), local("Liberation Sans"), local("Helvetica Neue");
+  size-adjust: 107.12%;
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0%;
+}
+:root { --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.nowrap { white-space: nowrap; }
+@media (max-width: 719.98px) { .site-header__cta { display: none; } }   /* one "Request a quote" under 720: the CTA bar */
+.site-footer li a, .site-footer li a:visited { color: var(--text-muted); }   /* all footer links one colour, LaborX included, visited or not */
 .badge, .eyebrow, .steps li::before { font-size: var(--fs-13); }          /* page rule: no text under 13 px */
 .site-footer__legal { font-size: var(--fs-13); }
 [hidden] { display: none !important; }
