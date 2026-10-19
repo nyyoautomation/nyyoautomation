@@ -6,7 +6,7 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/voice-receptionist/) (Chrome/Edge for mic).
 >
-> **Business benefit:** after-hours callers still get a booking. From **$80** · full phone agents **$300+** (your Vapi/Retell keys).
+> **Business benefit:** after-hours callers still get a booking. From **$159** · full phone agents on quote (your Vapi/Retell keys).
 
 ![Demo](docs/demo.gif)
 

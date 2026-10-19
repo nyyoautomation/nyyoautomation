@@ -6,7 +6,7 @@
 >
 > **Try it in 1 click:** [**kit home**](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/).
 >
-> **Business benefit:** a clean page live in about a day. From **$100**.
+> **Business benefit:** a clean page live in about a day. From **$199**.
 
 ![Demo](docs/demo.gif)
 

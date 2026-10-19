@@ -1,6 +1,6 @@
 # Nyyo Automation
 
-**I turn messy business data into clean files, dashboards and small AI assistants — fixed price, crypto welcome.**
+**I turn messy business data into clean files, dashboards and small AI assistants — fixed price, paid in crypto on BNB Chain or Base.**
 
 🟢 Available now · Remote · Worldwide · Typical delivery 24–72h
 
@@ -24,22 +24,23 @@ I help founders, operators and crypto teams who need **scraping → CSV**, **spr
 
 | Service | From | Demo |
 |---|---|---|
-| RAG chatbot on your docs | **$250** | [Live](https://nyyoautomation.github.io/nyyo-docs-chatbot/) · [Repo](https://github.com/nyyoautomation/nyyo-docs-chatbot) |
-| Invoice PDF → Excel | **$80** | [Repo](https://github.com/nyyoautomation/nyyo-invoice-to-excel) |
-| Live scrape dashboard | **$120** | [Live](https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/) · [Repo](https://github.com/nyyoautomation/nyyo-live-scrape-dashboard) |
-| Telegram / Discord bots | **$79** | [Simulator](https://nyyoautomation.github.io/nyyo-telegram-demo/simulator/) · [Repo](https://github.com/nyyoautomation/nyyo-telegram-demo) |
-| Spreadsheet cleanup | **$35** | [Repo](https://github.com/nyyoautomation/nyyo-spreadsheet-demo) |
-| n8n / Make AI workflows | **$100** | [Live](https://nyyoautomation.github.io/nyyo-n8n-workflows/) · [Repo](https://github.com/nyyoautomation/nyyo-n8n-workflows) |
-| Vibe-code rescue (Lovable/Cursor) | **$50** | [Live](https://nyyoautomation.github.io/nyyo-vibe-code-rescue/) · [Repo](https://github.com/nyyoautomation/nyyo-vibe-code-rescue) |
-| Inbox / ticket AI integration | **$300** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/inbox-ai/) |
-| Instant CSV → KPI dashboard | **$50** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/instant-dashboard/) |
-| Shopify import cleaner | **$80** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/shopify-importer/) |
-| B2B lead pipeline (OSM) | **$50** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/) |
-| Voice receptionist (browser) | **$80** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/voice-receptionist/) |
-| Landing page (24h) | **$100** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/) |
-| Wallet tracker (read-only) | **$60** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/) |
-| Google Sheets Apps Script pack | **$30**/script | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) |
-| Localization — website & app, marketing transcreation, bulk e-commerce listings, AI-translation post-editing / QA (EN ↔ ES, DE, PT-BR, IT, NL, JA, ZH, KO, AR) | **$0.06–0.35**/word · min **$35** | [Details](#localization--transcreation) |
+| RAG chatbot on your docs | **$199** | [Live](https://nyyoautomation.github.io/nyyo-docs-chatbot/) · [Repo](https://github.com/nyyoautomation/nyyo-docs-chatbot) |
+| Invoice PDF → Excel | **$109** | [Repo](https://github.com/nyyoautomation/nyyo-invoice-to-excel) |
+| Live scrape dashboard | **$199** | [Live](https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/) · [Repo](https://github.com/nyyoautomation/nyyo-live-scrape-dashboard) |
+| Telegram / Discord bots | **$159** | [Simulator](https://nyyoautomation.github.io/nyyo-telegram-demo/simulator/) · [Repo](https://github.com/nyyoautomation/nyyo-telegram-demo) |
+| Web scraping → CSV | **$69** | [Repo](https://github.com/nyyoautomation/nyyo-scraper-demo) |
+| Spreadsheet cleanup | **$59** | [Repo](https://github.com/nyyoautomation/nyyo-spreadsheet-demo) |
+| n8n / Make AI workflows | **$159** | [Live](https://nyyoautomation.github.io/nyyo-n8n-workflows/) · [Repo](https://github.com/nyyoautomation/nyyo-n8n-workflows) |
+| Vibe-code rescue (Lovable/Cursor) | **$89** | [Live](https://nyyoautomation.github.io/nyyo-vibe-code-rescue/) · [Repo](https://github.com/nyyoautomation/nyyo-vibe-code-rescue) |
+| Inbox / ticket AI integration | **$199** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/inbox-ai/) |
+| Instant CSV → KPI dashboard | **$69** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/instant-dashboard/) |
+| Shopify import cleaner | **$119** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/shopify-importer/) |
+| B2B lead pipeline (OSM) | **$99** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/) |
+| Voice receptionist (browser) | **$159** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/voice-receptionist/) |
+| Landing page (24h) | **$199** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/) |
+| Wallet tracker (read-only) | **$119** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/) |
+| Google Sheets Apps Script pack | **$49**/script | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) |
+| Localization — website & app, marketing transcreation, bulk e-commerce listings, AI-translation post-editing / QA (EN ↔ ES, DE, PT-BR, IT, NL, JA, ZH, KO, AR) | **$0.07**/word · min **$49** | [Details](#localization--transcreation) |
 
 Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoautomation/demos/)
 
@@ -47,16 +48,9 @@ Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoaut
 
 ## Localization & transcreation
 
-Website & app localization, marketing transcreation, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, IT, NL, JA, ZH, KO, AR.
+Website & app localization, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, IT, NL, JA, ZH, KO, AR.
 
-| Service | Per word |
-|---|---|
-| AI-translation post-editing / QA (you already have a machine draft) | $0.06–0.12 |
-| Bulk e-commerce product listings (titles, descriptions, SEO) | $0.06–0.16 |
-| Website & app localization (UI strings, help center, meta/SEO) | $0.10–0.22 |
-| Marketing transcreation (ads, slogans, brand voice) | $0.16–0.35 |
-
-Packs: up to 500 words **$35–50** · up to 2,000 words **$90–140** · up to 5,000 words **$200–320** · mini-site localization **from $250** · rush +25–50%. Minimum order **$35**.
+**$0.07 per word**, human-reviewed · minimum order **$49** · marketing transcreation on quote.
 
 ---
 
@@ -64,7 +58,7 @@ Packs: up to 500 words **$35–50** · up to 2,000 words **$90–140** · up to 
 
 | | Starter | Growth | Automation |
 |---|---|---|---|
-| **From** | $40 | $120 | $250 |
+| **From** | $59 | $109 | $159 |
 | **Examples** | scrape ≤1k rows · sheet cleanup · small script | scrape + dashboard · invoice PDF→Excel · Telegram bot | RAG chatbot · n8n agent · form→sheet→alert |
 | **Includes** | Source + README · 1 revision | + sample GIF/notes | + 7-day bugfix |
 
@@ -131,4 +125,4 @@ See the [demo gallery](https://nyyoautomation.github.io/nyyoautomation/demos/#in
 1. Open an **issue** with: goal · deadline · budget  
 2. Or **[LaborX — Nyyo Automation](https://laborx.com/freelancers/users/id475124)**
 
-Crypto: USDC / SOL / ETH / BTC. Also: WURK · Taskmarket · AIBTC · LaborX
+Payment: crypto (USDC) on BNB Chain or Base. Also: WURK · Taskmarket · AIBTC · LaborX

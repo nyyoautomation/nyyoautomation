@@ -6,7 +6,7 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/).
 >
-> **Business benefit:** SDRs work a short ranked list, not a dirty dump. From **$50** · enriched pipeline **$150–300**.
+> **Business benefit:** SDRs work a short ranked list, not a dirty dump. From **$99** · enriched pipeline on quote.
 >
 > **Ethics:** this demo does **not** collect personal emails.
 

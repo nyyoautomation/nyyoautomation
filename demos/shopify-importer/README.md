@@ -6,7 +6,7 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/shopify-importer/) → Load sample → Download.
 >
-> **Business benefit:** catalog updates in minutes. From **$80** · automated sync from **$300**.
+> **Business benefit:** catalog updates in minutes. From **$119** · automated sync on quote.
 
 ![Demo](docs/demo.gif)
 

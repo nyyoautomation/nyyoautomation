@@ -6,7 +6,7 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/instant-dashboard/) → **Load sample**.
 >
-> **Business benefit:** weekly reporting without rebuilding pivots. From **$50** (one page) · **$150–500** multi-page.
+> **Business benefit:** weekly reporting without rebuilding pivots. From **$69** (one page) · multi-page on quote.
 
 ![Demo](docs/demo.gif)
 

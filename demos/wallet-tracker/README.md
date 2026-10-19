@@ -6,7 +6,7 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/).
 >
-> **Business benefit:** spot empty gas tanks early. From **$60**.
+> **Business benefit:** spot empty gas tanks early. From **$119**.
 
 ![Demo](docs/demo.gif)
 
