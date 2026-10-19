@@ -6,11 +6,15 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/instant-dashboard/) → **Load sample**.
 >
-> **Business benefit:** weekly reporting without rebuilding pivots. From **$69** (one page) · multi-page on quote.
+> **Business benefit:** weekly reporting without rebuilding pivots. Pricing on quote.
 
 ![Demo](docs/demo.gif)
 
 **Live:** https://nyyoautomation.github.io/nyyoautomation/demos/instant-dashboard/
 
-## Hire me
-[LaborX](https://laborx.com/freelancers/users/id475124) · [Profile](https://github.com/nyyoautomation)
+## How to order
+
+Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
+
+Questions? Ask in your order chat.
+

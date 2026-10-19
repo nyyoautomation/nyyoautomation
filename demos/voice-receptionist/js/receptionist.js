@@ -93,7 +93,7 @@ function handle(text) {
     reply = "Hello! I can book a demo appointment. Try: I want a slot on Thursday.";
     lineKey = "greet";
   } else if (intent.type === "hours") {
-    reply = "We are open Monday to Friday, 9 to 18, Europe/Madrid.";
+    reply = "We are open Monday to Friday, 9 to 18 (UTC).";
     lineKey = "hours";
   } else if (intent.type === "book") {
     if (!intent.available.length) {

@@ -6,11 +6,15 @@
 >
 > **Try it:** open [**the guide**](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) and copy a `.gs` file into your Sheet.
 >
-> **Business benefit:** Sheets work while you sleep. From **$49**/script · full pack on quote.
+> **Business benefit:** Sheets work while you sleep. From **$45** · full pack on quote.
 
 ![Demo](docs/demo.gif)
 
 **Live:** https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/
 
-## Hire me
-[LaborX](https://laborx.com/freelancers/users/id475124)
+## How to order
+
+Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
+
+Questions? Ask in your order chat.
+

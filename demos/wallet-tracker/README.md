@@ -6,11 +6,15 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/).
 >
-> **Business benefit:** spot empty gas tanks early. From **$119**.
+> **Business benefit:** spot empty gas tanks early.
 
 ![Demo](docs/demo.gif)
 
 **Live:** https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/
 
-## Hire me
-[LaborX](https://laborx.com/freelancers/users/id475124)
+## How to order
+
+Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
+
+Questions? Ask in your order chat.
+

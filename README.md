@@ -1,12 +1,12 @@
 # Nyyo Automation
 
-**I turn messy business data into clean files, dashboards and small AI assistants — fixed price, paid in crypto on BNB Chain or Base.**
+**I turn messy business data into clean files, dashboards and small AI assistants — fixed price, available on LaborX.**
 
 🟢 Available now · Remote · Worldwide
 
 Every Nyyo build includes a free 1-click install kit — WordPress, Shopify, n8n, Sheets, and chat apps.
 
-I help founders, operators and crypto teams who need **scraping → CSV**, **spreadsheet cleanup**, **Telegram/Discord bots**, **n8n workflows**, or a **chatbot that answers from their own docs** — without a full-time engineer.
+I help founders, operators and Web3 teams who need **scraping → CSV**, **spreadsheet cleanup**, **Telegram/Discord bots**, **n8n workflows**, or a **chatbot that answers from their own docs** — without a full-time engineer.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat&logo=playwright&logoColor=white)
@@ -23,21 +23,21 @@ I help founders, operators and crypto teams who need **scraping → CSV**, **spr
 | Service | From | Demo |
 |---|---|---|
 | FAQ chatbot on your docs | **$149** | [Live](https://nyyoautomation.github.io/nyyo-docs-chatbot/) · [Repo](https://github.com/nyyoautomation/nyyo-docs-chatbot) |
-| Invoice PDF → Excel | **$109** | [Repo](https://github.com/nyyoautomation/nyyo-invoice-to-excel) |
-| Live scrape dashboard | **$199** | [Live](https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/) · [Repo](https://github.com/nyyoautomation/nyyo-live-scrape-dashboard) |
-| Telegram / Discord bots | **$159** | [Simulator](https://nyyoautomation.github.io/nyyo-telegram-demo/simulator/) · [Repo](https://github.com/nyyoautomation/nyyo-telegram-demo) |
+| Invoice PDF → Excel | Paused | [Repo](https://github.com/nyyoautomation/nyyo-invoice-to-excel) |
+| Live scrape dashboard | On quote | [Live](https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/) · [Repo](https://github.com/nyyoautomation/nyyo-live-scrape-dashboard) |
+| Telegram / Discord bots | **$149** | [Simulator](https://nyyoautomation.github.io/nyyo-telegram-demo/simulator/) · [Repo](https://github.com/nyyoautomation/nyyo-telegram-demo) |
 | Web scraping → CSV | **$69** | [Repo](https://github.com/nyyoautomation/nyyo-scraper-demo) |
 | Spreadsheet cleanup | **$45** | [Repo](https://github.com/nyyoautomation/nyyo-spreadsheet-demo) |
 | n8n / Make AI workflows | **$149** | [Live](https://nyyoautomation.github.io/nyyo-n8n-workflows/) · [Repo](https://github.com/nyyoautomation/nyyo-n8n-workflows) |
 | Vibe-code rescue (Lovable/Cursor) | **$49** | [Live](https://nyyoautomation.github.io/nyyo-vibe-code-rescue/) · [Repo](https://github.com/nyyoautomation/nyyo-vibe-code-rescue) |
 | Inbox / ticket AI integration | **$149** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/inbox-ai/) |
-| Instant CSV → KPI dashboard | **$69** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/instant-dashboard/) |
-| Shopify import cleaner | **$119** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/shopify-importer/) |
-| B2B lead pipeline (OSM) | **$99** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/) |
-| Voice receptionist (browser) | **$159** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/voice-receptionist/) |
-| Landing page | **$199** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/) |
-| Wallet tracker (read-only) | **$119** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/) |
-| Google Sheets Apps Script pack | **$49**/script | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) |
+| Instant CSV → KPI dashboard | On quote | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/instant-dashboard/) |
+| Shopify import cleaner | Paused | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/shopify-importer/) |
+| B2B lead pipeline (OSM) | On quote | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/) |
+| Voice receptionist (browser) | On quote | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/voice-receptionist/) |
+| Landing page | Paused | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/) |
+| Wallet tracker (read-only) | On quote | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/) |
+| Google Sheets Apps Script pack | **$45** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) |
 
 Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoautomation/demos/)
 
@@ -47,7 +47,7 @@ Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoaut
 |---|---|---|---|
 | Multi-sector tenders (cleaning, security, IT, training) | Analyse a sample RFP / ITT, check compliance forms and pricing schedule, export a Word technical proposal ready to review. No sign-up, sources cited. | **On quote** | [Live](https://nyyoautomation.github.io/nyyo-tender-sectors/) |
 | Architecture & engineering firms | Methodology statement on the scoring grid, spec / bill of quantities / drawings cross-check, site minutes. No sign-up, sources cited, contradiction check. | **On quote** | [Live](https://nyyoautomation.github.io/nyyo-archi-be-demo/) |
-| Insurance brokers | Quote comparison on one grid with a draft advice record, coverage gaps at renewal, pre-filled claim notice. Est. 4 h 35 → 35 min on the main fictional case (~87% less time; estimate on a fictional sample, not a promise). No sign-up, sources cited, contradiction check. | **On quote** | [Live](https://nyyoautomation.github.io/nyyo-courtiers-demo/) |
+| Insurance brokers | Quote comparison on one grid with a draft advice record, coverage gaps at renewal, pre-filled claim notice. Est. 4 h 35 → 35 min on a fictional sample. No sign-up, sources cited, contradiction check. | **On quote** | [Live](https://nyyoautomation.github.io/nyyo-courtiers-demo/) |
 
 ---
 
@@ -55,8 +55,8 @@ Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoaut
 
 | | Starter | Growth | Automation |
 |---|---|---|---|
-| **From** | $45 | $109 | $149 |
-| **Examples** | sheet cleanup ($45) · quick bug fix ($49) · scrape ≤1k rows ($69) | invoice PDF→Excel ($109) · scrape ≤10k rows ($139) · Telegram bot ($159) | FAQ chatbot · n8n workflow with AI step · ChatGPT → Sheet/CRM (all $149, your own API key) |
+| **From** | $45 | $139 | $149 |
+| **Examples** | sheet cleanup ($45) · quick bug fix ($49) · scrape ≤1k rows ($69) | scrape ≤10k rows ($139) · sheet formulas + light dashboard ($159) · vibe-code fix, Standard ($249) | FAQ chatbot · n8n workflow with AI step · ChatGPT → Sheet/CRM (all $149, your own API key) |
 | **Includes** | Source + README · 1 revision | + sample GIF/notes | + FREE 1-click install kit + Loom walkthrough |
 
 FREE **50-row** sample before the full run on scrape jobs.
@@ -117,9 +117,9 @@ Every live demo page lists the real platforms we connect — website widgets, Te
 
 See the [demo gallery](https://nyyoautomation.github.io/nyyoautomation/demos/#integrations) for the full chip list per service.
 
-## Hire me
+## How to order
 
-1. Open an **issue** with: goal · deadline · budget  
-2. Or **[LaborX — Nyyo Automation](https://laborx.com/freelancers/users/id475124)**
+Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
 
-Payment: crypto (USDC) on BNB Chain or Base. Also: WURK · Taskmarket · AIBTC · LaborX
+Questions? Ask in your order chat.
+

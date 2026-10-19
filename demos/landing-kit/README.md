@@ -6,11 +6,15 @@
 >
 > **Try it in 1 click:** [**kit home**](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/).
 >
-> **Business benefit:** a clean, fast landing page. From **$199**.
+> **Business benefit:** a clean, fast landing page.
 
 ![Demo](docs/demo.gif)
 
 **Live:** https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/
 
-## Hire me
-[LaborX](https://laborx.com/freelancers/users/id475124)
+## How to order
+
+Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
+
+Questions? Ask in your order chat.
+

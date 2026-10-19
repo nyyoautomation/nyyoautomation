@@ -6,11 +6,15 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/shopify-importer/) → Load sample → Download.
 >
-> **Business benefit:** catalog updates in minutes. From **$119** · automated sync on quote.
+> **Business benefit:** catalog updates in minutes.
 
 ![Demo](docs/demo.gif)
 
 **Live:** https://nyyoautomation.github.io/nyyoautomation/demos/shopify-importer/
 
-## Hire me
-[LaborX](https://laborx.com/freelancers/users/id475124) · [Profile](https://github.com/nyyoautomation)
+## How to order
+
+Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
+
+Questions? Ask in your order chat.
+

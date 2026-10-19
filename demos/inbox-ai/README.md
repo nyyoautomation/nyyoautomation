@@ -14,5 +14,9 @@
 
 Nothing is uploaded. Production builds can plug OpenAI/Claude when you provide a key.
 
-## Hire me
-[LaborX](https://laborx.com/freelancers/users/id475124) · [Profile](https://github.com/nyyoautomation)
+## How to order
+
+Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
+
+Questions? Ask in your order chat.
+

@@ -6,7 +6,7 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/).
 >
-> **Business benefit:** SDRs work a short ranked list, not a dirty dump. From **$99** · enriched pipeline on quote.
+> **Business benefit:** SDRs work a short ranked list, not a dirty dump. Pricing on quote.
 >
 > **Ethics:** this demo does **not** collect personal emails.
 
@@ -15,5 +15,9 @@
 **Live:** https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/  
 Data © OpenStreetMap contributors (ODbL).
 
-## Hire me
-[LaborX](https://laborx.com/freelancers/users/id475124) · [Profile](https://github.com/nyyoautomation)
+## How to order
+
+Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
+
+Questions? Ask in your order chat.
+
