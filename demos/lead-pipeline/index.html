@@ -130,7 +130,7 @@
       .bindPopup(`<strong>${esc(l.name)}</strong><br>Score ${esc(l.lead_score)}`).addTo(map));
   }
   document.getElementById("tb").innerHTML = leads.slice().sort((a, b) => b.lead_score - a.lead_score)
-    .map((l) => `<tr><td class="mono">${esc(l.lead_score)}</td><td>${esc(l.name)}</td><td>${esc(l.amenity)}</td><td class="hide-sm">${esc(l.cuisine || "—")}</td><td class="hide-sm">${l.website ? '<span class="mono">' + esc(new URL(l.website).hostname) + "</span>" : "—"}</td></tr>`).join("");
+    .map((l) => `<tr><td class="mono">${esc(l.lead_score)}</td><td>${esc(l.name)}</td><td>${esc(String(l.amenity).replace(/_/g, " "))}</td><td class="hide-sm">${esc(String(l.cuisine || "—").replace(/_/g, " "))}</td><td class="hide-sm">${l.website ? '<span class="mono">' + esc(new URL(l.website).hostname) + "</span>" : "—"}</td></tr>`).join("");
 })();
 </script>
 </body>
