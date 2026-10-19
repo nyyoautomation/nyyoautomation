@@ -4,7 +4,7 @@
 >
 > **What it does:** Turns open map business listings into a **deduped, scored** CSV for your CRM — with a map preview.
 >
-> **Try it in 1 click:** [**live demo**](https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/lead-pipeline/index.html).
+> **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/).
 >
 > **Business benefit:** SDRs work a short ranked list, not a dirty dump. From **$50** · enriched pipeline **$150–300**.
 >
@@ -12,7 +12,7 @@
 
 ![Demo](docs/demo.gif)
 
-**Live:** https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/lead-pipeline/index.html  
+**Live:** https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/  
 Data © OpenStreetMap contributors (ODbL).
 
 ## Hire me

@@ -4,13 +4,13 @@
 >
 > **What it does:** Reads a customer email/ticket, tags it (support, quote, complaint…), extracts order id / amount / email, and drafts a reply — **inside the browser**.
 >
-> **Try it in 1 click:** [**live demo**](https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/inbox-ai/index.html) → click a sample → **Analyze**.
+> **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/inbox-ai/) → click a sample → **Analyze**.
 >
 > **Business benefit:** faster first answers, fewer missed angry customers. From about **$300** (CRM wiring from **$500**).
 
 ![Demo](docs/demo.gif)
 
-**Live:** https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/inbox-ai/index.html
+**Live:** https://nyyoautomation.github.io/nyyoautomation/demos/inbox-ai/
 
 Nothing is uploaded. Production builds can plug OpenAI/Claude when you provide a key.
 

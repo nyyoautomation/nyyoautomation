@@ -4,13 +4,13 @@
 >
 > **What it does:** Three ready Apps Script snippets — invoices, follow-ups, weekly report.
 >
-> **Try it:** open [**the guide**](https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/sheets-automations/index.html) and copy a `.gs` file into your Sheet.
+> **Try it:** open [**the guide**](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) and copy a `.gs` file into your Sheet.
 >
 > **Business benefit:** Sheets work while you sleep. From **$30**/script · **$200–400** full pack.
 
 ![Demo](docs/demo.gif)
 
-**Live:** https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/sheets-automations/index.html
+**Live:** https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/
 
 ## Hire me
 [LaborX](https://laborx.com/freelancers/users/id475124)

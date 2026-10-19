@@ -4,13 +4,13 @@
 >
 > **What it does:** Three ready landing-page templates you can open, customize, and publish.
 >
-> **Try it in 1 click:** [**kit home**](https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/landing-kit/index.html).
+> **Try it in 1 click:** [**kit home**](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/).
 >
 > **Business benefit:** a clean page live in about a day. From **$100**.
 
 ![Demo](docs/demo.gif)
 
-**Live:** https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/landing-kit/index.html
+**Live:** https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/
 
 ## Hire me
 [LaborX](https://laborx.com/freelancers/users/id475124)
