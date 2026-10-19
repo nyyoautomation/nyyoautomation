@@ -1,163 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Voice receptionist — Nyyo Automation live demo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <meta name="description" content="Browser AI receptionist with neural voice that books a demo slot. Nyyo Automation." />
-  <meta name="theme-color" content="#050814" />
-  <meta property="og:title" content="Voice receptionist — Nyyo Automation" />
-  <meta property="og:description" content="Neural voice · books a slot · no cloud key in this demo." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/assets/logo.png" />
-  <link rel="icon" href="../assets/logo.png" type="image/png" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./nyyo-kit.css" />
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-  <style>
-    #chat{min-height:200px;max-height:300px;overflow:auto;padding:4px}
-    .bubble{padding:12px 14px;border-radius:14px;margin:8px 0;max-width:92%;white-space:pre-wrap;line-height:1.45;animation:fadeUp .28s ease}
-    .bubble.user{background:rgba(61,139,255,.22);border:1px solid rgba(61,139,255,.35);margin-left:auto}
-    .bubble.bot{background:rgba(255,255,255,.04);border:1px solid var(--border)}
-    .row{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
-    .row input{flex:1;min-width:160px}
-    .slot{display:inline-flex;align-items:center;gap:6px;padding:10px 12px;margin:4px;border-radius:10px;border:1px solid var(--border);font-family:"JetBrains Mono",monospace;font-size:.82rem}
-    .slot.free{color:var(--lime);border-color:rgba(57,255,136,.35)}
-    .slot.busy{color:var(--bad);text-decoration:line-through;opacity:.75}
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chips button{background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--muted);border-radius:999px;padding:8px 14px;cursor:pointer;font-family:inherit;font-weight:500}
-    .chips button:hover{color:var(--text);border-color:rgba(61,139,255,.45)}
-    #mic.recording{background:var(--bad)!important;box-shadow:0 0 0 3px rgba(255,107,138,.25)}
-  </style>
-  <style>@media (max-width:640px){.nyyo-integrate .block{min-width:0}.nyyo-integrate{grid-template-columns:minmax(0,1fr)}table{display:block;overflow-x:auto;max-width:100%}}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Voice receptionist · Nyyo Automation</title>
+<meta name="description" content="Browser voice flow for booking and FAQ. Speak or type; the demo books a slot on a local agenda board. No API key, nothing uploaded.">
+<meta property="og:title" content="Voice receptionist · Nyyo Automation">
+<meta property="og:description" content="Browser voice flow for booking and FAQ. Speak or type; the demo books a slot on a local agenda board. No API key, nothing uploaded.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nyyoautomation.github.io/nyyoautomation/demos/voice-receptionist/">
+<meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/assets/og-gallery.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nyyo Automation demos: AI assistants and automations, fictional data">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nyyoautomation.github.io/nyyoautomation/demos/voice-receptionist/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F7F7F5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=optional" rel="stylesheet">
+<link rel="stylesheet" href="../design-system.css">
+<link rel="stylesheet" href="../assets/subdemo.css">
 </head>
-<body>
-<!-- NYYO_PREMIUM_V1 -->
-  <div class="wrap">
-        <div class="topbar">
-      <a class="brand" href="https://github.com/nyyoautomation">
-        <img src="../assets/logo.png" alt="" width="34" height="34" />
-        <span>Nyyo Automation</span>
-      </a>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
-        <a class="btn btn-ghost btn-sm" href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a>
-        <a class="btn btn-primary btn-sm" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-      </div>
+<body class="has-cta-bar">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container site-header__inner">
+  <a class="brand" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg class="brand__mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" style="fill:var(--accent)"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" style="fill:var(--on-accent)"/></svg><span>Nyyo Automation</span></a>
+  <nav class="nav" aria-label="Main"><a class="back-link" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>All demos</span></a></nav>
+  <div class="site-header__actions"><a class="btn btn--primary site-header__cta" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+</div></header>
+<main id="main" class="sd-main">
+<section class="container sd-hero">
+  <div class="sd-meta"><span class="badge badge--sector">Voice</span><span class="badge badge--live">Live demo</span><span class="badge">Fictional agenda</span></div>
+  <h1>AI receptionist that books a slot</h1>
+  <p class="lead">Speak or type. The demo books into a local agenda board.</p>
+  <div class="sd-meta"><span class="badge">On quote</span><span class="badge">Available on LaborX</span><span class="badge"><span class="nowrap">Remote · Worldwide</span></span></div>
+</section>
+
+<section class="container sd-section" id="demo" aria-labelledby="demo-title">
+  <div class="panel">
+    <h2 id="demo-title">Try it</h2>
+    <p class="sd-sub">Tap a suggestion, type, or press Speak (Chrome or Edge). Replies are pre-recorded MP3s, played on this device.</p>
+    <div class="chips" role="group" aria-label="Suggested prompts">
+      <button class="chip" type="button" data-say="I want an appointment on Thursday"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span>Book Thursday</span></button>
+      <button class="chip" type="button" data-say="What are your opening hours?"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Hours</span></button>
+      <button class="chip" type="button" data-say="Book Friday please"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg><span>Book Friday</span></button>
     </div>
-<header class="hero">
-      <div class="hero-inner">
-        <span class="tag"><span class="dot" aria-hidden="true"></span> Neural voice · no cloud key</span>
-        <span class="tag kit-free" style="color:#041018;background:linear-gradient(135deg,#3d8bff,#39ff88);border-color:transparent;font-weight:700">FREE · 1-click install kit included</span>
-        <h1>AI receptionist that <span class="grad">books a slot</span></h1>
-        <p class="lead">Speak or type. Demo books into a local agenda board — same pattern as Synthflow/Vapi try-it demos, sized for small businesses.</p>
-        <div class="meta">
-          <span><strong>Neural MP3s</strong></span>
-          <span><strong>Available on LaborX</strong></span>
-          <span><strong>Remote · Worldwide</strong></span>
-        </div>
-      </div>
-    </header>
-
-    <section class="steps">
-      <div class="step"><span class="n">1</span><h3>Try</h3><p>Tap a suggestion, type, or press Speak (Chrome/Edge).</p></div>
-      <div class="step"><span class="n">2</span><h3>Hear</h3><p>Natural pre-recorded neural voice replies (offline MP3s).</p></div>
-      <div class="step"><span class="n">3</span><h3>Book</h3><p>Watch the agenda mark the slot — local only.</p></div>
-    </section>
-
-    <section class="explainer">
-      <h2>What is this? (plain English)</h2>
-      <p style="margin:0 0 8px;color:var(--muted)">A phone-style assistant for small businesses: answers FAQs, offers times, writes the appointment. Production builds connect real calendars (Vapi/Retell at your telephony cost).</p>
-      <div class="benefit"><strong>Business benefit (example):</strong> fewer missed after-hours calls. Pricing on quote.</div>
-    </section>
-
-    <div class="panel chips" aria-label="Suggested prompts">
-      <button type="button" data-say="I want an appointment on Thursday"><i data-lucide="calendar" style="width:14px;height:14px"></i> Book Thursday</button>
-      <button type="button" data-say="What are your opening hours?"><i data-lucide="clock" style="width:14px;height:14px"></i> Hours</button>
-      <button type="button" data-say="Book Friday please"><i data-lucide="calendar-check" style="width:14px;height:14px"></i> Book Friday</button>
+    <div id="chat" class="chat-log" role="log" aria-live="polite" style="margin-top:var(--sp-4)"></div>
+    <div class="input-row">
+      <input id="q" class="input" placeholder="Type: book Thursday…" aria-label="Message" autocomplete="off">
+      <button id="send" class="btn btn--primary" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg><span>Send</span></button>
+      <button id="mic" class="btn btn--secondary" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg><span class="mic-label">Speak</span></button>
     </div>
-
-    <div class="panel">
-      <div id="chat" role="log" aria-live="polite"></div>
-      <div class="row" style="margin-top:10px">
-        <input id="q" placeholder="Type: book Thursday…" aria-label="Message" autocomplete="off" />
-        <button id="send" class="btn btn-primary icon-btn" type="button"><i data-lucide="send"></i> Send</button>
-        <button id="mic" class="btn btn-ghost icon-btn" type="button"><i data-lucide="mic"></i> Speak</button>
-      </div>
-      <p id="micHint" style="color:var(--muted);font-size:.85rem;margin:8px 0 0"></p>
-      <h3 style="margin:16px 0 8px">Agenda board <span class="example-label">demo</span></h3>
-      <div id="board"></div>
-      <p id="log" style="color:var(--lime);font-family:'JetBrains Mono',monospace;font-size:.82rem"></p>
-    </div>
-
-    <section class="metrics">
-      <div class="metric"><div class="v">Quote</div><div class="l"><strong>Pricing</strong> · on request</div></div>
-      <div class="metric"><div class="v">Quote</div><div class="l"><strong>Phone</strong> · full agent</div></div>
-      <div class="metric"><div class="v">0</div><div class="l"><strong>API keys</strong> · in this demo</div></div>
-    </section>
-    <p class="metrics-note">Example figures for illustration — not a client case study.</p>
-    <div class="badges"><span>edge-tts neural</span><span>Web Speech API</span><span>Local agenda</span><span>No upload</span></div>
-
-    <!-- NYYO_INTEGRATE_START -->
-
-<section class="nyyo-integrate" aria-label="Integration and setup">
-  <div class="block">
-    <h2>Where it plugs in</h2>
-    <p class="sub">A browser voice flow you can embed or link from your site.</p>
-    <div class="plug-chips" role="list">
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true"></></span>Website embed</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">URL</span>Share link</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">Tw</span>Twilio voice*</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">Tg</span>Telegram voice notes</span>
-</div>
-    
-      <div class="embed-box" aria-label="Example embed snippet">
-        <div class="embed-label"><span>Example embed (you get a real key at handover)</span><span>copy-paste</span></div>
-        <pre><code>&lt;iframe src="https://YOUR-HOST/voice/"
-  allow="microphone"
-  style="width:100%;height:640px;border:0;border-radius:12px"&gt;&lt;/iframe&gt;</code></pre>
-      </div>
-    <p class="honest-note">Browser demo is included. Full phone numbers via Twilio are an add-on (your Twilio bill).</p>
-  </div>
-  <div class="block">
-    <h2>How we set it up</h2>
-    <p class="sub">Fixed scope · handover included</p>
-    <ol class="setup-steps">
-      <li><span class="n">1</span><h3>You send us</h3><p>your FAQ / booking script and the accent/language you want.</p></li>
-      <li><span class="n">2</span><h3>We build &amp; connect</h3><p>we build the flow in the browser demo, then optionally wire telephony (scoped).</p></li>
-      <li><span class="n">3</span><h3>You get the result</h3><p>working demo link, embed notes, handover + video.</p></li>
-    </ol>
-  </div>
-  <div class="block">
-    <h2>Hosting — no lock-in</h2>
-    <p class="sub">Pick what fits your stack. We never hold your data hostage.</p>
-    <div class="host-grid">
-      <div class="host-card"><strong>We host it</strong><p>Hosted demo page.</p></div>
-      <div class="host-card"><strong>On your account</strong><p>Static page on your Vercel/Cloudflare; Twilio project under your account if needed.</p></div>
-    </div>
+    <p id="micHint" class="muted" style="font-size:var(--fs-13);margin:var(--sp-2) 0 0"></p>
+    <h3 style="margin:var(--sp-5) 0 var(--sp-2)">Agenda board <span class="badge">demo</span></h3>
+    <div id="board" class="slot-board"></div>
+    <p id="log" class="mono" style="font-size:var(--fs-13);color:var(--success);margin:var(--sp-3) 0 0"></p>
   </div>
 </section>
 
-<!-- NYYO_INTEGRATE_END -->
+<section class="container sd-section" aria-labelledby="how-title">
+  <h2 id="how-title">How it works</h2>
+  <ol class="steps">
+    <li><strong>Try</strong>Tap a suggestion, type, or press Speak (Chrome/Edge).</li>
+    <li><strong>Hear</strong>Pre-recorded neural voice replies (offline MP3s).</li>
+    <li><strong>Book</strong>Watch the agenda mark the slot. Local only.</li>
+  </ol>
+  <p class="sd-sub" style="margin-top:var(--sp-4)">A phone-style assistant for small businesses: answers FAQs, offers times, writes the appointment. Production builds connect real calendars.</p>
+</section>
 
-<section class="cta-band">
-      <div>
-        <h2>Want a receptionist for your business?</h2>
-        <p>Fixed scope · available on LaborX</p>
-        <p style="margin:8px 0 0;font-size:.88rem">The kit is free and included — you only pay for the build.</p>
-      </div>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124">Hire me on LaborX</a>
-        <a class="btn btn-ghost" href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/voice-receptionist">Repo</a>
-      </div>
-    </section>
-    <p class="footer"><a href="../">All demos</a></p>
+<section class="container sd-section" aria-labelledby="plug-title">
+  <h2 id="plug-title">Where it plugs in</h2>
+  <p class="sd-sub">A browser voice flow you can embed or link from your site.</p>
+  <ul class="plug-list" aria-label="Integrations">
+    <li><span class="ic" aria-hidden="true">&lt;/&gt;</span>Website embed</li><li><span class="ic" aria-hidden="true">URL</span>Share link</li>
+    <li><span class="ic" aria-hidden="true">Tw</span>Twilio voice (add-on)</li><li><span class="ic" aria-hidden="true">Tg</span>Telegram voice notes</li>
+  </ul>
+  <div class="code-box"><div class="label"><span>Example embed</span><span>copy-paste</span></div>
+<pre class="result-pre"><code>&lt;iframe src="https://YOUR-HOST/voice/"
+  allow="microphone"
+  style="width:100%;height:640px;border:0;border-radius:12px"&gt;&lt;/iframe&gt;</code></pre></div>
+  <div class="notice"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><p>The browser demo is included. Full phone numbers via Twilio are an add-on, on your own Twilio bill.</p></div>
+</section>
+
+<section class="container sd-section" aria-labelledby="setup-title">
+  <h2 id="setup-title">How the build works</h2>
+  <div class="sd-grid-3">
+    <div class="card-plain"><h3>1 · You send</h3><p>Your FAQ or booking script and the accent or language you want.</p></div>
+    <div class="card-plain"><h3>2 · We build</h3><p>The flow in the browser demo, then telephony if it is in scope.</p></div>
+    <div class="card-plain"><h3>3 · You get</h3><p>A working demo link, embed notes and a handover.</p></div>
   </div>
-  <div class="mobile-cta"><a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124">Hire me on LaborX</a></div>
-  <script src="./js/receptionist.js"></script>
-  <script>document.addEventListener("DOMContentLoaded",()=>{ if(window.lucide) lucide.createIcons(); });</script>
+  <div class="sd-grid-2" style="margin-top:var(--sp-4)">
+    <div class="card-plain"><h3>We run it</h3><p>Hosted demo page.</p></div>
+    <div class="card-plain"><h3>On your account</h3><p>Static page on your Vercel or Cloudflare; Twilio project under your account if needed.</p></div>
+  </div>
+</section>
+
+<section class="container sd-section" aria-labelledby="quote-title">
+  <div class="panel">
+    <h2 id="quote-title">Want a receptionist for your business?</h2>
+    <p class="sd-sub">Fixed scope, priced on quote. Questions? Ask in your order chat.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="site-footer__grid">
+    <div><a class="brand" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg class="brand__mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" style="fill:var(--accent)"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" style="fill:var(--on-accent)"/></svg><span>Nyyo Automation</span></a>
+      <p style="margin-top:12px;max-width:42ch">AI assistants and automations built on your own documents. Fixed scope, a human always signs off. <span class="nowrap">Remote · Worldwide</span>.</p></div>
+    <div><h2 class="site-footer__title">Demos</h2><ul><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a></li><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/#industry">Industry demos</a></li><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/#tools">Automation &amp; data</a></li></ul></div>
+    <div><h2 class="site-footer__title">Contact</h2><ul><li><a href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></li><li><a href="https://laborx.com/freelancers/users/id475124" rel="noopener">LaborX</a></li><li><a href="https://github.com/nyyoautomation">GitHub</a></li></ul></div>
+  </div>
+  <div class="site-footer__legal"><span>© 2026 Nyyo Automation · Noah Vasseur</span><span>All demo data is fictional.</span></div>
+</div></footer>
+<div class="cta-bar"><a class="btn btn--secondary" href="#demo">Try the demo</a><a class="btn btn--primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+<script src="./js/receptionist.js"></script>
 </body>
 </html>

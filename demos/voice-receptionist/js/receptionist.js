@@ -129,11 +129,11 @@ function addChat(role, text) {
   c.scrollTop = c.scrollHeight;
 }
 
-function runText(text) {
+function runText(text, silent) {
   addChat("user", text);
   const { reply, lineKey, booked } = handle(text);
   addChat("bot", reply);
-  speakLine(lineKey, reply);
+  if (!silent) speakLine(lineKey, reply); // browsers block audio before the first tap
   renderBoard();
   if (booked) {
     const log = document.getElementById("log");
@@ -161,10 +161,11 @@ document.addEventListener("DOMContentLoaded", () => {
     rec.lang = "en-US";
     rec.onresult = (e) => runText(e.results[0][0].transcript);
     mic.onclick = () => {
+      const label = mic.querySelector(".mic-label") || mic;
       rec.start();
-      mic.textContent = "Listening…";
-      setTimeout(() => (mic.textContent = "🎤 Speak"), 4000);
+      label.textContent = "Listening…";
+      setTimeout(() => (label.textContent = "Speak"), 4000);
     };
   }
-  runText("hello");
+  runText("hello", true);
 });
