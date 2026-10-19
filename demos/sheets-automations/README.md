@@ -6,15 +6,17 @@
 >
 > **Try it:** open [**the guide**](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) and copy a `.gs` file into your Sheet.
 >
-> **Business benefit:** Sheets work while you sleep. From **$49** · full pack on quote.
+> **Pricing:** from **$49** · full pack on quote.
 
-![Demo](docs/demo.gif)
+![Sheets automation pack: the 3 demo scripts and the install kit](docs/demo.png)
 
 **Live:** https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/
 
+**Run locally:** `python3 -m http.server 8000` from the repository root, then open http://localhost:8000/demos/sheets-automations/ (needed for the "View code" panels).
+
 ## How to order
 
-Available on LaborX · [Profile & packages](https://github.com/nyyoautomation)
+Available on LaborX · [Request a quote](https://laborx.com/freelancers/users/id475124)
 
 Questions? Ask in your order chat.
 

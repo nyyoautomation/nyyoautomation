@@ -1,125 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="../assets/logo.png" type="image/png" /><meta name="theme-color" content="#050814" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta property="og:title" content="Sheets automations — Nyyo Automation" />
-  <meta property="og:description" content="Apps Script pack. From $49." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/assets/logo.png" />
-
-  <title>Google Sheets automation pack — Nyyo Automation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <style>
-    body{margin:0;background:#0b1220;color:#e8eefc;font-family:Inter,system-ui,sans-serif}
-    .wrap{max-width:860px;margin:0 auto;padding:24px 16px}
-    .card{background:#121a2b;border:1px solid #243049;border-radius:14px;padding:16px;margin:12px 0}
-    a{color:#3dd6c6} .tag{color:#3dd6c6;font-size:.75rem}
-    ol{color:#9aa8c7}
-    .benefit{padding:10px;border-radius:10px;background:rgba(91,140,255,.12);border:1px solid rgba(91,140,255,.3);margin-top:10px}
-    code{background:#0e1628;padding:2px 6px;border-radius:6px}
-  </style>
-  <link rel="stylesheet" href="./css/nyyo-kit.css" />
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Google Sheets automation pack · Nyyo Automation</title>
+<meta name="description" content="Apps Script pack for Google Sheets: invoice rows, follow-up flags and a weekly summary, plus a free install kit. From $49.">
+<meta property="og:title" content="Google Sheets automation pack · Nyyo Automation">
+<meta property="og:description" content="Apps Script pack for Google Sheets: invoice rows, follow-up flags and a weekly summary, plus a free install kit. From $49.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/">
+<meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/assets/og-gallery.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nyyo Automation demos: AI assistants and automations, fictional data">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F7F7F5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=optional" rel="stylesheet">
+<link rel="stylesheet" href="../design-system.css">
+<link rel="stylesheet" href="../assets/subdemo.css">
 </head>
-<body>
-<!-- NYYO_PREMIUM_V1 -->
-  <div class="wrap">
-            <div class="topbar">
-      <a class="brand" href="https://github.com/nyyoautomation">
-        <img src="../assets/logo.png" alt="" width="34" height="34" />
-        <span>Nyyo Automation</span>
-      </a>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
-        <a class="btn btn-ghost btn-sm" href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a>
-        <a class="btn btn-primary btn-sm" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-      </div>
-    </div>
-<section class="metrics" aria-label="Example metrics">
-<div class="metric"><div class="v">$49</div><div class="l"><strong>From</strong> · starter</div></div>
-<div class="metric"><div class="v">Apps Script</div><div class="l"><strong>Stack</strong> · native Sheets</div></div>
-<div class="metric"><div class="v">Zapier</div><div class="l"><strong>No</strong> · required</div></div>
+<body class="has-cta-bar">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container site-header__inner">
+  <a class="brand" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg class="brand__mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" style="fill:var(--accent)"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" style="fill:var(--on-accent)"/></svg><span>Nyyo Automation</span></a>
+  <nav class="nav" aria-label="Main"><a class="back-link" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>All demos</span></a></nav>
+  <div class="site-header__actions"><a class="btn btn--primary site-header__cta" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+</div></header>
+<main id="main" class="sd-main">
+<section class="container sd-hero">
+  <div class="sd-meta"><span class="badge badge--sector">Sheets</span><span class="badge badge--live">Live guide</span><span class="badge">Demo scripts</span></div>
+  <h1>Sheets that invoice, chase and report</h1>
+  <p class="lead">Small programs inside Google Sheets that add invoice rows, flag late payments and build a weekly summary.</p>
+  <div class="sd-meta"><span class="badge">From $49</span><span class="badge">Available on LaborX</span><span class="badge"><span class="nowrap">Remote · Worldwide</span></span></div>
 </section>
-<p class="metrics-note">Example figures for illustration — not a client case study.</p>
-<div class="badges" aria-label="Tech stack"><span>Google Apps Script</span><span>Sheets</span><span>Triggers</span></div>
-    <!-- NYYO_INTEGRATE_START -->
 
-<section class="nyyo-integrate" aria-label="Integration and setup">
-  <div class="block">
-    <h2>Where it plugs in</h2>
-    <p class="sub">Automations that live inside Google Sheets / Excel.</p>
-    <div class="plug-chips" role="list">
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">GS</span>Google Sheets</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">AS</span>Apps Script</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">XLS</span>Excel + Office Scripts</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">Gm</span>Gmail add-on triggers</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">Sl</span>Slack notify</span>
-</div>
-    
-    <p class="honest-note">We automate Sheets/Excel you own. We do not break Google ToS with bulk scraping from Sheets.</p>
-  </div>
-  <div class="block">
-    <h2>How we set it up</h2>
-    <p class="sub">2-day delivery · fixed scope · handover included</p>
-    <ol class="setup-steps">
-      <li><span class="n">1</span><h3>You send us</h3><p>the Sheet and the repetitive steps (clean, notify, sync).</p></li>
-      <li><span class="n">2</span><h3>We build &amp; connect</h3><p>we write Apps Script / Office Script and menus.</p></li>
-      <li><span class="n">3</span><h3>You get the result</h3><p>script bound to your file, doc + short video.</p></li>
-    </ol>
-  </div>
-  <div class="block">
-    <h2>Hosting — no lock-in</h2>
-    <p class="sub">Pick what fits your stack. We never hold your data hostage.</p>
-    <div class="host-grid">
-      <div class="host-card"><strong>We host it</strong><p>Not needed — runs in your Google/Microsoft account.</p></div>
-      <div class="host-card"><strong>On your account</strong><p>100% on your Workspace / Microsoft 365.</p></div>
+<section class="container sd-section" id="demo" aria-labelledby="demo-title">
+  <div class="panel">
+    <h2 id="demo-title">The 3 demo scripts</h2>
+    <p class="sd-sub">Open a script, then in Google Sheets: Extensions → Apps Script → paste → Save. Run once to authorize; add a weekly trigger if you want. The demos never email real customers.</p>
+    <div class="sd-grid-3">
+      <div class="card-plain script-card"><h3>01 · Invoice row helper</h3><p>Adds a demo invoice row to an Invoices tab.</p>
+        <details data-src="./scripts/01_invoice_pdf.gs"><summary>View code</summary><pre class="result-pre"><code>Loading…</code></pre></details>
+        <a class="btn btn--secondary" href="./scripts/01_invoice_pdf.gs" download><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg><span>01_invoice_pdf.gs</span></a></div>
+      <div class="card-plain script-card"><h3>02 · Follow-up flagger</h3><p>Marks unpaid rows past their due date as NEED_FOLLOWUP. No email sent.</p>
+        <details data-src="./scripts/02_followups.gs"><summary>View code</summary><pre class="result-pre"><code>Loading…</code></pre></details>
+        <a class="btn btn--secondary" href="./scripts/02_followups.gs" download><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg><span>02_followups.gs</span></a></div>
+      <div class="card-plain script-card"><h3>03 · Weekly summary</h3><p>Writes a Summary tab with totals; schedule it with a weekly trigger.</p>
+        <details data-src="./scripts/03_weekly_report.gs"><summary>View code</summary><pre class="result-pre"><code>Loading…</code></pre></details>
+        <a class="btn btn--secondary" href="./scripts/03_weekly_report.gs" download><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg><span>03_weekly_report.gs</span></a></div>
     </div>
   </div>
 </section>
 
-<!-- NYYO_INTEGRATE_END -->
-
-<!-- NYYO_INSTALL_KIT_START -->
-
-<section class="nyyo-install-kit" aria-label="Free install kit">
-  <div class="nyyo-install-kit-inner">
-    <span class="free-pill">FREE · 1-click install kit included</span>
-    <h2>Install kit — Apps Script</h2>
-    <p class="sub">Paste Code.gs into your Sheet. Template “Make a copy” link provided at handover (free). Install kit: free, included with every package — no add-on fee.</p>
-    <div class="kit-actions">
-      <a class="primary" href="./dist/nyyo-sheets-install-kit.zip" download rel="noopener">Download Apps Script kit</a>
-<a class="" href="./install-kit/Code.gs" download rel="noopener">Code.gs</a>
-<a class="" href="./install-kit/README.md"  rel="noopener">Install guide</a>
-    </div>
-    <ul class="kit-list">
-      <li><span class="ready">●</span> Code.gs menu: clean selection + email CSV</li>
-<li><span class="soon">●</span> Shared Google Sheet “Make a copy” template — on request (free)</li>
-    </ul>
+<section class="container sd-section" aria-labelledby="kit-title">
+  <h2 id="kit-title">Install kit · Apps Script</h2>
+  <p class="sd-sub">Paste Code.gs into your Sheet and reload: a Nyyo menu appears (clean selection, email CSV). Free, included with every package.</p>
+  <div class="btn-row">
+    <a class="btn btn--primary" href="./dist/nyyo-sheets-install-kit.zip" download><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg><span>Download the kit (.zip)</span></a>
+    <a class="btn btn--secondary" href="./install-kit/Code.gs" download><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg><span>Code.gs</span></a>
+    <a class="btn btn--ghost" href="./install-kit/README.md">Install guide</a>
   </div>
 </section>
 
-<!-- NYYO_INSTALL_KIT_END -->
+<section class="container sd-section" aria-labelledby="plug-title">
+  <h2 id="plug-title">Where it plugs in</h2>
+  <p class="sd-sub">Automations that live inside Google Sheets or Excel.</p>
+  <ul class="plug-list" aria-label="Integrations">
+    <li><span class="ic" aria-hidden="true">GS</span>Google Sheets</li><li><span class="ic" aria-hidden="true">AS</span>Apps Script</li><li><span class="ic" aria-hidden="true">XLS</span>Excel + Office Scripts</li>
+    <li><span class="ic" aria-hidden="true">Gm</span>Gmail triggers</li><li><span class="ic" aria-hidden="true">Sl</span>Slack notify</li>
+  </ul>
+  <div class="notice"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><p>We automate the Sheets and Excel files you own.</p></div>
+</section>
 
-<section class="cta-band" aria-label="Hire">
-      <div>
-        <h2>Want this for your stack?</h2>
-        <p>From <strong>$49</strong> · fixed scope · 7-day bugfix · available on LaborX · Remote · Worldwide</p>
-        <p style="margin:8px 0 0;font-size:.88rem">The kit is free and included — you only pay for the build.</p>
-      </div>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-        <a class="btn btn-ghost" href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/sheets-automations">Repo</a>
-      </div>
-    </section>
-
-  <div class="mobile-cta" aria-label="Hire shortcut">
-    <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
+<section class="container sd-section" aria-labelledby="setup-title">
+  <h2 id="setup-title">How the build works</h2>
+  <div class="sd-grid-3">
+    <div class="card-plain"><h3>1 · You send</h3><p>The Sheet and the repetitive steps (clean, notify, sync).</p></div>
+    <div class="card-plain"><h3>2 · We build</h3><p>Apps Script or Office Script, with menus.</p></div>
+    <div class="card-plain"><h3>3 · You get</h3><p>The script bound to your file, with a short doc.</p></div>
   </div>
+  <div class="card-plain" style="margin-top:var(--sp-4)"><h3>Where it runs</h3><p>In your own Google Workspace or Microsoft 365 account. No separate hosting needed.</p></div>
+</section>
 
-  <script>document.addEventListener("DOMContentLoaded",function(){if(window.lucide)lucide.createIcons();});</script>
+<section class="container sd-section" aria-labelledby="quote-title">
+  <div class="panel">
+    <h2 id="quote-title">Want this in your Sheet?</h2>
+    <p class="sd-sub">Fixed scope, from $49. Questions? Ask in your order chat.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="site-footer__grid">
+    <div><a class="brand" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg class="brand__mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" style="fill:var(--accent)"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" style="fill:var(--on-accent)"/></svg><span>Nyyo Automation</span></a>
+      <p style="margin-top:12px;max-width:42ch">AI assistants and automations built on your own documents. Fixed scope, a human always signs off. <span class="nowrap">Remote · Worldwide</span>.</p></div>
+    <div><h2 class="site-footer__title">Demos</h2><ul><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a></li><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/#industry">Industry demos</a></li><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/#tools">Automation &amp; data</a></li></ul></div>
+    <div><h2 class="site-footer__title">Contact</h2><ul><li><a href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></li><li><a href="https://laborx.com/freelancers/users/id475124" rel="noopener">LaborX</a></li><li><a href="https://github.com/nyyoautomation">GitHub</a></li></ul></div>
+  </div>
+  <div class="site-footer__legal"><span>© 2026 Nyyo Automation · Noah Vasseur</span><span>All demo data is fictional.</span></div>
+</div></footer>
+<div class="cta-bar"><a class="btn btn--secondary" href="#demo">See the scripts</a><a class="btn btn--primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+<script>
+  document.querySelectorAll("details[data-src]").forEach((d) => {
+    d.addEventListener("toggle", async () => {
+      if (!d.open || d.dataset.loaded) return;
+      const code = d.querySelector("code");
+      try { const r = await fetch(d.dataset.src); code.textContent = r.ok ? await r.text() : "Could not load the script."; d.dataset.loaded = "1"; }
+      catch (e) { code.textContent = "Could not load the script. Use the download button."; }
+    });
+  });
+</script>
 </body>
 </html>
