@@ -94,6 +94,41 @@
     }
     .btn-ghost:hover { border-color: rgba(61,139,255,.4); background: rgba(61,139,255,.08); }
 
+
+    .kit-banner {
+      margin: 0 0 18px; padding: 12px 16px; border-radius: 14px;
+      border: 1px solid rgba(57,255,136,.28);
+      background: rgba(57,255,136,.08);
+      color: var(--text); font-size: 0.92rem; line-height: 1.45;
+    }
+    .kit-strip {
+      margin: 8px 0 18px; padding: 18px 18px 16px;
+      border-radius: 18px; border: 1px solid var(--border);
+      background: var(--panel); backdrop-filter: blur(12px);
+    }
+    .kit-strip h2 { margin: 0 0 6px; font-size: 1.15rem; letter-spacing: -0.02em; }
+    .kit-strip p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+    .card-kit {
+      display: block; margin-top: 6px;
+      font-size: 0.72rem; font-weight: 600; color: var(--lime);
+      letter-spacing: 0.01em;
+    }
+    .pricing-include {
+      margin: 28px 0 8px; padding: 22px 20px;
+      border-radius: 20px; border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(61,139,255,.14), rgba(57,255,136,.07));
+    }
+    .pricing-include h2 { margin: 0 0 10px; font-size: 1.25rem; letter-spacing: -0.02em; }
+    .pricing-include ul { margin: 0 0 12px; padding-left: 1.15rem; color: var(--muted); }
+    .pricing-include li { margin: 5px 0; }
+    .pricing-include .close { margin: 0; color: var(--text); font-weight: 600; font-size: 0.95rem; }
+    .badge.kit-free {
+      color: #041018;
+      background: linear-gradient(135deg, #3d8bff, #39ff88);
+      border-color: transparent;
+      font-weight: 700;
+    }
+
     /* Hero */
     .hero {
       display: grid; gap: 28px; align-items: center;
@@ -481,12 +516,14 @@
 
     <header class="hero">
       <div>
-        <div class="badge"><span class="pulse" aria-hidden="true"></span> Live demos · no signup</div>
+        <div class="badge kit-free">FREE · 1-click install kit included</div>
+        <p class="kit-banner">Every build ships with a free 1-click install kit — WordPress, Shopify, Wix/Webflow/HTML, Telegram/Slack/Discord, n8n/Make, Sheets & webhooks.</p>
         <h1>Automation &amp; AI you can <span class="grad">try in 3 seconds</span></h1>
         <p class="lead">
           Interactive proofs — chatbots, scrapers, n8n workflows, dashboards.
           Fixed price, crypto welcome, Remote · Worldwide.
         </p>
+        <p class="lead" style="margin-top:-8px;font-size:.95rem">No hunting for plugins. You get the install kit with the job — copy, click, live.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#demos">Browse demos</a>
           <a class="btn btn-ghost" href="https://nyyoautomation.github.io/nyyo-docs-chatbot/">Try docs chatbot</a>
@@ -496,6 +533,7 @@
           <span><strong>From $30</strong> fixed packages</span>
           <span><strong>10 languages</strong> localization</span>
           <span><strong>Crypto OK</strong> USDC · SOL · ETH</span>
+          <span><strong>Free 1-click kit</strong> with every offer</span>
         </div>
       </div>
       <aside class="preview" aria-label="Animated demo preview" aria-hidden="false">
@@ -523,6 +561,12 @@
       </div>
     </div>
 
+    
+    <section class="kit-strip" aria-label="Install kit overview" id="one-click-kit">
+      <h2>Install in one click — kit included free</h2>
+      <p>WordPress plugin · Shopify embed · Wix/Webflow/HTML snippet · Telegram / Slack / Discord links · importable n8n/Make workflows · Google Sheets copy + scripts · Sheets / Airtable / webhook connectors.</p>
+    </section>
+
     <div class="filters" role="tablist" aria-label="Filter demos">
       <button type="button" class="active" data-filter="all" role="tab" aria-selected="true">All</button>
       <button type="button" data-filter="ai" role="tab" aria-selected="false">AI</button>
@@ -539,36 +583,42 @@
         <h3>Docs chatbot (RAG)</h3>
         <p>Ask questions on your business docs — answers with source citations. Widget or Telegram.</p>
         <div class="card-foot"><span class="price">from $250</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="automation" href="https://nyyoautomation.github.io/nyyo-n8n-workflows/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="workflow"></i></div><span class="live">Live</span></div>
         <h3>n8n / Make AI workflows</h3>
         <p>Production-shape automations with visible steps, retries and run history.</p>
         <div class="card-foot"><span class="price">from $100</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="web" href="https://nyyoautomation.github.io/nyyo-vibe-code-rescue/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="wrench"></i></div><span class="live">Live</span></div>
         <h3>Vibe-code rescue</h3>
         <p>Before/after: fix broken Lovable / Cursor / v0 landings fast.</p>
         <div class="card-foot"><span class="price">from $50</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="data" href="https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="radio"></i></div><span class="live">Live</span></div>
         <h3>Live scrape dashboard</h3>
         <p>Watch a scraper fill a live KPI board — prices, stock, alerts.</p>
         <div class="card-foot"><span class="price">from $120</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="bots" href="https://nyyoautomation.github.io/nyyo-telegram-demo/simulator/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="bot"></i></div><span class="live">Live</span></div>
         <h3>Telegram / Discord bots</h3>
         <p>Browser simulator of alert &amp; support bots — menus, buttons, flows.</p>
         <div class="card-foot"><span class="price">from $79</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="data" href="https://nyyoautomation.github.io/nyyo-invoice-to-excel/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="file-text"></i></div><span class="live">Live</span></div>
         <h3>Invoice → Excel</h3>
         <p>Messy PDFs to a clean spreadsheet — try sample extraction in-browser.</p>
         <div class="card-foot"><span class="price">from $80</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
 
             <a class="card" data-cat="data" href="https://nyyoautomation.github.io/nyyo-spreadsheet-demo/">
@@ -576,6 +626,7 @@
         <h3>Spreadsheet cleanup</h3>
         <p>Messy sheet → clean table. Before/after example you can toggle.</p>
         <div class="card-foot"><span class="price">from $35</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
 
       <!-- Profile-hosted demos -->
@@ -584,48 +635,56 @@
         <h3>Inbox AI</h3>
         <p>Sort, draft and tag support tickets — fewer repetitive replies.</p>
         <div class="card-foot"><span class="price">from $300</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="data" href="./instant-dashboard/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="bar-chart-3"></i></div><span class="live">Live</span></div>
         <h3>Instant CSV dashboard</h3>
         <p>Drop a CSV → KPIs and charts in the browser. No backend.</p>
         <div class="card-foot"><span class="price">from $50</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="data" href="./shopify-importer/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="shopping-cart"></i></div><span class="live">Live</span></div>
         <h3>Shopify import cleaner</h3>
         <p>Normalize product CSVs before import — fewer failed uploads.</p>
         <div class="card-foot"><span class="price">from $80</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="data" href="./lead-pipeline/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="map-pin"></i></div><span class="live">Live</span></div>
         <h3>B2B lead pipeline</h3>
         <p>OpenStreetMap business leads — no personal emails scraped.</p>
         <div class="card-foot"><span class="price">from $50</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="bots" href="./voice-receptionist/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="mic"></i></div><span class="live">Live</span></div>
         <h3>Voice receptionist</h3>
         <p>Browser voice flow for booking / FAQ — hands-free demo.</p>
         <div class="card-foot"><span class="price">from $80</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="web" href="./landing-kit/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="rocket"></i></div><span class="live">Live</span></div>
         <h3>Landing page kit</h3>
         <p>SaaS, local business &amp; crypto templates — shipped in 24h.</p>
         <div class="card-foot"><span class="price">from $100</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="data" href="./wallet-tracker/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="eye"></i></div><span class="live">Live</span></div>
         <h3>Wallet tracker</h3>
         <p>Read-only portfolio board for public addresses — alerts ready.</p>
         <div class="card-foot"><span class="price">from $60</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
       <a class="card" data-cat="automation" href="./sheets-automations/">
         <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="sheet"></i></div><span class="live">Live</span></div>
         <h3>Sheets automations</h3>
         <p>Google Apps Script pack — clean, notify, sync without Zapier.</p>
         <div class="card-foot"><span class="price">from $30/script</span><span class="open">Open demo →</span></div>
+        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
       </a>
     </div>
 
@@ -663,9 +722,9 @@
 
 <section class="nyyo-install-kit" id="install-kits" aria-label="Free install kits">
   <div class="nyyo-install-kit-inner">
-    <span class="free-pill">Free install kit included</span>
-    <h2>Install kits with every package</h2>
-    <p class="sub">Plugins, snippets, workflow JSON, Apps Script and sync configs — <strong>free, included with every package</strong>. No add-on fee. Anything not listed yet is <strong>on request (free)</strong>.</p>
+    <span class="free-pill">FREE · 1-click install kit included</span>
+    <h2>Install in one click — kit included free</h2>
+    <p class="sub">Every build ships with a free 1-click install kit — WordPress, Shopify, Wix/Webflow/HTML, Telegram/Slack/Discord, n8n/Make, Sheets & webhooks. Anything not listed yet is <strong>on request (free)</strong>.</p>
     <div class="kit-actions">
       <a class="primary" href="https://nyyoautomation.github.io/nyyo-docs-chatbot/#install">Docs chatbot kit</a>
       <a class="primary" href="https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/">Scrape sync kit</a>
@@ -676,6 +735,21 @@
 </section>
 
 <!-- NYYO_INSTALL_KIT_END -->
+
+    
+    <section class="pricing-include" aria-label="Whats included">
+      <h2>What’s included with every offer</h2>
+      <ul>
+        <li>Free <strong>1-click install kit</strong> matched to your stack</li>
+        <li>WordPress plugin <strong>or</strong> Shopify app embed <strong>or</strong> Wix / Webflow / HTML script</li>
+        <li>Ready links for <strong>Telegram / Slack / Discord</strong> when the bot lives there</li>
+        <li><strong>Importable</strong> n8n / Make workflows (JSON) when automation is the deliverable</li>
+        <li><strong>Google Sheets</strong> copy + Apps Script packs when Sheets is the hub</li>
+        <li>Connectors for <strong>Sheets / Airtable / webhooks</strong> so your tools stay in charge</li>
+      </ul>
+      <p class="close">The kit is free and included — you only pay for the build.</p>
+      <p style="margin:10px 0 0;color:var(--muted);font-size:.82rem">Items not built yet for a given stack are marked <strong>on request (free)</strong>.</p>
+    </section>
 
     <section class="cta-band" aria-label="Hire">
       <div>

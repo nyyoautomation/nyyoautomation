@@ -4,6 +4,8 @@
 
 🟢 Available now · Remote · Worldwide · Typical delivery 24–72h
 
+Every Nyyo build includes a free 1-click install kit — WordPress, Shopify, n8n, Sheets, and chat apps.
+
 **Localization:** Website & app localization, marketing transcreation, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, FR, IT, NL, JA, ZH, KO, AR.
 
 I help founders, operators and crypto teams who need **scraping → CSV**, **spreadsheet cleanup**, **Telegram/Discord bots**, **n8n workflows**, or a **chatbot that answers from their own docs** — without a full-time engineer.
@@ -68,6 +70,8 @@ Packs: up to 500 words **$35–50** · up to 2,000 words **$90–140** · up to 
 
 First **100 rows** sample free on scrape/sheet jobs.
 
+You don’t buy “setup” twice: the 1-click install kit is free with every offer.
+
 ---
 
 ## How I work
@@ -87,16 +91,26 @@ First **100 rows** sample free on scrape/sheet jobs.
 
 
 
-## Free install kit included
 
-**Install kit: free, included with every package** — no add-on fee for WordPress plugins, Shopify snippets, universal embeds, n8n JSON, Apps Script, or sync configs.
 
-- Docs chatbot: [WordPress ZIP + full kit](https://nyyoautomation.github.io/nyyo-docs-chatbot/#install)
-- Scrape dashboard: Sheets / Airtable / webhook examples on the [live demo](https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/)
-- n8n workflows: importable JSON on the [live demo](https://nyyoautomation.github.io/nyyo-n8n-workflows/)
-- Sheets: Apps Script file in the [Sheets demo](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/)
+## Free 1-click install kit (included with every offer)
 
-Anything not built yet is marked **on request (free)** at handover.
+
+Every fixed-scope build ships with a **free install kit** so you go live without a second project:
+
+| Stack | What you get |
+|---|---|
+| WordPress | Plugin / drop-in |
+| Shopify | Embeddable app snippet |
+| Wix / Webflow / HTML | Script tag + paste instructions |
+| Telegram / Slack / Discord | Bot links + setup steps |
+| n8n / Make | Importable workflow JSON |
+| Google Sheets | Copy + Apps Script pack |
+| Data hubs | Sheets / Airtable / webhook connectors |
+
+**Remote · Worldwide** · Try demos: https://nyyoautomation.github.io/nyyoautomation/demos/
+
+Items not built yet for a given stack are marked **on request (free)**.
 
 
 ## Where it plugs in (integrations)
