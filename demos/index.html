@@ -2,31 +2,561 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230a0f2c%22/%3E%3Ctext x=%2232%22 y=%2245%22 font-size=%2238%22 font-family=%22Arial%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%2339ff88%22%3EN%3C/text%3E%3C/svg%3E" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nyyo Automation — extra demos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nyyo Automation — Live demos</title>
+  <meta name="description" content="Try live automation, AI and scraping demos. No signup. Fixed price. Hire Nyyo Automation on LaborX." />
+  <meta name="theme-color" content="#050814" />
+  <link rel="icon" href="./assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    body{margin:0;background:#0b1220;color:#e8eefc;font-family:Inter,system-ui,sans-serif}
-    .wrap{max-width:900px;margin:0 auto;padding:24px 16px 48px}
-    a{color:#3dd6c6;text-decoration:none}
-    .card{background:#121a2b;border:1px solid #243049;border-radius:14px;padding:16px;margin:10px 0}
-    .tag{color:#3dd6c6;font-size:.75rem}
-    .price{color:#9aa8c7;font-size:.9rem}
+    :root {
+      --void: #050814;
+      --abyss: #0a0f2c;
+      --panel: rgba(18, 28, 52, 0.72);
+      --panel-solid: #121c34;
+      --border: rgba(120, 160, 255, 0.14);
+      --text: #e8eefc;
+      --muted: #8b9bb8;
+      --azure: #3d8bff;
+      --lime: #39ff88;
+      --radius: 18px;
+      --glow-a: 0 0 40px rgba(61, 139, 255, 0.35);
+      --glow-l: 0 0 40px rgba(57, 255, 136, 0.28);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--void);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 12% -10%, rgba(61,139,255,.22), transparent 55%),
+        radial-gradient(ellipse 60% 45% at 95% 15%, rgba(57,255,136,.14), transparent 50%),
+        radial-gradient(ellipse 50% 40% at 50% 110%, rgba(61,139,255,.08), transparent 55%);
+    }
+    a { color: var(--lime); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: 0 20px 96px; }
+
+    /* Nav */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 12px 0;
+      margin: 0 -4px;
+      padding-inline: 4px;
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      background: rgba(5, 8, 20, 0.72);
+      border-bottom: 1px solid transparent;
+    }
+    .nav.scrolled { border-bottom-color: var(--border); }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: -0.02em; }
+    .brand:hover { text-decoration: none; }
+    .brand img { width: 36px; height: 36px; border-radius: 10px; box-shadow: var(--glow-a); }
+    .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a.ghost {
+      color: var(--muted); font-size: 0.88rem; font-weight: 500;
+      padding: 8px 12px; border-radius: 999px;
+    }
+    .nav-links a.ghost:hover { color: var(--text); background: rgba(255,255,255,.04); text-decoration: none; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border: 0; border-radius: 999px; cursor: pointer;
+      font-family: inherit; font-weight: 600; font-size: 0.9rem;
+      padding: 11px 18px; text-decoration: none !important;
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .btn:focus-visible { outline: 2px solid var(--azure); outline-offset: 3px; }
+    .btn-primary {
+      color: #041018;
+      background: linear-gradient(135deg, #3d8bff 0%, #39ff88 100%);
+      box-shadow: 0 8px 28px rgba(61,139,255,.28);
+    }
+    .btn-primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
+    .btn-ghost {
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: rgba(61,139,255,.4); background: rgba(61,139,255,.08); }
+
+    /* Hero */
+    .hero {
+      display: grid; gap: 28px; align-items: center;
+      padding: 36px 0 28px;
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.75rem; font-weight: 600; color: var(--lime);
+      background: rgba(57,255,136,.1); border: 1px solid rgba(57,255,136,.32);
+      padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .badge .pulse {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--lime);
+      box-shadow: 0 0 0 0 rgba(57,255,136,.55);
+      animation: pulse 2s ease-out infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(57,255,136,.55); }
+      70% { box-shadow: 0 0 0 10px rgba(57,255,136,0); }
+      100% { box-shadow: 0 0 0 0 rgba(57,255,136,0); }
+    }
+    .hero h1 {
+      margin: 0 0 12px; font-size: clamp(2rem, 4.2vw, 3rem);
+      letter-spacing: -0.035em; line-height: 1.12; font-weight: 800;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(135deg, #7eb6ff, #39ff88);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero p.lead { margin: 0 0 22px; color: var(--muted); font-size: 1.05rem; max-width: 36rem; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+    .proof {
+      display: flex; flex-wrap: wrap; gap: 8px 18px;
+      color: var(--muted); font-size: 0.82rem;
+    }
+    .proof strong { color: var(--text); font-weight: 600; }
+
+    /* Preview panel */
+    .preview {
+      position: relative;
+      border-radius: 22px;
+      padding: 1px;
+      background: linear-gradient(145deg, rgba(61,139,255,.55), rgba(57,255,136,.35), rgba(61,139,255,.15));
+      box-shadow: var(--glow-a), 0 24px 60px rgba(0,0,0,.45);
+    }
+    .preview-inner {
+      border-radius: 21px;
+      background: linear-gradient(180deg, rgba(14,22,42,.95), rgba(8,12,28,.98));
+      padding: 16px;
+      overflow: hidden;
+      min-height: 280px;
+    }
+    .preview-bar { display: flex; gap: 6px; margin-bottom: 14px; }
+    .preview-bar i { width: 9px; height: 9px; border-radius: 50%; background: #2a3550; display: block; }
+    .preview-bar i:nth-child(1) { background: #ff6b7a; }
+    .preview-bar i:nth-child(2) { background: #ffd166; }
+    .preview-bar i:nth-child(3) { background: #39ff88; }
+    .fake-chat { display: flex; flex-direction: column; gap: 10px; }
+    .bubble {
+      max-width: 92%; padding: 10px 12px; border-radius: 12px; font-size: 0.82rem; line-height: 1.4;
+      opacity: 0; transform: translateY(8px);
+      animation: fadeUp .45s ease forwards;
+    }
+    .bubble.user {
+      align-self: flex-end;
+      background: rgba(61,139,255,.22); border: 1px solid rgba(61,139,255,.35);
+      animation-delay: .3s;
+    }
+    .bubble.bot {
+      align-self: flex-start;
+      background: rgba(255,255,255,.04); border: 1px solid var(--border);
+      animation-delay: .9s;
+    }
+    .bubble.cite {
+      font-size: 0.72rem; color: var(--muted);
+      border-left: 3px solid var(--azure);
+      animation-delay: 1.4s;
+    }
+    .typing {
+      display: inline-flex; gap: 4px; align-items: center; height: 14px;
+      animation: fadeUp .3s ease forwards; animation-delay: .65s; opacity: 0;
+    }
+    .typing span {
+      width: 5px; height: 5px; border-radius: 50%; background: var(--muted);
+      animation: blink 1.1s infinite ease-in-out;
+    }
+    .typing span:nth-child(2) { animation-delay: .15s; }
+    .typing span:nth-child(3) { animation-delay: .3s; }
+    @keyframes blink {
+      0%, 80%, 100% { opacity: .25; transform: translateY(0); }
+      40% { opacity: 1; transform: translateY(-2px); }
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .preview-caption {
+      margin-top: 12px; font-size: 0.75rem; color: var(--muted); text-align: center;
+    }
+
+    /* Filters */
+    .section-head {
+      display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between;
+      gap: 12px; margin: 18px 0 14px;
+    }
+    .section-head h2 { margin: 0; font-size: 1.25rem; letter-spacing: -0.02em; }
+    .section-head p { margin: 4px 0 0; color: var(--muted); font-size: 0.88rem; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .filters button {
+      font-family: inherit; font-size: 0.8rem; font-weight: 560;
+      padding: 8px 14px; border-radius: 999px; cursor: pointer;
+      color: var(--muted); background: transparent;
+      border: 1px solid var(--border);
+      transition: background .18s, color .18s, border-color .18s, transform .18s;
+    }
+    .filters button:hover { color: var(--text); border-color: rgba(61,139,255,.4); }
+    .filters button.active {
+      color: #041018;
+      background: linear-gradient(135deg, #3d8bff, #39ff88);
+      border-color: transparent;
+    }
+    .filters button:focus-visible { outline: 2px solid var(--azure); outline-offset: 2px; }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card {
+      position: relative;
+      display: flex; flex-direction: column; gap: 10px;
+      padding: 18px 18px 16px;
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      text-decoration: none !important; color: inherit;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+      min-height: 196px;
+      overflow: hidden;
+    }
+    .card::before {
+      content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
+      background: linear-gradient(90deg, var(--azure), var(--lime));
+      opacity: .7;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(61,139,255,.4);
+      box-shadow: 0 16px 40px rgba(0,0,0,.35), var(--glow-a);
+    }
+    .card.hidden { display: none; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .icon {
+      width: 40px; height: 40px; border-radius: 12px;
+      display: grid; place-items: center; font-size: 1.15rem;
+      background: rgba(61,139,255,.12); border: 1px solid rgba(61,139,255,.22);
+    }
+    .live {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+      color: var(--lime);
+      background: rgba(57,255,136,.1); border: 1px solid rgba(57,255,136,.28);
+      padding: 3px 8px; border-radius: 999px;
+    }
+    .live::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--lime);
+      animation: pulse 2s ease-out infinite;
+    }
+    .card h3 { margin: 0; font-size: 1.05rem; letter-spacing: -0.02em; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.86rem; flex: 1; }
+    .card-foot {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--border);
+    }
+    .price { font-weight: 700; font-size: 0.92rem;
+      background: linear-gradient(135deg, #9ec2ff, #39ff88);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .open { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+    .card:hover .open { color: var(--lime); }
+
+    /* CTA band */
+    .cta-band {
+      margin-top: 40px;
+      padding: 28px 24px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(61,139,255,.16), rgba(57,255,136,.08));
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .cta-band h2 { margin: 0 0 4px; font-size: 1.35rem; letter-spacing: -0.02em; }
+    .cta-band p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    footer {
+      margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--border);
+      color: var(--muted); font-size: 0.8rem;
+      display: flex; flex-wrap: wrap; gap: 10px 18px; justify-content: space-between;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--lime); }
+
+    /* Mobile sticky hire */
+    .mobile-cta {
+      display: none;
+      position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60;
+      padding: 12px; border-radius: 16px;
+      background: rgba(10, 15, 44, 0.92);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.5);
+    }
+    .mobile-cta .btn { width: 100%; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 24px; }
+      .preview { order: -1; max-width: 420px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .shell { padding-bottom: 110px; }
+      .nav-links a.ghost { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.85rem; }
+      .mobile-cta { display: block; }
+      .preview-inner { min-height: 220px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important; transition: none !important;
+      }
+      .bubble, .typing { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <p class="tag">Nyyo Automation · demos A–J continuation</p>
-    <h1>More services you can try</h1>
-    <p style="color:#9aa8c7">Each card opens a plain-English demo. Browser-only where noted.</p>
-    <div class="card"><a href="./inbox-ai/"><strong>G · Inbox AI</strong></a><div class="price">from $300</div></div>
-    <div class="card"><a href="./instant-dashboard/"><strong>C · Instant CSV dashboard</strong></a><div class="price">from $50</div></div>
-    <div class="card"><a href="./shopify-importer/"><strong>F · Shopify import cleaner</strong></a><div class="price">from $80</div></div>
-    <div class="card"><a href="./lead-pipeline/"><strong>D · B2B leads (OSM)</strong></a><div class="price">from $50 · no personal emails</div></div>
-    <div class="card"><a href="./voice-receptionist/"><strong>E · Voice receptionist</strong></a><div class="price">from $80</div></div>
-    <div class="card"><a href="./landing-kit/"><strong>H · Landing pages kit</strong></a><div class="price">from $100</div></div>
-    <div class="card"><a href="./wallet-tracker/"><strong>I · Wallet tracker</strong></a><div class="price">from $60</div></div>
-    <div class="card"><a href="./sheets-automations/"><strong>J · Sheets automations</strong></a><div class="price">from $30/script</div></div>
-    <p><a href="https://github.com/nyyoautomation">Profile</a> · <a href="https://laborx.com/freelancers/users/id475124">Hire</a></p>
+  <div class="shell">
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a class="brand" href="https://github.com/nyyoautomation">
+        <img src="./assets/logo.png" alt="" width="36" height="36" />
+        <span>Nyyo Automation</span>
+      </a>
+      <div class="nav-links">
+        <a class="ghost" href="#demos">Demos</a>
+        <a class="ghost" href="https://github.com/nyyoautomation">GitHub</a>
+        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="badge"><span class="pulse" aria-hidden="true"></span> Live demos · no signup</div>
+        <h1>Automation &amp; AI you can <span class="grad">try in 3 seconds</span></h1>
+        <p class="lead">
+          Interactive proofs — chatbots, scrapers, n8n workflows, dashboards.
+          Fixed price, crypto welcome, Remote · Worldwide.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#demos">Browse demos</a>
+          <a class="btn btn-ghost" href="https://nyyoautomation.github.io/nyyo-docs-chatbot/">Try docs chatbot</a>
+        </div>
+        <div class="proof" aria-label="Highlights">
+          <span><strong>24–72h</strong> typical delivery</span>
+          <span><strong>From $30</strong> fixed packages</span>
+          <span><strong>10 languages</strong> localization</span>
+          <span><strong>Crypto OK</strong> USDC · SOL · ETH</span>
+        </div>
+      </div>
+      <aside class="preview" aria-label="Animated demo preview" aria-hidden="false">
+        <div class="preview-inner">
+          <div class="preview-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="fake-chat">
+            <div class="bubble user">What’s the Growth plan price?</div>
+            <div class="typing" id="typing" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="bubble bot" id="botBubble" hidden>
+              Growth is <strong>29 EUR / month</strong> — 5 users and 2,000 API calls.
+            </div>
+            <div class="bubble cite" id="citeBubble" hidden>
+              Source · Pricing &amp; Subscriptions · demo-store/pricing.md
+            </div>
+          </div>
+          <p class="preview-caption">Preview of the docs chatbot · answers with citations</p>
+        </div>
+      </aside>
+    </header>
+
+    <div class="section-head" id="demos">
+      <div>
+        <h2>All live demos</h2>
+        <p>Click a card — opens the interactive page. Browser-only where noted.</p>
+      </div>
+    </div>
+
+    <div class="filters" role="tablist" aria-label="Filter demos">
+      <button type="button" class="active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button type="button" data-filter="ai" role="tab" aria-selected="false">AI</button>
+      <button type="button" data-filter="automation" role="tab" aria-selected="false">Automation</button>
+      <button type="button" data-filter="data" role="tab" aria-selected="false">Data</button>
+      <button type="button" data-filter="bots" role="tab" aria-selected="false">Bots</button>
+      <button type="button" data-filter="web" role="tab" aria-selected="false">Web</button>
+    </div>
+
+    <div class="grid" id="grid">
+      <!-- Flagship / separate repos -->
+      <a class="card" data-cat="ai" href="https://nyyoautomation.github.io/nyyo-docs-chatbot/">
+        <div class="card-top"><div class="icon" aria-hidden="true">💬</div><span class="live">Live</span></div>
+        <h3>Docs chatbot (RAG)</h3>
+        <p>Ask questions on your business docs — answers with source citations. Widget or Telegram.</p>
+        <div class="card-foot"><span class="price">from $250</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="automation" href="https://nyyoautomation.github.io/nyyo-n8n-workflows/">
+        <div class="card-top"><div class="icon" aria-hidden="true">🔗</div><span class="live">Live</span></div>
+        <h3>n8n / Make AI workflows</h3>
+        <p>Production-shape automations with visible steps, retries and run history.</p>
+        <div class="card-foot"><span class="price">from $100</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="web" href="https://nyyoautomation.github.io/nyyo-vibe-code-rescue/">
+        <div class="card-top"><div class="icon" aria-hidden="true">🩹</div><span class="live">Live</span></div>
+        <h3>Vibe-code rescue</h3>
+        <p>Before/after: fix broken Lovable / Cursor / v0 landings fast.</p>
+        <div class="card-foot"><span class="price">from $50</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="data" href="https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/">
+        <div class="card-top"><div class="icon" aria-hidden="true">📡</div><span class="live">Live</span></div>
+        <h3>Live scrape dashboard</h3>
+        <p>Watch a scraper fill a live KPI board — prices, stock, alerts.</p>
+        <div class="card-foot"><span class="price">from $120</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="bots" href="https://nyyoautomation.github.io/nyyo-telegram-demo/simulator/">
+        <div class="card-top"><div class="icon" aria-hidden="true">🤖</div><span class="live">Live</span></div>
+        <h3>Telegram / Discord bots</h3>
+        <p>Browser simulator of alert &amp; support bots — menus, buttons, flows.</p>
+        <div class="card-foot"><span class="price">from $79</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="data" href="https://github.com/nyyoautomation/nyyo-invoice-to-excel">
+        <div class="card-top"><div class="icon" aria-hidden="true">📄</div><span class="live">Live</span></div>
+        <h3>Invoice → Excel</h3>
+        <p>Messy PDFs to a clean spreadsheet. Script + sample files in the repo.</p>
+        <div class="card-foot"><span class="price">from $60</span><span class="open">Open repo →</span></div>
+      </a>
+
+      <!-- Profile-hosted demos -->
+      <a class="card" data-cat="ai" href="./inbox-ai/">
+        <div class="card-top"><div class="icon" aria-hidden="true">📥</div><span class="live">Live</span></div>
+        <h3>Inbox AI</h3>
+        <p>Sort, draft and tag support tickets — fewer repetitive replies.</p>
+        <div class="card-foot"><span class="price">from $300</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="data" href="./instant-dashboard/">
+        <div class="card-top"><div class="icon" aria-hidden="true">📊</div><span class="live">Live</span></div>
+        <h3>Instant CSV dashboard</h3>
+        <p>Drop a CSV → KPIs and charts in the browser. No backend.</p>
+        <div class="card-foot"><span class="price">from $50</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="data" href="./shopify-importer/">
+        <div class="card-top"><div class="icon" aria-hidden="true">🛒</div><span class="live">Live</span></div>
+        <h3>Shopify import cleaner</h3>
+        <p>Normalize product CSVs before import — fewer failed uploads.</p>
+        <div class="card-foot"><span class="price">from $80</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="data" href="./lead-pipeline/">
+        <div class="card-top"><div class="icon" aria-hidden="true">🎯</div><span class="live">Live</span></div>
+        <h3>B2B lead pipeline</h3>
+        <p>OpenStreetMap business leads — no personal emails scraped.</p>
+        <div class="card-foot"><span class="price">from $50</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="bots" href="./voice-receptionist/">
+        <div class="card-top"><div class="icon" aria-hidden="true">🎙️</div><span class="live">Live</span></div>
+        <h3>Voice receptionist</h3>
+        <p>Browser voice flow for booking / FAQ — hands-free demo.</p>
+        <div class="card-foot"><span class="price">from $80</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="web" href="./landing-kit/">
+        <div class="card-top"><div class="icon" aria-hidden="true">🚀</div><span class="live">Live</span></div>
+        <h3>Landing page kit</h3>
+        <p>SaaS, local business &amp; crypto templates — shipped in 24h.</p>
+        <div class="card-foot"><span class="price">from $100</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="data" href="./wallet-tracker/">
+        <div class="card-top"><div class="icon" aria-hidden="true">👀</div><span class="live">Live</span></div>
+        <h3>Wallet tracker</h3>
+        <p>Read-only portfolio board for public addresses — alerts ready.</p>
+        <div class="card-foot"><span class="price">from $60</span><span class="open">Open demo →</span></div>
+      </a>
+      <a class="card" data-cat="automation" href="./sheets-automations/">
+        <div class="card-top"><div class="icon" aria-hidden="true">📑</div><span class="live">Live</span></div>
+        <h3>Sheets automations</h3>
+        <p>Google Apps Script pack — clean, notify, sync without Zapier.</p>
+        <div class="card-foot"><span class="price">from $30/script</span><span class="open">Open demo →</span></div>
+      </a>
+    </div>
+
+    <section class="cta-band" aria-label="Hire">
+      <div>
+        <h2>Ready to ship yours?</h2>
+        <p>Fixed packages · 7-day bugfix · crypto welcome · Remote · Worldwide</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
+        <a class="btn btn-ghost" href="https://github.com/nyyoautomation">GitHub profile</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© Nyyo Automation · demos are browser-only proofs</span>
+      <span>
+        <a href="https://laborx.com/freelancers/users/id475124">LaborX</a> ·
+        <a href="https://laborx.com/freelancers/users/id475124">LaborX</a> ·
+        <a href="https://github.com/nyyoautomation">GitHub</a>
+      </span>
+    </footer>
   </div>
+
+  <div class="mobile-cta" aria-label="Hire shortcut">
+    <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
+  </div>
+
+  <script>
+    (function () {
+      var nav = document.getElementById("nav");
+      var onScroll = function () {
+        if (window.scrollY > 8) nav.classList.add("scrolled");
+        else nav.classList.remove("scrolled");
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      // Preview sequence: hide typing, show answer after delay
+      var typing = document.getElementById("typing");
+      var bot = document.getElementById("botBubble");
+      var cite = document.getElementById("citeBubble");
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function runPreview() {
+        if (reduce) {
+          if (typing) typing.hidden = true;
+          if (bot) { bot.hidden = false; bot.style.opacity = 1; }
+          if (cite) { cite.hidden = false; cite.style.opacity = 1; }
+          return;
+        }
+        setTimeout(function () {
+          if (typing) typing.style.display = "none";
+          if (bot) bot.hidden = false;
+          if (cite) cite.hidden = false;
+        }, 1600);
+      }
+      runPreview();
+
+      // Filters
+      var buttons = document.querySelectorAll(".filters button");
+      var cards = document.querySelectorAll(".card");
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var f = btn.getAttribute("data-filter");
+          buttons.forEach(function (b) {
+            b.classList.toggle("active", b === btn);
+            b.setAttribute("aria-selected", b === btn ? "true" : "false");
+          });
+          cards.forEach(function (card) {
+            var cat = card.getAttribute("data-cat");
+            var show = f === "all" || cat === f;
+            card.classList.toggle("hidden", !show);
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
