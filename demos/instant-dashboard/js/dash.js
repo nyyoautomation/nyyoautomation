@@ -104,7 +104,7 @@ function render(rows) {
   const tb = document.getElementById("tbody");
   const headers = Object.keys(rows[0] || {});
   document.getElementById("thead").innerHTML = "<tr>" + headers.map((h) => `<th scope="col">${esc(h)}</th>`).join("") + "</tr>";
-  tb.innerHTML = rows.slice(0, 50).map((r) => "<tr>" + headers.map((h) => `<td>${esc(r[h])}</td>`).join("") + "</tr>").join("");
+  tb.innerHTML = rows.slice(0, 50).map((r) => "<tr>" + headers.map((h) => `<td${h === date ? ' class="nowrap"' : ""}>${esc(r[h])}</td>`).join("") + "</tr>").join("");
 }
 
 async function loadSample() {
