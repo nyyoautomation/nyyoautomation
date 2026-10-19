@@ -2,11 +2,9 @@
 
 **I turn messy business data into clean files, dashboards and small AI assistants — fixed price, paid in crypto on BNB Chain or Base.**
 
-🟢 Available now · Remote · Worldwide · Typical delivery 24–72h
+🟢 Available now · Remote · Worldwide
 
 Every Nyyo build includes a free 1-click install kit — WordPress, Shopify, n8n, Sheets, and chat apps.
-
-**Localization:** Website & app localization, marketing transcreation, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, IT, NL, JA, ZH, KO, AR.
 
 I help founders, operators and crypto teams who need **scraping → CSV**, **spreadsheet cleanup**, **Telegram/Discord bots**, **n8n workflows**, or a **chatbot that answers from their own docs** — without a full-time engineer.
 
@@ -37,10 +35,9 @@ I help founders, operators and crypto teams who need **scraping → CSV**, **spr
 | Shopify import cleaner | **$119** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/shopify-importer/) |
 | B2B lead pipeline (OSM) | **$99** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/lead-pipeline/) |
 | Voice receptionist (browser) | **$159** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/voice-receptionist/) |
-| Landing page (24h) | **$199** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/) |
+| Landing page | **$199** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/) |
 | Wallet tracker (read-only) | **$119** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/) |
 | Google Sheets Apps Script pack | **$49**/script | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) |
-| Localization — website & app, marketing transcreation, bulk e-commerce listings, AI-translation post-editing / QA (EN ↔ ES, DE, PT-BR, IT, NL, JA, ZH, KO, AR) | Paused | [Details](#localization--transcreation) |
 
 Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoautomation/demos/)
 
@@ -50,14 +47,6 @@ Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoaut
 |---|---|---|---|
 | Multi-sector tenders (cleaning, security, IT, training) | Analyse a sample RFP / ITT, check compliance forms and pricing schedule, export a Word technical proposal ready to review. No sign-up, sources cited. | **On quote** | [Live](https://nyyoautomation.github.io/nyyo-tender-sectors/) |
 | Architecture & engineering firms | Methodology statement on the scoring grid, spec / bill of quantities / drawings cross-check, site minutes. No sign-up, sources cited, contradiction check. | **On quote** | [Live](https://nyyoautomation.github.io/nyyo-archi-be-demo/) |
-
----
-
-## Localization & transcreation
-
-Website & app localization, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, IT, NL, JA, ZH, KO, AR.
-
-Currently paused — not taking new translation orders.
 
 ---
 
@@ -120,7 +109,7 @@ Every live demo page lists the real platforms we connect — website widgets, Te
 
 **How we set it up (all packages):**
 1. **You send us** docs, a sample file, or access to the tool you already use.
-2. **We build & connect** in **24–72h** (fixed scope).
+2. **We build & connect** (fixed scope).
 3. **You get the result** + a handover doc + a short video.
 
 **Hosting:** we can host it, or we deploy on **your** Vercel / Cloudflare / server / bot account — **no lock-in**.
