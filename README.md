@@ -6,7 +6,7 @@
 
 Every Nyyo build includes a free 1-click install kit — WordPress, Shopify, n8n, Sheets, and chat apps.
 
-**Localization:** Website & app localization, marketing transcreation, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, FR, IT, NL, JA, ZH, KO, AR.
+**Localization:** Website & app localization, marketing transcreation, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, IT, NL, JA, ZH, KO, AR.
 
 I help founders, operators and crypto teams who need **scraping → CSV**, **spreadsheet cleanup**, **Telegram/Discord bots**, **n8n workflows**, or a **chatbot that answers from their own docs** — without a full-time engineer.
 
@@ -39,7 +39,7 @@ I help founders, operators and crypto teams who need **scraping → CSV**, **spr
 | Landing page (24h) | **$100** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/) |
 | Wallet tracker (read-only) | **$60** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/) |
 | Google Sheets Apps Script pack | **$30**/script | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) |
-| Localization — website & app, marketing transcreation, bulk e-commerce listings, AI-translation post-editing / QA (EN ↔ ES, DE, PT-BR, FR, IT, NL, JA, ZH, KO, AR) | **$0.06–0.35**/word · min **$35** | [Details](#localization--transcreation) |
+| Localization — website & app, marketing transcreation, bulk e-commerce listings, AI-translation post-editing / QA (EN ↔ ES, DE, PT-BR, IT, NL, JA, ZH, KO, AR) | **$0.06–0.35**/word · min **$35** | [Details](#localization--transcreation) |
 
 Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoautomation/demos/)
 
@@ -47,7 +47,7 @@ Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoaut
 
 ## Localization & transcreation
 
-Website & app localization, marketing transcreation, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, FR, IT, NL, JA, ZH, KO, AR.
+Website & app localization, marketing transcreation, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, IT, NL, JA, ZH, KO, AR.
 
 | Service | Per word |
 |---|---|
