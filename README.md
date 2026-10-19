@@ -4,6 +4,8 @@
 
 🟢 Available now · Remote · Worldwide · Typical delivery 24–72h
 
+**Languages:** Translation & localization (EN ↔ ES, DE, PT, FR, IT and more)
+
 I help founders, operators and crypto teams who need **scraping → CSV**, **spreadsheet cleanup**, **Telegram/Discord bots**, **n8n workflows**, or a **chatbot that answers from their own docs** — without a full-time engineer.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
@@ -35,6 +37,7 @@ I help founders, operators and crypto teams who need **scraping → CSV**, **spr
 | Landing page (24h) | **$100** | [Live](https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/landing-kit/index.html) |
 | Wallet tracker (read-only) | **$60** | [Live](https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/wallet-tracker/index.html) |
 | Google Sheets Apps Script pack | **$30**/script | [Live](https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/sheets-automations/index.html) |
+| Translation & localization (EN ↔ ES, DE, PT, FR, IT and more) | **$0.04**/word | — |
 
 Extra demos gallery: [**open gallery**](https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/index.html)
 
@@ -71,11 +74,3 @@ First **100 rows** sample free on scrape/sheet jobs.
 2. Or **[LaborX — Nyyo Automation](https://laborx.com/freelancers/users/id475124)**
 
 Crypto: USDC / SOL / ETH / BTC. Also: WURK · Taskmarket · AIBTC · LaborX
-
-<details>
-<summary>🇫🇷 Français</summary>
-
-**Nyyo Automation** — scraping, tableurs, bots, n8n, assistants IA sur vos docs, Shopify, leads OSM, landings, trackers wallets, Apps Script.
-Prix fixes, crypto OK, livraison typique 24–72h.
-
-</details>
