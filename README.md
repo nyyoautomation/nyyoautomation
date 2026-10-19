@@ -83,6 +83,35 @@ First **100 rows** sample free on scrape/sheet jobs.
 | [Knots analysis](https://gist.github.com/nyyoautomation/325306ed00c1dd152f27416b067f10a0) | Bitcoin ecosystem |
 | [Gable Guardians analysis](https://gist.github.com/nyyoautomation/01af086217a5f5a5e5e4cd4a603d6219) | Project analysis |
 
+
+
+
+
+## Free install kit included
+
+**Install kit: free, included with every package** — no add-on fee for WordPress plugins, Shopify snippets, universal embeds, n8n JSON, Apps Script, or sync configs.
+
+- Docs chatbot: [WordPress ZIP + full kit](https://nyyoautomation.github.io/nyyo-docs-chatbot/#install)
+- Scrape dashboard: Sheets / Airtable / webhook examples on the [live demo](https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/)
+- n8n workflows: importable JSON on the [live demo](https://nyyoautomation.github.io/nyyo-n8n-workflows/)
+- Sheets: Apps Script file in the [Sheets demo](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/)
+
+Anything not built yet is marked **on request (free)** at handover.
+
+
+## Where it plugs in (integrations)
+
+Every live demo page lists the real platforms we connect — website widgets, Telegram/Slack/Discord, Google Sheets, Shopify Admin, n8n/Make, Vercel/Cloudflare, webhooks, and more.
+
+**How we set it up (all packages):**
+1. **You send us** docs, a sample file, or access to the tool you already use.
+2. **We build & connect** in **24–72h** (fixed scope).
+3. **You get the result** + a handover doc + a short video.
+
+**Hosting:** we can host it, or we deploy on **your** Vercel / Cloudflare / server / bot account — **no lock-in**.
+
+See the [demo gallery](https://nyyoautomation.github.io/nyyoautomation/demos/#integrations) for the full chip list per service.
+
 ## Hire me
 
 1. Open an **issue** with: goal · deadline · budget  
