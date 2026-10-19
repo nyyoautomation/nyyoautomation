@@ -48,6 +48,7 @@ Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoaut
 | Multi-sector tenders (cleaning, security, IT, training) | Analyse a sample RFP / ITT, check compliance forms and pricing schedule, export a Word technical proposal ready to review. No sign-up, sources cited. | **On quote** | [Live](https://nyyoautomation.github.io/nyyo-tender-sectors/) |
 | Architecture & engineering firms | Methodology statement on the scoring grid, spec / bill of quantities / drawings cross-check, site minutes. No sign-up, sources cited, contradiction check. | **On quote** | [Live](https://nyyoautomation.github.io/nyyo-archi-be-demo/) |
 | Insurance brokers | Quote comparison on one grid with a draft advice record, coverage gaps at renewal, pre-filled claim notice. Est. 4 h 35 → 35 min on a fictional sample. No sign-up, sources cited, contradiction check. | **On quote** | [Live](https://nyyoautomation.github.io/nyyo-courtiers-demo/) |
+| Property managers | General meeting minutes from the attendance sheet and votes, contractor bid comparison on one grid, sourced reply to an owner complaint. No sign-up, sources cited, contradiction check. | **On quote** | [Live](https://nyyoautomation.github.io/nyyo-syndics-demo/) |
 
 ---
 
