@@ -1,0 +1,13 @@
+/* Gallery-only additions on top of design-system.css (copied verbatim from Nyyo Design). Tokens only, no hard-coded colours. */
+.badge, .eyebrow, .steps li::before { font-size: var(--fs-13); }          /* page rule: no text under 13 px */
+.site-footer__legal { font-size: var(--fs-13); }
+[hidden] { display: none !important; }
+.gal-included { margin-top: var(--sp-8); }
+.gal-included h3, .gal-contact h2 { font-size: var(--fs-20); margin: 0 0 var(--sp-3); }
+.gal-list { list-style: none; margin: 0 0 var(--sp-4); padding: 0; display: grid; gap: var(--sp-2); font-size: var(--fs-14); color: var(--text-muted); }
+.gal-list li { display: flex; gap: var(--sp-2); align-items: flex-start; }
+.gal-list svg { flex: none; color: var(--success); margin-top: 1px; }
+.gal-plugs { list-style: none; margin: 0 0 var(--sp-4); padding: 0; display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.gal-plugs li { display: inline-flex; align-items: center; min-height: 32px; padding: 0 var(--sp-3); border: 1px solid var(--border); border-radius: var(--r-pill); background: var(--surface-2); font-size: var(--fs-14); color: var(--text); }
+.gal-contact { display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: center; justify-content: space-between; }
+.gal-contact p { margin: 0; }

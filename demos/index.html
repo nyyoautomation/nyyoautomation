@@ -1,848 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nyyo Automation — Live demos</title>
-  <meta name="description" content="Try live automation, AI and scraping demos. No signup. Fixed price. Hire Nyyo Automation on LaborX." />
-  <meta name="theme-color" content="#050814" />
-  <meta property="og:title" content="Nyyo Automation — Live demos" />
-  <meta property="og:description" content="Try automation & AI demos. Fixed price. Available on LaborX." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/assets/logo.png" />
-  <link rel="icon" href="./assets/logo.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --void: #050814;
-      --abyss: #0a0f2c;
-      --panel: rgba(18, 28, 52, 0.72);
-      --panel-solid: #121c34;
-      --border: rgba(120, 160, 255, 0.14);
-      --text: #e8eefc;
-      --muted: #8b9bb8;
-      --azure: #3d8bff;
-      --lime: #39ff88;
-      --radius: 18px;
-      --glow-a: 0 0 40px rgba(61, 139, 255, 0.35);
-      --glow-l: 0 0 40px rgba(57, 255, 136, 0.28);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100%;
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: var(--void);
-      line-height: 1.55;
-      overflow-x: hidden;
-    }
-    body::before {
-      content: "";
-      position: fixed; inset: 0; pointer-events: none; z-index: 0;
-      background:
-        radial-gradient(ellipse 70% 50% at 12% -10%, rgba(61,139,255,.22), transparent 55%),
-        radial-gradient(ellipse 60% 45% at 95% 15%, rgba(57,255,136,.14), transparent 50%),
-        radial-gradient(ellipse 50% 40% at 50% 110%, rgba(61,139,255,.08), transparent 55%);
-    }
-    a { color: var(--lime); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .shell { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: 0 20px 96px; }
-
-    /* Nav */
-    .nav {
-      position: sticky; top: 0; z-index: 50;
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      padding: 12px 0;
-      margin: 0 -4px;
-      padding-inline: 4px;
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      background: rgba(5, 8, 20, 0.72);
-      border-bottom: 1px solid transparent;
-    }
-    .nav.scrolled { border-bottom-color: var(--border); }
-    .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: -0.02em; }
-    .brand:hover { text-decoration: none; }
-    .brand img { width: 36px; height: 36px; border-radius: 10px; box-shadow: var(--glow-a); }
-    .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
-    .nav-links a.ghost {
-      color: var(--muted); font-size: 0.88rem; font-weight: 500;
-      padding: 8px 12px; border-radius: 999px;
-    }
-    .nav-links a.ghost:hover { color: var(--text); background: rgba(255,255,255,.04); text-decoration: none; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      border: 0; border-radius: 999px; cursor: pointer;
-      font-family: inherit; font-weight: 600; font-size: 0.9rem;
-      padding: 11px 18px; text-decoration: none !important;
-      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-    }
-    .btn:focus-visible { outline: 2px solid var(--azure); outline-offset: 3px; }
-    .btn-primary {
-      color: #041018;
-      background: linear-gradient(135deg, #3d8bff 0%, #39ff88 100%);
-      box-shadow: 0 8px 28px rgba(61,139,255,.28);
-    }
-    .btn-primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
-    .btn-ghost {
-      color: var(--text);
-      background: rgba(255,255,255,.04);
-      border: 1px solid var(--border);
-    }
-    .btn-ghost:hover { border-color: rgba(61,139,255,.4); background: rgba(61,139,255,.08); }
-
-
-    .kit-banner {
-      margin: 0 0 18px; padding: 12px 16px; border-radius: 14px;
-      border: 1px solid rgba(57,255,136,.28);
-      background: rgba(57,255,136,.08);
-      color: var(--text); font-size: 0.92rem; line-height: 1.45;
-    }
-    .kit-strip {
-      margin: 8px 0 18px; padding: 18px 18px 16px;
-      border-radius: 18px; border: 1px solid var(--border);
-      background: var(--panel); backdrop-filter: blur(12px);
-    }
-    .kit-strip h2 { margin: 0 0 6px; font-size: 1.15rem; letter-spacing: -0.02em; }
-    .kit-strip p { margin: 0; color: var(--muted); font-size: 0.88rem; }
-    .card-kit {
-      display: block; margin-top: 6px;
-      font-size: 0.72rem; font-weight: 600; color: var(--lime);
-      letter-spacing: 0.01em;
-    }
-    .pricing-include {
-      margin: 28px 0 8px; padding: 22px 20px;
-      border-radius: 20px; border: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(61,139,255,.14), rgba(57,255,136,.07));
-    }
-    .pricing-include h2 { margin: 0 0 10px; font-size: 1.25rem; letter-spacing: -0.02em; }
-    .pricing-include ul { margin: 0 0 12px; padding-left: 1.15rem; color: var(--muted); }
-    .pricing-include li { margin: 5px 0; }
-    .pricing-include .close { margin: 0; color: var(--text); font-weight: 600; font-size: 0.95rem; }
-    .badge.kit-free {
-      color: #041018;
-      background: linear-gradient(135deg, #3d8bff, #39ff88);
-      border-color: transparent;
-      font-weight: 700;
-    }
-
-    /* Hero */
-    .hero {
-      display: grid; gap: 28px; align-items: center;
-      padding: 36px 0 28px;
-      grid-template-columns: 1.15fr 0.85fr;
-    }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.75rem; font-weight: 600; color: var(--lime);
-      background: rgba(57,255,136,.1); border: 1px solid rgba(57,255,136,.32);
-      padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
-    }
-    .badge .pulse {
-      width: 7px; height: 7px; border-radius: 50%; background: var(--lime);
-      box-shadow: 0 0 0 0 rgba(57,255,136,.55);
-      animation: pulse 2s ease-out infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(57,255,136,.55); }
-      70% { box-shadow: 0 0 0 10px rgba(57,255,136,0); }
-      100% { box-shadow: 0 0 0 0 rgba(57,255,136,0); }
-    }
-    .hero h1 {
-      margin: 0 0 12px; font-size: clamp(2rem, 4.2vw, 3rem);
-      letter-spacing: -0.035em; line-height: 1.12; font-weight: 800;
-    }
-    .hero h1 .grad {
-      background: linear-gradient(135deg, #7eb6ff, #39ff88);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .hero p.lead { margin: 0 0 22px; color: var(--muted); font-size: 1.05rem; max-width: 36rem; }
-    .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
-    .proof {
-      display: flex; flex-wrap: wrap; gap: 8px 18px;
-      color: var(--muted); font-size: 0.82rem;
-    }
-    .proof strong { color: var(--text); font-weight: 600; }
-
-    /* Preview panel */
-    .preview {
-      position: relative;
-      border-radius: 22px;
-      padding: 1px;
-      background: linear-gradient(145deg, rgba(61,139,255,.55), rgba(57,255,136,.35), rgba(61,139,255,.15));
-      box-shadow: var(--glow-a), 0 24px 60px rgba(0,0,0,.45);
-    }
-    .preview-inner {
-      border-radius: 21px;
-      background: linear-gradient(180deg, rgba(14,22,42,.95), rgba(8,12,28,.98));
-      padding: 16px;
-      overflow: hidden;
-      min-height: 280px;
-    }
-    .preview-bar { display: flex; gap: 6px; margin-bottom: 14px; }
-    .preview-bar i { width: 9px; height: 9px; border-radius: 50%; background: #2a3550; display: block; }
-    .preview-bar i:nth-child(1) { background: #ff6b7a; }
-    .preview-bar i:nth-child(2) { background: #ffd166; }
-    .preview-bar i:nth-child(3) { background: #39ff88; }
-    .fake-chat { display: flex; flex-direction: column; gap: 10px; }
-    .bubble {
-      max-width: 92%; padding: 10px 12px; border-radius: 12px; font-size: 0.82rem; line-height: 1.4;
-      opacity: 0; transform: translateY(8px);
-      animation: fadeUp .45s ease forwards;
-    }
-    .bubble.user {
-      align-self: flex-end;
-      background: rgba(61,139,255,.22); border: 1px solid rgba(61,139,255,.35);
-      animation-delay: .3s;
-    }
-    .bubble.bot {
-      align-self: flex-start;
-      background: rgba(255,255,255,.04); border: 1px solid var(--border);
-      animation-delay: .9s;
-    }
-    .bubble.cite {
-      font-size: 0.72rem; color: var(--muted);
-      border-left: 3px solid var(--azure);
-      animation-delay: 1.4s;
-    }
-    .typing {
-      display: inline-flex; gap: 4px; align-items: center; height: 14px;
-      animation: fadeUp .3s ease forwards; animation-delay: .65s; opacity: 0;
-    }
-    .typing span {
-      width: 5px; height: 5px; border-radius: 50%; background: var(--muted);
-      animation: blink 1.1s infinite ease-in-out;
-    }
-    .typing span:nth-child(2) { animation-delay: .15s; }
-    .typing span:nth-child(3) { animation-delay: .3s; }
-    @keyframes blink {
-      0%, 80%, 100% { opacity: .25; transform: translateY(0); }
-      40% { opacity: 1; transform: translateY(-2px); }
-    }
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .preview-caption {
-      margin-top: 12px; font-size: 0.75rem; color: var(--muted); text-align: center;
-    }
-
-    /* Filters */
-    .section-head {
-      display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between;
-      gap: 12px; margin: 18px 0 14px;
-    }
-    .section-head h2 { margin: 0; font-size: 1.25rem; letter-spacing: -0.02em; }
-    .section-head p { margin: 4px 0 0; color: var(--muted); font-size: 0.88rem; }
-    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
-    .filters button {
-      font-family: inherit; font-size: 0.8rem; font-weight: 560;
-      padding: 8px 14px; border-radius: 999px; cursor: pointer;
-      color: var(--muted); background: transparent;
-      border: 1px solid var(--border);
-      transition: background .18s, color .18s, border-color .18s, transform .18s;
-    }
-    .filters button:hover { color: var(--text); border-color: rgba(61,139,255,.4); }
-    .filters button.active {
-      color: #041018;
-      background: linear-gradient(135deg, #3d8bff, #39ff88);
-      border-color: transparent;
-    }
-    .filters button:focus-visible { outline: 2px solid var(--azure); outline-offset: 2px; }
-
-    /* Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .card {
-      position: relative;
-      display: flex; flex-direction: column; gap: 10px;
-      padding: 18px 18px 16px;
-      border-radius: var(--radius);
-      background: var(--panel);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      text-decoration: none !important; color: inherit;
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-      min-height: 196px;
-      overflow: hidden;
-    }
-    .card::before {
-      content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
-      background: linear-gradient(90deg, var(--azure), var(--lime));
-      opacity: .7;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(61,139,255,.4);
-      box-shadow: 0 16px 40px rgba(0,0,0,.35), var(--glow-a);
-    }
-    .card.hidden { display: none; }
-    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-    .icon svg, .icon i { width: 20px; height: 20px; stroke: #7eb6ff; }
-    .icon {
-      width: 40px; height: 40px; border-radius: 12px;
-      display: grid; place-items: center; font-size: 1.15rem;
-      background: rgba(61,139,255,.12); border: 1px solid rgba(61,139,255,.22);
-    }
-    .live {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.68rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
-      color: var(--lime);
-      background: rgba(57,255,136,.1); border: 1px solid rgba(57,255,136,.28);
-      padding: 3px 8px; border-radius: 999px;
-    }
-    .live::before {
-      content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--lime);
-      animation: pulse 2s ease-out infinite;
-    }
-    .card h3 { margin: 0; font-size: 1.05rem; letter-spacing: -0.02em; }
-    .card p { margin: 0; color: var(--muted); font-size: 0.86rem; flex: 1; }
-    .card-foot {
-      display: flex; align-items: center; justify-content: space-between; gap: 8px;
-      margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--border);
-    }
-    .price { font-weight: 700; font-size: 0.92rem;
-      background: linear-gradient(135deg, #9ec2ff, #39ff88);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .open { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
-    .card:hover .open { color: var(--lime); }
-
-    /* CTA band */
-    .cta-band {
-      margin-top: 40px;
-      padding: 28px 24px;
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(61,139,255,.16), rgba(57,255,136,.08));
-      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
-    }
-    .cta-band h2 { margin: 0 0 4px; font-size: 1.35rem; letter-spacing: -0.02em; }
-    .cta-band p { margin: 0; color: var(--muted); font-size: 0.92rem; }
-    .cta-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-
-    footer {
-      margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--border);
-      color: var(--muted); font-size: 0.8rem;
-      display: flex; flex-wrap: wrap; gap: 10px 18px; justify-content: space-between;
-    }
-    footer a { color: var(--muted); }
-    footer a:hover { color: var(--lime); }
-
-    /* Mobile sticky hire */
-    .mobile-cta {
-      display: none;
-      position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60;
-      padding: 12px; border-radius: 16px;
-      background: rgba(10, 15, 44, 0.92);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 12px 40px rgba(0,0,0,.5);
-    }
-    .mobile-cta .btn { width: 100%; }
-
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding-top: 24px; }
-      .preview { order: -1; max-width: 420px; }
-      .grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 640px) {
-      .shell { padding-bottom: 110px; }
-      .nav-links a.ghost { display: none; }
-      .grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.85rem; }
-      .mobile-cta { display: block; }
-      .preview-inner { min-height: 220px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important; transition: none !important;
-      }
-      .bubble, .typing { opacity: 1; transform: none; }
-    }
-  /* Where it plugs in / How we set it up / Hosting */
-.nyyo-integrate {
-  margin: 18px 0 8px;
-  display: grid;
-  gap: 12px;
-}
-.nyyo-integrate .block {
-  background: var(--panel, rgba(18,28,52,.72));
-  border: 1px solid var(--border, rgba(120,160,255,.14));
-  border-radius: 18px;
-  padding: 18px 18px 16px;
-  backdrop-filter: blur(12px);
-}
-.nyyo-integrate .block h2 {
-  margin: 0 0 6px;
-  font-size: 1.05rem;
-  letter-spacing: -0.02em;
-}
-.nyyo-integrate .block .sub {
-  margin: 0 0 12px;
-  color: var(--muted, #8b9bb8);
-  font-size: 0.88rem;
-}
-.plug-chips {
-  display: flex; flex-wrap: wrap; gap: 8px;
-}
-.plug-chip {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--border, rgba(120,160,255,.14));
-  background: rgba(255,255,255,.03);
-  font-size: 0.82rem; font-weight: 600; color: var(--text, #e8eefc);
-}
-.plug-chip .ic {
-  width: 22px; height: 22px; border-radius: 6px;
-  display: grid; place-items: center;
-  font-size: 0.72rem; font-weight: 800;
-  background: linear-gradient(135deg, rgba(61,139,255,.25), rgba(57,255,136,.18));
-  color: #e8eefc;
-}
-.setup-steps {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0;
-  padding: 0; list-style: none;
-}
-.setup-steps li {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border, rgba(120,160,255,.14));
-  border-radius: 14px; padding: 14px;
-}
-.setup-steps .n {
-  display: inline-grid; place-items: center;
-  width: 26px; height: 26px; border-radius: 8px; margin-bottom: 8px;
-  background: rgba(61,139,255,.15); color: var(--lime, #39ff88);
-  font-weight: 800; font-size: 0.8rem;
-}
-.setup-steps h3 { margin: 0 0 4px; font-size: 0.92rem; }
-.setup-steps p { margin: 0; color: var(--muted, #8b9bb8); font-size: 0.84rem; }
-.host-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-}
-.host-card {
-  border-radius: 14px; padding: 14px;
-  border: 1px solid var(--border, rgba(120,160,255,.14));
-  background: rgba(255,255,255,.03);
-}
-.host-card strong { display: block; margin-bottom: 4px; }
-.host-card p { margin: 0; color: var(--muted, #8b9bb8); font-size: 0.84rem; }
-.embed-box {
-  margin-top: 12px;
-  border-radius: 12px;
-  border: 1px solid var(--border, rgba(120,160,255,.14));
-  background: #070b18;
-  overflow: hidden;
-}
-.embed-box .embed-label {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 8px 12px; font-size: 0.72rem; color: var(--muted, #8b9bb8);
-  border-bottom: 1px solid var(--border, rgba(120,160,255,.14));
-  background: rgba(255,255,255,.02);
-}
-.embed-box pre {
-  margin: 0; padding: 12px 14px; overflow-x: auto;
-  font-size: 0.78rem; line-height: 1.45; color: #cfe0ff;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-}
-.embed-box code { color: #9ec2ff; }
-.honest-note {
-  margin: 10px 0 0; font-size: 0.78rem; color: var(--muted, #8b9bb8);
-}
-@media (max-width: 700px) {
-  .setup-steps, .host-grid { grid-template-columns: 1fr; }
-}
-
-  /* Free install kit card */
-.nyyo-install-kit {
-  margin: 12px 0 8px;
-  border-radius: 18px;
-  padding: 1px;
-  background: linear-gradient(145deg, rgba(61,139,255,.55), rgba(57,255,136,.35));
-  box-shadow: 0 16px 40px rgba(0,0,0,.28);
-}
-.nyyo-install-kit-inner {
-  border-radius: 17px;
-  background: linear-gradient(165deg, rgba(14,22,42,.97), rgba(8,12,28,.98));
-  padding: 18px 18px 16px;
-}
-.nyyo-install-kit h2 { margin: 0 0 6px; font-size: 1.05rem; letter-spacing: -0.02em; }
-.nyyo-install-kit .free-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.72rem; font-weight: 700; color: #041018;
-  background: linear-gradient(135deg, #3d8bff, #39ff88);
-  padding: 4px 10px; border-radius: 999px; margin-bottom: 10px;
-}
-.nyyo-install-kit .sub { margin: 0 0 12px; color: var(--muted,#8b9bb8); font-size: 0.88rem; }
-.kit-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
-.kit-actions a, .kit-actions button {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 9px 14px; border-radius: 999px; font: 600 0.8rem system-ui,sans-serif;
-  text-decoration: none; cursor: pointer; border: 1px solid var(--border,rgba(120,160,255,.14));
-  color: var(--text,#e8eefc); background: rgba(255,255,255,.04);
-}
-.kit-actions a.primary, .kit-actions button.primary {
-  border: 0; color: #041018;
-  background: linear-gradient(135deg, #3d8bff, #39ff88);
-}
-.kit-list { margin: 8px 0 0; padding-left: 1.1rem; color: var(--muted,#8b9bb8); font-size: 0.84rem; }
-.kit-list li { margin: 3px 0; }
-.kit-list .ready { color: var(--lime,#39ff88); }
-.kit-list .soon { color: var(--warn,#ffd166); }
-
-  </style>
-  <link rel="stylesheet" href="./integrate.css" />
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Live demos · Nyyo Automation</title>
+<meta name="description" content="Try live AI, automation and data demos on fictional sample files. No sign-up. Fixed price or on quote, available on LaborX. Remote · Worldwide.">
+<meta property="og:title" content="Live demos · Nyyo Automation">
+<meta property="og:description" content="AI and automation demos you can try before you buy. Fictional data, no sign-up. Available on LaborX.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nyyoautomation.github.io/nyyoautomation/demos/">
+<link rel="canonical" href="https://nyyoautomation.github.io/nyyoautomation/demos/">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./design-system.css">
+<link rel="stylesheet" href="./gallery-b.css">
 </head>
 <body>
-  <div class="shell">
-    <nav class="nav" id="nav" aria-label="Primary">
-      <a class="brand" href="https://github.com/nyyoautomation">
-        <img src="./assets/logo.png" alt="" width="36" height="36" />
-        <span>Nyyo Automation</span>
-      </a>
-      <div class="nav-links">
-        <a class="ghost" href="#demos">Demos</a>
-        <a class="ghost" href="https://github.com/nyyoautomation">GitHub</a>
-        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-      </div>
-    </nav>
-
-    <header class="hero">
-      <div>
-        <div class="badge kit-free">FREE · 1-click install kit included</div>
-        <p class="kit-banner">Every build ships with a free 1-click install kit — WordPress, Shopify, Wix/Webflow/HTML, Telegram/Slack/Discord, n8n/Make, Sheets & webhooks.</p>
-        <h1>Automation &amp; AI you can <span class="grad">try in 3 seconds</span></h1>
-        <p class="lead">
-          Interactive proofs — chatbots, scrapers, n8n workflows, dashboards.
-          Fixed price, available on LaborX, Remote · Worldwide.
-        </p>
-        <p class="lead" style="margin-top:-8px;font-size:.95rem">No hunting for plugins. You get the install kit with the job — copy, click, live.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#demos">Browse demos</a>
-          <a class="btn btn-ghost" href="https://nyyoautomation.github.io/nyyo-docs-chatbot/">Try docs chatbot</a>
-        </div>
-        <div class="proof" aria-label="Highlights">
-          <span><strong>From $45</strong> fixed packages</span>
-          <span><strong>Available</strong> on LaborX</span>
-          <span><strong>Free 1-click kit</strong> with every offer</span>
-        </div>
-      </div>
-      <aside class="preview" aria-label="Animated demo preview" aria-hidden="false">
-        <div class="preview-inner">
-          <div class="preview-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="fake-chat">
-            <div class="bubble user">What’s the Growth plan price?</div>
-            <div class="typing" id="typing" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="bubble bot" id="botBubble" hidden>
-              Growth is <strong>$29 / month</strong> — 5 users and 2,000 API calls.
-            </div>
-            <div class="bubble cite" id="citeBubble" hidden>
-              Source · Pricing &amp; Subscriptions · demo-store/pricing.md
-            </div>
-          </div>
-          <p class="preview-caption">Preview of the docs chatbot · answers with citations</p>
-        </div>
-      </aside>
-    </header>
-
-    <div class="section-head" id="demos">
-      <div>
-        <h2>All live demos</h2>
-        <p>Click a card — opens the interactive page. Browser-only where noted.</p>
-      </div>
-    </div>
-
-    
-    <section class="kit-strip" aria-label="Install kit overview" id="one-click-kit">
-      <h2>Install in one click — kit included free</h2>
-      <p>WordPress plugin · Shopify embed · Wix/Webflow/HTML snippet · Telegram / Slack / Discord links · importable n8n/Make workflows · Google Sheets copy + scripts · Sheets / Airtable / webhook connectors.</p>
-    </section>
-
-    <div class="filters" role="tablist" aria-label="Filter demos">
-      <button type="button" class="active" data-filter="all" role="tab" aria-selected="true">All</button>
-      <button type="button" data-filter="ai" role="tab" aria-selected="false">AI</button>
-      <button type="button" data-filter="automation" role="tab" aria-selected="false">Automation</button>
-      <button type="button" data-filter="data" role="tab" aria-selected="false">Data</button>
-      <button type="button" data-filter="bots" role="tab" aria-selected="false">Bots</button>
-      <button type="button" data-filter="web" role="tab" aria-selected="false">Web</button>
-      <button type="button" data-filter="industry" role="tab" aria-selected="false">Industry</button>
-    </div>
-
-    <div class="grid" id="grid">
-      <!-- Industry demos (on quote) -->
-      <a class="card" data-cat="industry" href="https://nyyoautomation.github.io/nyyo-tender-sectors/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="file-check"></i></div><span class="live">Live</span></div>
-        <h3>Multi-sector tenders</h3>
-        <p>Cleaning, security, IT, training: analyse a sample RFP, check compliance forms, export a Word proposal. No sign-up, sources cited.</p>
-        <div class="card-foot"><span class="price">On quote</span><span class="open">Open demo →</span></div>
-      </a>
-      <a class="card" data-cat="industry" href="https://nyyoautomation.github.io/nyyo-archi-be-demo/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="drafting-compass"></i></div><span class="live">Live</span></div>
-        <h3>Architecture &amp; engineering firms</h3>
-        <p>Methodology statement, spec / bill of quantities / drawings cross-check, site minutes. Sources cited, contradiction check.</p>
-        <div class="card-foot"><span class="price">On quote</span><span class="open">Open demo →</span></div>
-      </a>
-      <a class="card" data-cat="industry" href="https://nyyoautomation.github.io/nyyo-courtiers-demo/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="shield-check"></i></div><span class="live">Live</span></div>
-        <h3>Insurance brokers</h3>
-        <p>Quote comparison &amp; advice record, renewal coverage gaps, pre-filled claim notice. Est. 4 h 35 → 35 min on a fictional sample. Sources cited, contradiction check.</p>
-        <div class="card-foot"><span class="price">On quote</span><span class="open">Open demo →</span></div>
-      </a>
-      <!-- Flagship / separate repos -->
-      <a class="card" data-cat="ai" href="https://nyyoautomation.github.io/nyyo-docs-chatbot/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="message-square"></i></div><span class="live">Live</span></div>
-        <h3>Docs chatbot (RAG)</h3>
-        <p>Ask questions on your business docs — answers with source citations. Widget or Telegram.</p>
-        <div class="card-foot"><span class="price">from $149</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="automation" href="https://nyyoautomation.github.io/nyyo-n8n-workflows/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="workflow"></i></div><span class="live">Live</span></div>
-        <h3>n8n / Make AI workflows</h3>
-        <p>Production-shape automations with visible steps, retries and run history.</p>
-        <div class="card-foot"><span class="price">from $149</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="web" href="https://nyyoautomation.github.io/nyyo-vibe-code-rescue/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="wrench"></i></div><span class="live">Live</span></div>
-        <h3>Vibe-code rescue</h3>
-        <p>Before/after: fix broken Lovable / Cursor / v0 landings fast.</p>
-        <div class="card-foot"><span class="price">from $49</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="data" href="https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="radio"></i></div><span class="live">Live</span></div>
-        <h3>Live scrape dashboard</h3>
-        <p>Watch a scraper fill a live KPI board — prices, stock, alerts.</p>
-        <div class="card-foot"><span class="price">On quote</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="bots" href="https://nyyoautomation.github.io/nyyo-telegram-demo/simulator/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="bot"></i></div><span class="live">Live</span></div>
-        <h3>Telegram / Discord bots</h3>
-        <p>Browser simulator of alert &amp; support bots — menus, buttons, flows.</p>
-        <div class="card-foot"><span class="price">from $149</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="data" href="https://nyyoautomation.github.io/nyyo-invoice-to-excel/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="file-text"></i></div><span class="live">Live</span></div>
-        <h3>Invoice → Excel</h3>
-        <p>Messy PDFs to a clean spreadsheet — try sample extraction in-browser.</p>
-        <div class="card-foot"><span class="price">Paused</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-
-            <a class="card" data-cat="data" href="https://nyyoautomation.github.io/nyyo-spreadsheet-demo/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="table-2"></i></div><span class="live">Live</span></div>
-        <h3>Spreadsheet cleanup</h3>
-        <p>Messy sheet → clean table. Before/after example you can toggle.</p>
-        <div class="card-foot"><span class="price">from $45</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-
-      <!-- Profile-hosted demos -->
-      <a class="card" data-cat="ai" href="./inbox-ai/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="inbox"></i></div><span class="live">Live</span></div>
-        <h3>Inbox AI</h3>
-        <p>Sort, draft and tag support tickets — fewer repetitive replies.</p>
-        <div class="card-foot"><span class="price">from $149</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="data" href="./instant-dashboard/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="bar-chart-3"></i></div><span class="live">Live</span></div>
-        <h3>Instant CSV dashboard</h3>
-        <p>Drop a CSV → KPIs and charts in the browser. No backend.</p>
-        <div class="card-foot"><span class="price">On quote</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="data" href="./shopify-importer/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="shopping-cart"></i></div><span class="live">Live</span></div>
-        <h3>Shopify import cleaner</h3>
-        <p>Normalize product CSVs before import — fewer failed uploads.</p>
-        <div class="card-foot"><span class="price">Paused</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="data" href="./lead-pipeline/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="map-pin"></i></div><span class="live">Live</span></div>
-        <h3>B2B lead pipeline</h3>
-        <p>OpenStreetMap business leads — no personal emails scraped.</p>
-        <div class="card-foot"><span class="price">On quote</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="bots" href="./voice-receptionist/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="mic"></i></div><span class="live">Live</span></div>
-        <h3>Voice receptionist</h3>
-        <p>Browser voice flow for booking / FAQ — hands-free demo.</p>
-        <div class="card-foot"><span class="price">On quote</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="web" href="./landing-kit/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="rocket"></i></div><span class="live">Live</span></div>
-        <h3>Landing page kit</h3>
-        <p>SaaS, local business &amp; Web3 templates.</p>
-        <div class="card-foot"><span class="price">Paused</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="data" href="./wallet-tracker/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="eye"></i></div><span class="live">Live</span></div>
-        <h3>Wallet tracker</h3>
-        <p>Read-only portfolio board for public addresses — alerts ready.</p>
-        <div class="card-foot"><span class="price">On quote</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-      <a class="card" data-cat="automation" href="./sheets-automations/">
-        <div class="card-top"><div class="icon" aria-hidden="true"><i data-lucide="sheet"></i></div><span class="live">Live</span></div>
-        <h3>Sheets automations</h3>
-        <p>Google Apps Script pack — clean, notify, sync without Zapier.</p>
-        <div class="card-foot"><span class="price">from $45</span><span class="open">Open demo →</span></div>
-        <span class="card-kit">+ Free 1-click install kit with every paid build</span>
-      </a>
-    </div>
-
-    <!-- NYYO_INTEGRATE_START -->
-
-<section class="nyyo-integrate" aria-label="How integrations work" id="integrations">
-  <div class="block">
-    <h2>Where these demos plug in</h2>
-    <p class="sub">Every package ships with real connectors — not a slideshow. Open a card for the full list.</p>
-    <div class="plug-chips" role="list">
-      <span class="plug-chip"><span class="ic">&lt;/&gt;</span>Website widget</span>
-      <span class="plug-chip"><span class="ic">Tg</span>Telegram</span>
-      <span class="plug-chip"><span class="ic">Sl</span>Slack</span>
-      <span class="plug-chip"><span class="ic">GS</span>Google Sheets</span>
-      <span class="plug-chip"><span class="ic">Sh</span>Shopify</span>
-      <span class="plug-chip"><span class="ic">n8n</span>n8n / Make</span>
-      <span class="plug-chip"><span class="ic">▲</span>Vercel / Cloudflare</span>
-      <span class="plug-chip"><span class="ic">API</span>Webhooks</span>
-    </div>
-    <p class="honest-note">We only list platforms we can actually deliver. Details and embed snippets are on each demo page.</p>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container site-header__inner">
+  <a class="brand" href="https://github.com/nyyoautomation"><svg class="brand__mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" style="fill:var(--accent)"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" style="fill:var(--on-accent)"/></svg><span>Nyyo Automation</span></a>
+  <nav class="nav" aria-label="Main"><a href="#demos" aria-current="page">Demos</a><a href="#industry">Industries</a><a href="#how">How it works</a></nav>
+  <div class="site-header__actions"><a class="btn btn--primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+</div></header>
+<main id="main" class="has-cta-bar">
+<section class="hero container">
+  <p class="eyebrow">Live demos · fictional data · no sign-up</p>
+  <h1 class="hero__title">AI and automation you can try before you buy.</h1>
+  <p class="lead">Open a demo, run it on sample files and see how it works. When it fits, the same thing is built on your files: fixed price or on quote, available on LaborX. Remote · Worldwide.</p>
+  <div class="btn-row"><a class="btn btn--primary btn--lg" href="#demos">Explore demos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--secondary btn--lg" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+</section>
+<section id="demos" class="container" aria-label="Filter demos" style="padding-bottom:var(--sp-8)"><div class="chips" role="toolbar" aria-label="Filter by category"><button class="chip" type="button" aria-pressed="true" data-filter="all">All</button><button class="chip" type="button" aria-pressed="false" data-filter="industry">Industry AI</button><button class="chip" type="button" aria-pressed="false" data-filter="ai">AI</button><button class="chip" type="button" aria-pressed="false" data-filter="automation">Automation</button><button class="chip" type="button" aria-pressed="false" data-filter="data">Data</button><button class="chip" type="button" aria-pressed="false" data-filter="bots">Bots &amp; chat</button><button class="chip" type="button" aria-pressed="false" data-filter="web">Web</button></div></section>
+<section id="industry" class="container section--tight gal-section" style="padding-top:0">
+  <div class="section-head"><p class="eyebrow">Industry AI</p><h2>Built for document-heavy professions</h2><p class="muted">Each demo works on a fictional file set. Drafts only: a qualified person on your side always reviews and decides.</p></div>
+  <div class="grid grid--3"><div data-cat="industry"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="60" y="20" width="130" height="160" rx="8" style="fill:var(--surface)"/><rect x="76" y="40" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="54" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="68" width="62" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="82" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="96" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="110" width="62" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="124" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="138" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="40" width="50" height="6" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="200" y="50" width="96" height="60" rx="8" style="fill:var(--surface)"/><rect x="212" y="64" width="60" height="6" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="212" y="78" width="70" height="6" rx="3" style="fill:var(--border)"/><rect x="212" y="90" width="50" height="6" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Industry AI</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="https://nyyoautomation.github.io/nyyo-tender-sectors/">Multi-sector tenders</a></h3>
+    <p class="demo-card__desc">Cleaning, security, IT, training: analyse a sample RFP, check compliance forms, export a Word proposal. No sign-up, sources cited.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">On quote</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
   </div>
-  <div class="block">
-    <h2>How we set it up</h2>
-    <ol class="setup-steps">
-      <li><span class="n">1</span><h3>You send us</h3><p>docs, sample files, or access to the tool you already use.</p></li>
-      <li><span class="n">2</span><h3>We build &amp; connect</h3><p>fixed scope, tested on your sample data.</p></li>
-      <li><span class="n">3</span><h3>You get the result</h3><p>live delivery + handover doc + short video — on our host or yours, no lock-in.</p></li>
-    </ol>
+</article></div><div data-cat="industry"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="60" y="20" width="130" height="160" rx="8" style="fill:var(--surface)"/><rect x="76" y="40" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="54" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="68" width="62" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="82" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="96" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="110" width="62" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="124" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="138" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="40" width="50" height="6" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="200" y="50" width="96" height="60" rx="8" style="fill:var(--surface)"/><rect x="212" y="64" width="60" height="6" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="212" y="78" width="70" height="6" rx="3" style="fill:var(--border)"/><rect x="212" y="90" width="50" height="6" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Industry AI</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="https://nyyoautomation.github.io/nyyo-archi-be-demo/">Architecture &amp; engineering firms</a></h3>
+    <p class="demo-card__desc">Methodology statement, spec / bill of quantities / drawings cross-check, site minutes. Sources cited, contradiction check.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">On quote</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="industry"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="60" y="20" width="130" height="160" rx="8" style="fill:var(--surface)"/><rect x="76" y="40" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="54" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="68" width="62" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="82" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="96" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="110" width="62" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="124" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="138" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="40" width="50" height="6" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="200" y="50" width="96" height="60" rx="8" style="fill:var(--surface)"/><rect x="212" y="64" width="60" height="6" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="212" y="78" width="70" height="6" rx="3" style="fill:var(--border)"/><rect x="212" y="90" width="50" height="6" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Industry AI</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="https://nyyoautomation.github.io/nyyo-courtiers-demo/">Insurance brokers</a></h3>
+    <p class="demo-card__desc">Quote comparison &amp; advice record, renewal coverage gaps, pre-filled claim notice. Sources cited, contradiction check.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">On quote</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div></div>
+</section>
+<section id="tools" class="container section--tight gal-section">
+  <div class="section-head"><p class="eyebrow">Automation, data &amp; bots</p><h2>Tools you can try in the browser</h2><p class="muted">Interactive proofs: chatbots, scrapers, workflows, dashboards. Click a card to open the demo.</p></div>
+  <div class="grid grid--3"><div data-cat="ai"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="40" y="30" width="170" height="30" rx="12" style="fill:var(--surface)"/><rect x="52" y="42" width="120" height="6" rx="3" style="fill:var(--border)"/><rect x="120" y="74" width="160" height="30" rx="12" style="fill:var(--accent);opacity:.85"/><rect x="40" y="118" width="200" height="40" rx="12" style="fill:var(--surface)"/><rect x="52" y="130" width="150" height="6" rx="3" style="fill:var(--border)"/><rect x="52" y="142" width="100" height="6" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">AI</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="https://nyyoautomation.github.io/nyyo-docs-chatbot/">Docs chatbot (RAG)</a></h3>
+    <p class="demo-card__desc">Ask questions on your business docs — answers with source citations. Widget or Telegram.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">From $149</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="automation"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="24" y="70" width="72" height="40" rx="8" style="fill:var(--surface)"/><rect x="36" y="86" width="48" height="7" rx="3.5" style="fill:var(--border)"/><rect x="124" y="70" width="72" height="40" rx="8" style="fill:var(--surface)"/><rect x="136" y="86" width="48" height="7" rx="3.5" style="fill:var(--accent);opacity:.85"/><rect x="224" y="70" width="72" height="40" rx="8" style="fill:var(--surface)"/><rect x="236" y="86" width="48" height="7" rx="3.5" style="fill:var(--border)"/><rect x="96" y="89" width="28" height="2" style="fill:var(--border)"/><rect x="196" y="89" width="28" height="2" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Automation</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="https://nyyoautomation.github.io/nyyo-n8n-workflows/">n8n / Make AI workflows</a></h3>
+    <p class="demo-card__desc">Production-shape automations with visible steps, retries and run history.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">From $149</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="web"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="60" y="20" width="130" height="160" rx="8" style="fill:var(--surface)"/><rect x="76" y="40" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="54" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="68" width="62" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="82" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="96" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="110" width="62" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="124" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="138" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="40" width="50" height="6" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="200" y="50" width="96" height="60" rx="8" style="fill:var(--surface)"/><rect x="212" y="64" width="60" height="6" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="212" y="78" width="70" height="6" rx="3" style="fill:var(--border)"/><rect x="212" y="90" width="50" height="6" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Web</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="https://nyyoautomation.github.io/nyyo-vibe-code-rescue/">Vibe-code rescue</a></h3>
+    <p class="demo-card__desc">Before/after: fix broken Lovable / Cursor / v0 landings fast.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">From $49</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="data"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="24" y="24" width="272" height="148" rx="8" style="fill:var(--surface)"/><rect x="48" y="110" width="16" height="40" rx="3" style="fill:var(--border)"/><rect x="78" y="88" width="16" height="62" rx="3" style="fill:var(--border)"/><rect x="108" y="100" width="16" height="50" rx="3" style="fill:var(--border)"/><rect x="138" y="70" width="16" height="80" rx="3" style="fill:var(--border)"/><rect x="168" y="80" width="16" height="70" rx="3" style="fill:var(--border)"/><rect x="198" y="50" width="16" height="100" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="228" y="64" width="16" height="86" rx="3" style="fill:var(--border)"/><rect x="258" y="58" width="16" height="92" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Data</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/">Live scrape dashboard</a></h3>
+    <p class="demo-card__desc">Watch a scraper fill a live KPI board — prices, stock, alerts.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">On quote</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="bots"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="40" y="30" width="170" height="30" rx="12" style="fill:var(--surface)"/><rect x="52" y="42" width="120" height="6" rx="3" style="fill:var(--border)"/><rect x="120" y="74" width="160" height="30" rx="12" style="fill:var(--accent);opacity:.85"/><rect x="40" y="118" width="200" height="40" rx="12" style="fill:var(--surface)"/><rect x="52" y="130" width="150" height="6" rx="3" style="fill:var(--border)"/><rect x="52" y="142" width="100" height="6" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Bots &amp; chat</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="https://nyyoautomation.github.io/nyyo-telegram-demo/simulator/">Telegram / Discord bots</a></h3>
+    <p class="demo-card__desc">Browser simulator of alert &amp; support bots — menus, buttons, flows.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">From $149</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="data"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="24" y="24" width="272" height="148" rx="8" style="fill:var(--surface)"/><rect x="40" y="40" width="80" height="8" rx="4" style="fill:var(--border)"/><rect x="40" y="64" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="64" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="64" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="64" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="86" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="86" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="86" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="86" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="108" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="108" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="108" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="108" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="130" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="130" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="130" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="130" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="180" y="104" width="52" height="19" rx="4" style="fill:var(--tint-warn)"/><rect x="186" y="110" width="40" height="7" rx="3.5" style="fill:var(--warn)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Data</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="https://nyyoautomation.github.io/nyyo-invoice-to-excel/">Invoice → Excel</a></h3>
+    <p class="demo-card__desc">Messy PDFs to a clean spreadsheet — try sample extraction in-browser.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">Paused</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="data"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="24" y="24" width="272" height="148" rx="8" style="fill:var(--surface)"/><rect x="40" y="40" width="80" height="8" rx="4" style="fill:var(--border)"/><rect x="40" y="64" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="64" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="64" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="64" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="86" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="86" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="86" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="86" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="108" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="108" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="108" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="108" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="130" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="130" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="130" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="130" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="180" y="104" width="52" height="19" rx="4" style="fill:var(--tint-warn)"/><rect x="186" y="110" width="40" height="7" rx="3.5" style="fill:var(--warn)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Data</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="https://nyyoautomation.github.io/nyyo-spreadsheet-demo/">Spreadsheet cleanup</a></h3>
+    <p class="demo-card__desc">Messy sheet → clean table. Before/after example you can toggle.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">From $45</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="ai"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="40" y="30" width="170" height="30" rx="12" style="fill:var(--surface)"/><rect x="52" y="42" width="120" height="6" rx="3" style="fill:var(--border)"/><rect x="120" y="74" width="160" height="30" rx="12" style="fill:var(--accent);opacity:.85"/><rect x="40" y="118" width="200" height="40" rx="12" style="fill:var(--surface)"/><rect x="52" y="130" width="150" height="6" rx="3" style="fill:var(--border)"/><rect x="52" y="142" width="100" height="6" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">AI</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="./inbox-ai/">Inbox AI</a></h3>
+    <p class="demo-card__desc">Sort, draft and tag support tickets — fewer repetitive replies.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">From $149</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="data"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="24" y="24" width="272" height="148" rx="8" style="fill:var(--surface)"/><rect x="48" y="110" width="16" height="40" rx="3" style="fill:var(--border)"/><rect x="78" y="88" width="16" height="62" rx="3" style="fill:var(--border)"/><rect x="108" y="100" width="16" height="50" rx="3" style="fill:var(--border)"/><rect x="138" y="70" width="16" height="80" rx="3" style="fill:var(--border)"/><rect x="168" y="80" width="16" height="70" rx="3" style="fill:var(--border)"/><rect x="198" y="50" width="16" height="100" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="228" y="64" width="16" height="86" rx="3" style="fill:var(--border)"/><rect x="258" y="58" width="16" height="92" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Data</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="./instant-dashboard/">Instant CSV dashboard</a></h3>
+    <p class="demo-card__desc">Drop a CSV → KPIs and charts in the browser. No backend.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">On quote</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="data"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="24" y="24" width="272" height="148" rx="8" style="fill:var(--surface)"/><rect x="40" y="40" width="80" height="8" rx="4" style="fill:var(--border)"/><rect x="40" y="64" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="64" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="64" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="64" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="86" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="86" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="86" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="86" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="108" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="108" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="108" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="108" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="130" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="130" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="130" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="130" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="180" y="104" width="52" height="19" rx="4" style="fill:var(--tint-warn)"/><rect x="186" y="110" width="40" height="7" rx="3.5" style="fill:var(--warn)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Data</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="./shopify-importer/">Shopify import cleaner</a></h3>
+    <p class="demo-card__desc">Normalize product CSVs before import — fewer failed uploads.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">Paused</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="data"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="24" y="24" width="272" height="148" rx="8" style="fill:var(--surface)"/><rect x="40" y="40" width="80" height="8" rx="4" style="fill:var(--border)"/><rect x="40" y="64" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="64" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="64" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="64" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="86" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="86" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="86" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="86" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="108" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="108" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="108" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="108" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="40" y="130" width="70" height="7" rx="3.5" style="fill:var(--border)"/><rect x="130" y="130" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="186" y="130" width="40" height="7" rx="3.5" style="fill:var(--border)"/><rect x="242" y="130" width="38" height="7" rx="3.5" style="fill:var(--border)"/><rect x="180" y="104" width="52" height="19" rx="4" style="fill:var(--tint-warn)"/><rect x="186" y="110" width="40" height="7" rx="3.5" style="fill:var(--warn)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Data</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="./lead-pipeline/">B2B lead pipeline</a></h3>
+    <p class="demo-card__desc">OpenStreetMap business leads — no personal emails scraped.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">On quote</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="bots"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="40" y="30" width="170" height="30" rx="12" style="fill:var(--surface)"/><rect x="52" y="42" width="120" height="6" rx="3" style="fill:var(--border)"/><rect x="120" y="74" width="160" height="30" rx="12" style="fill:var(--accent);opacity:.85"/><rect x="40" y="118" width="200" height="40" rx="12" style="fill:var(--surface)"/><rect x="52" y="130" width="150" height="6" rx="3" style="fill:var(--border)"/><rect x="52" y="142" width="100" height="6" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Bots &amp; chat</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="./voice-receptionist/">Voice receptionist</a></h3>
+    <p class="demo-card__desc">Browser voice flow for booking / FAQ — hands-free demo.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">On quote</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="web"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="60" y="20" width="130" height="160" rx="8" style="fill:var(--surface)"/><rect x="76" y="40" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="54" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="68" width="62" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="82" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="96" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="110" width="62" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="124" width="98" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="138" width="80" height="6" rx="3" style="fill:var(--border)"/><rect x="76" y="40" width="50" height="6" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="200" y="50" width="96" height="60" rx="8" style="fill:var(--surface)"/><rect x="212" y="64" width="60" height="6" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="212" y="78" width="70" height="6" rx="3" style="fill:var(--border)"/><rect x="212" y="90" width="50" height="6" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Web</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="./landing-kit/">Landing page kit</a></h3>
+    <p class="demo-card__desc">SaaS, local business &amp; Web3 templates.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">Paused</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="data"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="24" y="24" width="272" height="148" rx="8" style="fill:var(--surface)"/><rect x="48" y="110" width="16" height="40" rx="3" style="fill:var(--border)"/><rect x="78" y="88" width="16" height="62" rx="3" style="fill:var(--border)"/><rect x="108" y="100" width="16" height="50" rx="3" style="fill:var(--border)"/><rect x="138" y="70" width="16" height="80" rx="3" style="fill:var(--border)"/><rect x="168" y="80" width="16" height="70" rx="3" style="fill:var(--border)"/><rect x="198" y="50" width="16" height="100" rx="3" style="fill:var(--accent);opacity:.85"/><rect x="228" y="64" width="16" height="86" rx="3" style="fill:var(--border)"/><rect x="258" y="58" width="16" height="92" rx="3" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Data</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="./wallet-tracker/">Wallet tracker</a></h3>
+    <p class="demo-card__desc">Read-only portfolio board for public addresses — alerts ready.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">On quote</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div><div data-cat="automation"><article class="demo-card">
+  <div class="demo-card__media"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="320" height="180" style="fill:var(--surface-2)"/><rect x="24" y="70" width="72" height="40" rx="8" style="fill:var(--surface)"/><rect x="36" y="86" width="48" height="7" rx="3.5" style="fill:var(--border)"/><rect x="124" y="70" width="72" height="40" rx="8" style="fill:var(--surface)"/><rect x="136" y="86" width="48" height="7" rx="3.5" style="fill:var(--accent);opacity:.85"/><rect x="224" y="70" width="72" height="40" rx="8" style="fill:var(--surface)"/><rect x="236" y="86" width="48" height="7" rx="3.5" style="fill:var(--border)"/><rect x="96" y="89" width="28" height="2" style="fill:var(--border)"/><rect x="196" y="89" width="28" height="2" style="fill:var(--border)"/></svg></div>
+  <div class="demo-card__body">
+    <div class="demo-card__meta"><span class="badge badge--sector">Automation</span><span class="badge badge--live">Live demo</span></div>
+    <h3 class="demo-card__title"><a href="./sheets-automations/">Sheets automations</a></h3>
+    <p class="demo-card__desc">Google Apps Script pack — clean, notify, sync without Zapier.</p>
+    <div class="demo-card__foot"><span class="demo-card__price">From $45</span><span class="demo-card__cta" aria-hidden="true">Open demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  </div>
+</article></div></div>
+</section>
+<section id="how" class="container section">
+  <div class="section-head"><p class="eyebrow">How it works</p><h2>From demo to your own setup</h2></div>
+  <ol class="steps"><li><strong>Try the demo</strong>Run it on the sample files, no account needed.</li><li><strong>Share a sample</strong>Docs, sample files, or access to the tool you already use.</li><li><strong>Get a fixed quote</strong>Scope, deliverables and price in writing, tested on your sample data.</li><li><strong>Review and go live</strong>Delivery with a handover doc, on our host or yours, no lock-in.</li></ol>
+  <div class="grid grid--2 gal-included">
+    <div class="panel"><h3>Included with every build</h3><ul class="gal-list"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>A free install kit matched to your stack, with the build</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>WordPress plugin, Shopify app embed, or Wix / Webflow / HTML script</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Ready links for Telegram / Slack / Discord when the bot lives there</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Importable n8n / Make workflows (JSON) when automation is the deliverable</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Google Sheets copy + Apps Script packs when Sheets is the hub</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Connectors for Sheets / Airtable / webhooks, so your tools stay in charge</span></li></ul><p class="subtle">The install kit is free and included: you only pay for the build. Items not built yet for a given stack are on request (free).</p></div>
+    <div class="panel"><h3>Where these demos plug in</h3><ul class="gal-plugs"><li>Website widget</li><li>Telegram</li><li>Slack</li><li>Google Sheets</li><li>Shopify</li><li>n8n / Make</li><li>Vercel / Cloudflare</li><li>Webhooks</li></ul><p class="subtle">Only platforms we can actually deliver are listed. Details and embed snippets are on each demo page.</p></div>
   </div>
 </section>
-
-<!-- NYYO_INTEGRATE_END -->
-
-<!-- NYYO_INSTALL_KIT_START -->
-
-<section class="nyyo-install-kit" id="install-kits" aria-label="Free install kits">
-  <div class="nyyo-install-kit-inner">
-    <span class="free-pill">FREE · 1-click install kit included</span>
-    <h2>Install in one click — kit included free</h2>
-    <p class="sub">Every build ships with a free 1-click install kit — WordPress, Shopify, Wix/Webflow/HTML, Telegram/Slack/Discord, n8n/Make, Sheets & webhooks. Anything not listed yet is <strong>on request (free)</strong>.</p>
-    <div class="kit-actions">
-      <a class="primary" href="https://nyyoautomation.github.io/nyyo-docs-chatbot/#install">Docs chatbot kit</a>
-      <a class="primary" href="https://nyyoautomation.github.io/nyyo-live-scrape-dashboard/">Scrape sync kit</a>
-      <a class="primary" href="https://nyyoautomation.github.io/nyyo-n8n-workflows/">n8n import kit</a>
-      <a href="./sheets-automations/">Sheets Apps Script kit</a>
-    </div>
-  </div>
+<section id="contact" class="container" style="padding-bottom:var(--sp-16)">
+  <div class="notice" style="margin-bottom:var(--sp-6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><p style="margin:0"><strong>About these demos.</strong> All companies, people, documents and figures are fictional. Time estimates shown inside demos are illustrations on the sample, not measurements or promises.</p></div>
+  <div class="panel gal-contact"><div><h2>Have a similar workflow?</h2><p class="muted">Describe it in a few lines on LaborX; you get a written scope and price before any work starts. Questions? Ask in your order chat.</p></div>
+    <a class="btn btn--primary btn--lg" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
 </section>
-
-<!-- NYYO_INSTALL_KIT_END -->
-
-    
-    <section class="pricing-include" aria-label="Whats included">
-      <h2>What’s included with every offer</h2>
-      <ul>
-        <li>Free <strong>1-click install kit</strong> matched to your stack</li>
-        <li>WordPress plugin <strong>or</strong> Shopify app embed <strong>or</strong> Wix / Webflow / HTML script</li>
-        <li>Ready links for <strong>Telegram / Slack / Discord</strong> when the bot lives there</li>
-        <li><strong>Importable</strong> n8n / Make workflows (JSON) when automation is the deliverable</li>
-        <li><strong>Google Sheets</strong> copy + Apps Script packs when Sheets is the hub</li>
-        <li>Connectors for <strong>Sheets / Airtable / webhooks</strong> so your tools stay in charge</li>
-      </ul>
-      <p class="close">The kit is free and included — you only pay for the build.</p>
-      <p style="margin:10px 0 0;color:var(--muted);font-size:.82rem">Items not built yet for a given stack are marked <strong>on request (free)</strong>.</p>
-    </section>
-
-    <section class="cta-band" aria-label="Hire">
-      <div>
-        <h2>Ready to ship yours?</h2>
-        <p>Fixed packages · 7-day bugfix · available on LaborX · Remote · Worldwide</p>
-      </div>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-        <a class="btn btn-ghost" href="https://github.com/nyyoautomation">GitHub profile</a>
-      </div>
-    </section>
-
-    <footer>
-      <span>© Nyyo Automation · demos are browser-only proofs</span>
-      <span>
-        <a href="https://laborx.com/freelancers/users/id475124">LaborX</a> ·
-        <a href="https://github.com/nyyoautomation">GitHub</a>
-      </span>
-    </footer>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="site-footer__grid">
+    <div><a class="brand" href="https://github.com/nyyoautomation"><svg class="brand__mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" style="fill:var(--accent)"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" style="fill:var(--on-accent)"/></svg><span>Nyyo Automation</span></a>
+      <p style="margin-top:12px;max-width:42ch">AI assistants and automations built on your own documents. Fixed scope, sources cited, a human always signs off. Remote · Worldwide.</p></div>
+    <div><h2 class="site-footer__title">Demos</h2><ul><li><a href="#demos">All demos</a></li><li><a href="#industry">Industry demos</a></li><li><a href="#tools">Automation &amp; data</a></li></ul></div>
+    <div><h2 class="site-footer__title">Contact</h2><ul><li><a href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></li><li><a href="https://laborx.com/freelancers/users/id475124" rel="noopener">LaborX</a></li><li><a href="https://github.com/nyyoautomation">GitHub</a></li></ul></div>
   </div>
-
-  <div class="mobile-cta" aria-label="Hire shortcut">
-    <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-  </div>
-
-  <script>
-    (function () {
-      var nav = document.getElementById("nav");
-      var onScroll = function () {
-        if (window.scrollY > 8) nav.classList.add("scrolled");
-        else nav.classList.remove("scrolled");
-      };
-      window.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
-
-      // Preview sequence: hide typing, show answer after delay
-      var typing = document.getElementById("typing");
-      var bot = document.getElementById("botBubble");
-      var cite = document.getElementById("citeBubble");
-      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      function runPreview() {
-        if (reduce) {
-          if (typing) typing.hidden = true;
-          if (bot) { bot.hidden = false; bot.style.opacity = 1; }
-          if (cite) { cite.hidden = false; cite.style.opacity = 1; }
-          return;
-        }
-        setTimeout(function () {
-          if (typing) typing.style.display = "none";
-          if (bot) bot.hidden = false;
-          if (cite) cite.hidden = false;
-        }, 1600);
-      }
-      runPreview();
-      if (window.lucide) lucide.createIcons();
-      else window.addEventListener("load", function () { if (window.lucide) lucide.createIcons(); });
-
-      // Filters
-      var buttons = document.querySelectorAll(".filters button");
-      var cards = document.querySelectorAll(".card");
-      buttons.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var f = btn.getAttribute("data-filter");
-          buttons.forEach(function (b) {
-            b.classList.toggle("active", b === btn);
-            b.setAttribute("aria-selected", b === btn ? "true" : "false");
-          });
-          cards.forEach(function (card) {
-            var cat = card.getAttribute("data-cat");
-            var show = f === "all" || cat === f;
-            card.classList.toggle("hidden", !show);
-          });
-        });
-      });
-    })();
-  </script>
+  <div class="site-footer__legal"><span>© 2026 Nyyo Automation · Noah Vasseur</span><span>All demo data is fictional. Time estimates are illustrations, not measurements.</span></div>
+</div></footer>
+<div class="cta-bar"><a class="btn btn--secondary" href="#demos">Demos</a><a class="btn btn--primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+<script>
+(function () {
+  var chips = document.querySelectorAll(".chip");
+  chips.forEach(function (c) { c.addEventListener("click", function () {
+    chips.forEach(function (x) { x.setAttribute("aria-pressed", String(x === c)); });
+    var f = c.dataset.filter;
+    document.querySelectorAll("[data-cat]").forEach(function (el) { el.hidden = !(f === "all" || el.dataset.cat === f); });
+    document.querySelectorAll(".gal-section").forEach(function (s) { s.hidden = !s.querySelector("[data-cat]:not([hidden])"); });
+  }); });
+})();
+</script>
 </body>
 </html>
