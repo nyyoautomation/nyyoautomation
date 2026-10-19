@@ -8,7 +8,18 @@
 :root { --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 .nowrap { white-space: nowrap; }
 [hidden] { display: none !important; }
-@media (max-width: 719.98px) { .site-header__cta { display: none; } }   /* under 720 the CTA bar holds the one Request a quote */
+@media (max-width: 719.98px) { .site-header__cta { display: none; } }
+/* QA T020: no mid-word breaks (design-system.css sets overflow-wrap:anywhere on body for the gallery; the sub-pages opt out) */
+body { overflow-wrap: normal; }
+.data-table, .data-table th, .data-table td, .kpi__label { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+/* QA T020: the back link stays visible under 720 px (it is the only nav item) */
+.site-header .nav { display: flex; }
+/* QA T020: skip link at least 44 px */
+.skip-link { display: inline-flex; align-items: center; min-height: 44px; }
+/* QA T020: one column per step from 720 px */
+@media (min-width: 720px) { .steps { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); } }
+/* QA T022: chips wrap instead of scrolling off the panel */
+.chips { flex-wrap: wrap; overflow-x: visible; margin-inline: 0; padding-inline: 0; }   /* under 720 the CTA bar holds the one Request a quote */
 .back-link { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: 44px; color: var(--text-muted); font-size: var(--fs-14); font-weight: var(--fw-medium); text-decoration: none; }
 .back-link:hover { color: var(--text); }
 .site-footer li a, .site-footer li a:visited { color: var(--text-muted); }
@@ -35,7 +46,7 @@
 .kpis { display: grid; gap: var(--sp-3); grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .kpi { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-md, 12px); padding: var(--sp-3); min-width: 0; }
 .kpi__label { color: var(--text-muted); font-size: var(--fs-13); }
-.kpi__value { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: var(--fs-24); font-weight: var(--fw-semibold); color: var(--text); overflow-wrap: anywhere; }
+.kpi__value { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: var(--fs-24); font-weight: var(--fw-semibold); color: var(--text); }
 
 /* plain data table (scrolls inside its wrapper only) */
 .table-wrap { overflow-x: auto; max-width: 100%; border: 1px solid var(--border); border-radius: var(--r-md, 12px); background: var(--surface); }
@@ -63,7 +74,7 @@ textarea.input, .field textarea { min-height: 200px; line-height: var(--lh-body)
 .chip-btn { min-height: 44px; }
 
 /* result blocks */
-.result-pre { font-family: var(--font-mono); font-size: var(--fs-13); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-sm, 8px); padding: var(--sp-3); white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text); margin: 0; }
+.result-pre { font-family: var(--font-mono); font-size: var(--fs-13); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-sm, 8px); padding: var(--sp-3); white-space: pre-wrap; overflow-wrap: break-word; color: var(--text); margin: 0; }
 .status-pill { display: inline-flex; align-items: center; gap: var(--sp-1); min-height: 28px; padding: 0 var(--sp-3); border-radius: var(--r-pill); background: var(--tint-accent); color: var(--accent-text); font-size: var(--fs-13); font-weight: var(--fw-semibold); text-transform: none; }
 .status-pill--warn { background: var(--tint-warn); color: var(--warn); }
 .status-pill--ok { background: var(--tint-success); color: var(--success); }
