@@ -4,6 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Voice receptionist — Nyyo Automation live demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <meta name="description" content="Browser AI receptionist with neural voice that books a demo slot. From $80. Nyyo Automation." />
   <meta name="theme-color" content="#050814" />
   <meta property="og:title" content="Voice receptionist — Nyyo Automation" />
@@ -12,6 +16,7 @@
   <meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/assets/logo.png" />
   <link rel="icon" href="../assets/logo.png" type="image/png" />
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./nyyo-kit.css" />
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
   <style>
     #chat{min-height:200px;max-height:300px;overflow:auto;padding:4px}
@@ -32,18 +37,17 @@
 <body>
 <!-- NYYO_PREMIUM_V1 -->
   <div class="wrap">
-    <div class="topbar">
+        <div class="topbar">
       <a class="brand" href="https://github.com/nyyoautomation">
         <img src="../assets/logo.png" alt="" width="34" height="34" />
         <span>Nyyo Automation</span>
       </a>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <a class="btn btn-ghost" href="../">All demos</a>
-        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me</a>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
+        <a class="btn btn-ghost btn-sm" href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a>
+        <a class="btn btn-primary btn-sm" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
       </div>
     </div>
-
-    <header class="hero">
+<header class="hero">
       <div class="hero-inner">
         <span class="tag"><span class="dot"></span> Neural voice · no cloud key · FIX-VOICE1</span>
         <h1>AI receptionist that <span class="grad">books a slot</span></h1>
