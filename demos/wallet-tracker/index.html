@@ -48,7 +48,7 @@
     </div>
     <div class="table-wrap" role="region" aria-label="Wallet totals" tabindex="0">
       <table class="data-table"><caption class="sr-only">Wallet totals and alerts</caption>
-        <thead><tr><th scope="col">Label</th><th scope="col">Chain</th><th scope="col">USD</th><th scope="col">Alert</th></tr></thead><tbody id="tb"><tr><td colspan="4">Loading…</td></tr><tr><td colspan="4">&nbsp;</td></tr><tr><td colspan="4">&nbsp;</td></tr></tbody></table>
+        <thead><tr><th scope="col">Label</th><th scope="col" class="hide-sm">Chain</th><th scope="col">USD</th><th scope="col">Alert</th></tr></thead><tbody id="tb"><tr><td colspan="4">Loading…</td></tr><tr><td colspan="4">&nbsp;</td></tr><tr><td colspan="4">&nbsp;</td></tr></tbody></table>
     </div>
   </div>
 </section>
@@ -118,7 +118,7 @@
       <p class="mono wallet-addr">${esc(w.address)}</p>
       <ul class="wallet-assets">${w.assets.map((a) => `<li><span>${esc(a.amount)} ${esc(a.symbol)}</span><span class="mono">${usd(a.usd)}</span></li>`).join("")}</ul>
       <p class="muted">${(w.recent || []).map((r) => esc(r.when + ": " + r.note)).join(" · ")}</p></article>`;
-    rows += `<tr><td>${esc(w.label)}</td><td>${esc(w.chain)}</td><td class="mono">${usd(total)}</td><td>${low ? '<span class="status-pill status-pill--warn">Low</span>' : '<span class="status-pill status-pill--ok">OK</span>'}</td></tr>`;
+    rows += `<tr><td>${esc(w.label)}</td><td class="hide-sm">${esc(w.chain)}</td><td class="mono">${usd(total)}</td><td>${low ? '<span class="status-pill status-pill--warn">Low</span>' : '<span class="status-pill status-pill--ok">OK</span>'}</td></tr>`;
   });
   document.getElementById("cards").innerHTML = cards;
   document.getElementById("tb").innerHTML = rows;
