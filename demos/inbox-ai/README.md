@@ -6,7 +6,7 @@
 >
 > **Try it in 1 click:** [**live demo**](https://nyyoautomation.github.io/nyyoautomation/demos/inbox-ai/) → click a sample → **Analyze**.
 >
-> **Business benefit:** faster first answers, fewer missed angry customers. From about **$199** (CRM wiring from **$319**).
+> **Business benefit:** faster first answers, fewer missed angry customers. From **$149** (Standard **$399** · Premium **$849**). Delivery: 3 / 5 / 10 days by tier.
 
 ![Demo](docs/demo.gif)
 
