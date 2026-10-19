@@ -4,7 +4,7 @@
 
 🟢 Available now · Remote · Worldwide · Typical delivery 24–72h
 
-**Translation & localization:** EN ↔ ES · DE · PT-BR · FR · IT · NL · JA · ZH · KO · AR — websites & apps, e-commerce listings, technical docs, marketing copy
+**Localization:** Website & app localization, marketing transcreation, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, FR, IT, NL, JA, ZH, KO, AR.
 
 I help founders, operators and crypto teams who need **scraping → CSV**, **spreadsheet cleanup**, **Telegram/Discord bots**, **n8n workflows**, or a **chatbot that answers from their own docs** — without a full-time engineer.
 
@@ -37,26 +37,24 @@ I help founders, operators and crypto teams who need **scraping → CSV**, **spr
 | Landing page (24h) | **$100** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/landing-kit/) |
 | Wallet tracker (read-only) | **$60** | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/wallet-tracker/) |
 | Google Sheets Apps Script pack | **$30**/script | [Live](https://nyyoautomation.github.io/nyyoautomation/demos/sheets-automations/) |
-| Translation & localization — EN ↔ ES, DE, PT-BR, FR, IT, NL, JA, ZH, KO, AR | **$0.06–0.35**/word · min **$35** | [Details](#translation--localization) |
+| Localization — website & app, marketing transcreation, bulk e-commerce listings, AI-translation post-editing / QA (EN ↔ ES, DE, PT-BR, FR, IT, NL, JA, ZH, KO, AR) | **$0.06–0.35**/word · min **$35** | [Details](#localization--transcreation) |
 
 Extra demos gallery: [**open gallery**](https://nyyoautomation.github.io/nyyoautomation/demos/)
 
 ---
 
-## Translation & localization
+## Localization & transcreation
 
-Fast, clear translations for product pages, apps, docs and campaigns. Bilingual file delivered, glossary on request, short QA notes. Rush available.
+Website & app localization, marketing transcreation, bulk e-commerce product listings, and AI-translation post-editing / QA. Languages: EN ↔ ES, DE, PT-BR, FR, IT, NL, JA, ZH, KO, AR.
 
-**Pairs:** EN ↔ ES · DE · PT-BR · FR · IT · NL · JA · ZH · KO · AR
-
-| Content | Per word |
+| Service | Per word |
 |---|---|
-| Product listings, emails, short UI | $0.06–0.16 |
-| Landing pages, help centers, web/app | $0.10–0.22 |
-| Marketing & brand copy | $0.16–0.35 |
-| Technical docs / crypto whitepapers | $0.14–0.35 |
+| AI-translation post-editing / QA (you already have a machine draft) | $0.06–0.12 |
+| Bulk e-commerce product listings (titles, descriptions, SEO) | $0.06–0.16 |
+| Website & app localization (UI strings, help center, meta/SEO) | $0.10–0.22 |
+| Marketing transcreation (ads, slogans, brand voice) | $0.16–0.35 |
 
-Packs: up to 500 words **$35–50** · up to 2,000 words **$90–140** · up to 5,000 words **$200–320** · rush +25–50%. Minimum order **$35**.
+Packs: up to 500 words **$35–50** · up to 2,000 words **$90–140** · up to 5,000 words **$200–320** · mini-site localization **from $250** · rush +25–50%. Minimum order **$35**.
 
 ---
 
