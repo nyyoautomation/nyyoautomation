@@ -1,7 +1,7 @@
 /**
  * Nyyo Sheets Automations — free install kit (Apps Script)
  * Install: Extensions → Apps Script → paste this file → Save → Reload sheet
- * Menu: Nyyo → Clean selection / Notify Slack (webhook optional)
+ * Menu: Nyyo → Clean selection (trim + dedupe) / Export selection as CSV email (sent to you only)
  * Install kit: free, included with every package.
  */
 function onOpen() {
