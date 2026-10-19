@@ -46,7 +46,8 @@ body { overflow-wrap: normal; }
 .kpis { display: grid; gap: var(--sp-3); grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .kpi { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-md, 12px); padding: var(--sp-3); min-width: 0; }
 .kpi__label { color: var(--text-muted); font-size: var(--fs-13); }
-.kpi__value { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: var(--fs-24); font-weight: var(--fw-semibold); color: var(--text); }
+@media (max-width: 399.98px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.kpi__value { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: clamp(1.125rem, 5vw, 1.5rem); min-width: 0; white-space: nowrap; font-weight: var(--fw-semibold); color: var(--text); }
 
 /* plain data table (scrolls inside its wrapper only) */
 .table-wrap { overflow-x: auto; max-width: 100%; border: 1px solid var(--border); border-radius: var(--r-md, 12px); background: var(--surface); }
@@ -112,7 +113,8 @@ textarea.input, .field textarea { min-height: 200px; line-height: var(--lh-body)
 .drop.hot { border-color: var(--accent); background: var(--tint-accent); }
 .chart-frame { position: relative; height: 240px; }
 label.btn { cursor: pointer; }
-input.sr-only:focus-visible + *, .drop input:focus-visible { outline: 2px solid var(--focus, var(--accent)); }
+/* file buttons: the sr-only input sits BEFORE its label, the ring goes on the label */
+input.sr-only:focus-visible + label, label:has(input:focus-visible), .drop input:focus-visible { outline: 2px solid #1D4ED8; outline-offset: 2px; }
 
 /* script cards (sheets automations) */
 .script-card { display: flex; flex-direction: column; gap: var(--sp-3); }
@@ -144,3 +146,7 @@ details .result-pre { max-height: 280px; overflow: auto; white-space: pre; }
 .tpl-hero { display: grid; gap: var(--sp-6); grid-template-columns: minmax(0, 1fr); padding-block: var(--sp-8); align-items: start; }
 @media (min-width: 900px) { .tpl-hero { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); } }
 .tpl-hero h1 { font-size: var(--fs-display); line-height: var(--lh-tight); letter-spacing: var(--tracking-tight); font-weight: var(--fw-semibold); margin: 0 0 var(--sp-3); }
+
+/* install guide page (sheets-automations/install-kit) */
+.sd-section .card-plain > h2 { font-size: var(--fs-20); margin: 0 0 var(--sp-3); }
+.guide-list { margin: 0; padding-left: 1.25rem; display: grid; gap: var(--sp-2); }
