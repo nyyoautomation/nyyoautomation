@@ -16,7 +16,3 @@ Nothing is uploaded. Production builds can plug OpenAI/Claude when you provide a
 
 ## Hire me
 [LaborX](https://laborx.com/freelancers/users/id475124) · [Profile](https://github.com/nyyoautomation)
-
-<details><summary>🇫🇷 Français</summary>
-IA boîte mail sans clé API. [Démo](https://cdn.jsdelivr.net/gh/nyyoautomation/nyyoautomation@main/demos/inbox-ai/index.html). À partir de **~300 $**.
-</details>
