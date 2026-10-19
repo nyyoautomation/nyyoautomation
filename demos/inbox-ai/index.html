@@ -1,146 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 28 28%27%3E%3Crect width=%2728%27 height=%2728%27 rx=%278%27 fill=%27%231D4ED8%27/%3E%3Cpath d=%27M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z%27 fill=%27%23FFFFFF%27/%3E%3C/svg%3E" />
-  <meta name="theme-color" content="#050814" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta property="og:title" content="Inbox AI — Nyyo Automation" />
-  <meta property="og:description" content="Sort emails & draft replies. From $149." />
-  <meta property="og:type" content="website" />
-
-  <title>Inbox AI (no API key) — Nyyo Automation</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./nyyo-kit.css" />
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-  <style>.brand__mark{width:28px;height:28px;border-radius:8px;flex:none;display:block;box-shadow:none}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inbox AI · Nyyo Automation</title>
+<meta name="description" content="Paste a customer email: get its category, the key fields and a draft reply to check. Runs in your browser, no API key, fictional samples.">
+<meta property="og:title" content="Inbox AI · Nyyo Automation">
+<meta property="og:description" content="Paste a customer email: get its category, the key fields and a draft reply to check. Runs in your browser, no API key, fictional samples.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nyyoautomation.github.io/nyyoautomation/demos/inbox-ai/">
+<meta property="og:image" content="https://nyyoautomation.github.io/nyyoautomation/demos/inbox-ai/og-inbox-ai.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Inbox AI by Nyyo Automation: classify an email, extract its fields and draft a reply for review">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nyyoautomation.github.io/nyyoautomation/demos/inbox-ai/">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F7F7F5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=optional" rel="stylesheet">
+<link rel="stylesheet" href="../design-system.css">
+<link rel="stylesheet" href="../assets/subdemo.css">
 </head>
-<body>
-<!-- NYYO_KIT_V1 -->
-  <div class="wrap">
-            <div class="topbar">
-      <a class="brand" href="https://github.com/nyyoautomation">
-        <svg class="brand__mark" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true" focusable="false"><rect width="28" height="28" rx="8" fill="#1D4ED8"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" fill="#FFFFFF"/></svg>
-        <span>Nyyo Automation</span>
-      </a>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
-        <a class="btn btn-ghost btn-sm" href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a>
-        <a class="btn btn-primary btn-sm" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-      </div>
-    </div>
-<header class="hero">
-      <span class="tag">Runs in your browser · nothing uploaded · no API key</span>
-        <span class="tag kit-free" style="color:#041018;background:linear-gradient(135deg,#3d8bff,#39ff88);border-color:transparent;font-weight:700">FREE · 1-click install kit included</span>
-      <h1 style="margin:0 0 8px">AI that sorts emails & tickets inside your tool</h1>
-      <p style="margin:0;color:#9aa8c7">Paste a customer email → get category, extracted fields, and a draft reply. Same idea wired into Gmail, Sheets or your CRM.</p>
-          <div class="meta" aria-label="Offer">
-        <span><strong>From $149</strong></span>
-        <span><strong>Available on LaborX</strong></span>
-        <span><strong>Remote · Worldwide</strong></span>
-        <span><strong>Example data</strong> labeled</span>
-      </div>
-</header>
-    <section class="explainer">
-      <h2>What is this? (plain English)</h2>
-      <p style="margin:0 0 8px;color:#9aa8c7">Instead of reading every message, software tags it (support / quote / complaint…), pulls out order id & amount, and drafts a reply.</p>
-      <ol>
-        <li>Click a sample email (or paste your own fictional text).</li>
-        <li>Click <strong>Analyze</strong> — results stay on this device.</li>
-        <li>That’s the product we wire into your inbox or helpdesk.</li>
-      </ol>
-      <div class="benefit"><strong>Business benefit:</strong> faster first response, fewer missed complaints. Integrations from <strong>$149</strong> (your own API key) · Standard <strong>$399</strong> · Pro <strong>$849</strong>.</div>
-    </section>
-
-<section class="steps" aria-label="How it works">
-<div class="step"><span class="n">1</span><h3>Sample</h3><p>Click a sample email (or paste fictional text).</p></div>
-<div class="step"><span class="n">2</span><h3>Analyze</h3><p>Category, fields, and draft reply appear locally.</p></div>
-<div class="step"><span class="n">3</span><h3>Integrate</h3><p>We wire the same logic into Gmail / helpdesk / CRM.</p></div>
-</section>
-    <div>
-      <button class="chip" data-sample="0" type="button">Sample: complaint</button>
-      <button class="chip" data-sample="1" type="button">Sample: quote</button>
-      <button class="chip" data-sample="2" type="button">Sample: support</button>
-      <button class="chip" data-sample="3" type="button">Sample: billing</button>
-    </div>
-    <div class="grid" style="margin-top:12px">
-      <div class="panel">
-        <textarea id="mail" placeholder="Paste email body…"></textarea>
-        <button id="go" type="button">Analyze</button>
-      </div>
-      <div class="panel">
-        <div>Category: <span class="badge" id="label">—</span></div>
-        <h3>Extracted fields</h3>
-        <table class="table"><tbody id="fields"></tbody></table>
-        <h3>Draft reply</h3>
-        <pre id="reply">—</pre>
-        <p style="color:#9aa8c7;font-size:.8rem" id="engine"></p>
-      </div>
-    </div>
-    <section class="metrics" aria-label="Example metrics">
-<div class="metric"><div class="v">$149</div><div class="l"><strong>From</strong> · inbox AI</div></div>
-<div class="metric"><div class="v">$399</div><div class="l"><strong>Standard</strong> · 5 days</div></div>
-<div class="metric"><div class="v">Local</div><div class="l"><strong>Privacy</strong> · demo stays on device</div></div>
-</section>
-<p class="metrics-note">Example figures for illustration — not a client case study.</p>
-<div class="badges" aria-label="Tech stack"><span>JavaScript</span><span>Heuristics</span><span>Optional LLM</span><span>Gmail</span></div>
-    <!-- NYYO_INTEGRATE_START -->
-
-<section class="nyyo-integrate" aria-label="Integration and setup">
-  <div class="block">
-    <h2>Where it plugs in</h2>
-    <p class="sub">Sits on top of the inbox you already use.</p>
-    <div class="plug-chips" role="list">
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">Gm</span>Gmail</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">GW</span>Google Workspace</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">Ou</span>Outlook / Microsoft 365</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">API</span>Helpdesk webhook</span>
-<span class="plug-chip" role="listitem"><span class="ic" aria-hidden="true">Sl</span>Slack notify</span>
-</div>
-    
-    <p class="honest-note">Official Gmail / Microsoft Graph only — no password scraping.</p>
-  </div>
-  <div class="block">
-    <h2>How we set it up</h2>
-    <p class="sub">Delivery by tier: Starter $149 — 3 days · Standard $399 — 5 days · Pro $849 — 10 days · fixed scope · handover included</p>
-    <ol class="setup-steps">
-      <li><span class="n">1</span><h3>You send us</h3><p>mailbox access (or exports) + label rules you want (billing, support, spam…).</p></li>
-      <li><span class="n">2</span><h3>We build &amp; connect</h3><p>we wire classification, drafts and labels via official APIs (3–10 days by tier).</p></li>
-      <li><span class="n">3</span><h3>You get the result</h3><p>working labels/drafts, handover + video. You keep the mailbox.</p></li>
-    </ol>
-  </div>
-  <div class="block">
-    <h2>Hosting — no lock-in</h2>
-    <p class="sub">Pick what fits your stack. We never hold your data hostage.</p>
-    <div class="host-grid">
-      <div class="host-card"><strong>We host it</strong><p>Optional automation host that calls Gmail/Outlook APIs.</p></div>
-      <div class="host-card"><strong>On your account</strong><p>n8n/Make on your account, or Apps Script under your Workspace.</p></div>
-    </div>
-  </div>
+<body class="has-cta-bar">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container site-header__inner">
+  <a class="brand" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg class="brand__mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" style="fill:var(--accent)"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" style="fill:var(--on-accent)"/></svg><span>Nyyo Automation</span></a>
+  <nav class="nav" aria-label="Main"><a class="back-link" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>All demos</span></a></nav>
+  <div class="site-header__actions"><a class="btn btn--primary site-header__cta" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+</div></header>
+<main id="main" class="sd-main">
+<section class="container sd-hero">
+  <div class="sd-meta"><span class="badge badge--sector">AI</span><span class="badge badge--live">Live demo</span><span class="badge">Fictional samples</span></div>
+  <h1>Sort emails and draft replies inside the tools you use</h1>
+  <p class="lead">Paste a customer email: get its category, the key fields (order, amount, email) and a draft reply for a person to check. This demo runs in your browser: nothing is uploaded, no API key.</p>
+  <div class="sd-meta"><span class="badge">From $149</span><span class="badge">Available on LaborX</span><span class="badge"><span class="nowrap">Remote · Worldwide</span></span></div>
 </section>
 
-<!-- NYYO_INTEGRATE_END -->
-
-<section class="cta-band" aria-label="Hire">
+<section class="container sd-section" id="demo" aria-labelledby="demo-title">
+  <div class="panel">
+    <h2 id="demo-title">Try it</h2>
+    <p class="sd-sub">Pick a sample or paste your own fictional text, then select Analyze.</p>
+    <div class="chips" role="group" aria-label="Sample emails">
+      <button class="chip" data-sample="0" type="button" aria-pressed="true">Complaint</button>
+      <button class="chip" data-sample="1" type="button" aria-pressed="false">Quote</button>
+      <button class="chip" data-sample="2" type="button" aria-pressed="false">Support</button>
+      <button class="chip" data-sample="3" type="button" aria-pressed="false">Billing</button>
+    </div>
+    <div class="sd-grid-2" style="margin-top:var(--sp-4)">
       <div>
-        <h2>Want this for your stack?</h2>
-        <p>From <strong>$149</strong> · fixed scope · 7-day bugfix · available on LaborX · Remote · Worldwide</p>
-        <p style="margin:8px 0 0;font-size:.88rem">The kit is free and included — you only pay for the build.</p>
+        <div class="field"><label for="mail">Email text</label><textarea id="mail" placeholder="Paste an email body…"></textarea></div>
+        <button id="go" class="btn btn--primary" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.94 14.06 4 20l-2-2 5.94-5.94"/><path d="m14 4 1.5 3L19 8.5l-3.5 1.5L14 13l-1.5-3L9 8.5 12.5 7z"/></svg><span>Analyze</span></button>
       </div>
-      <div class="cta-actions">
-        <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-        <a class="btn btn-ghost" href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/inbox-ai">Repo</a>
+      <div aria-live="polite">
+        <p style="margin:0 0 var(--sp-3)">Category: <span class="status-pill" id="label">—</span></p>
+        <h3>Extracted fields</h3>
+        <div class="table-wrap"><table class="data-table"><caption class="sr-only">Extracted fields</caption><tbody id="fields"></tbody></table></div>
+        <h3 style="margin-top:var(--sp-4)">Draft reply <span class="status-pill status-pill--warn">To check</span></h3>
+        <pre id="reply" class="result-pre">—</pre>
+        <p class="muted" style="font-size:var(--fs-13);margin:var(--sp-2) 0 0" id="engine"></p>
       </div>
-    </section>
-
-    <p class="footer"><a href="https://github.com/nyyoautomation">Available on LaborX</a> · <a href="https://github.com/nyyoautomation/nyyoautomation/tree/main/demos/inbox-ai">Repo</a></p>
+    </div>
   </div>
-  <script src="./js/classify.js"></script>
-  <script>
-    const SAMPLES = [
+</section>
+
+<section class="container sd-section" aria-labelledby="how-title">
+  <h2 id="how-title">How it works</h2>
+  <ol class="steps">
+    <li><strong>Read</strong>Each new email or ticket is read as it arrives.</li>
+    <li><strong>Sort and extract</strong>Category (complaint, quote, support, billing), plus order, amount and contact.</li>
+    <li><strong>Draft</strong>A reply is drafted and flagged for a person to check before anything is sent.</li>
+  </ol>
+</section>
+
+<section class="container sd-section" aria-labelledby="pkg-title">
+  <h2 id="pkg-title">Packages</h2>
+  <p class="sd-sub">AI usage runs on your own OpenAI or Claude API key, billed to you.</p>
+  <div class="sd-grid-3">
+    <div class="card-plain"><h3>Starter · $149</h3><p>1 AI step: email → category and fields → a Google Sheet row, with a “needs human” flag.</p></div>
+    <div class="card-plain"><h3>Standard · $399</h3><p>Starter plus an AI draft reply, write-back to HubSpot, Pipedrive or Airtable, and error alerts.</p></div>
+    <div class="card-plain"><h3>Pro · $849</h3><p>3 connected steps: inbox triage → CRM update → Slack or Telegram digest, with a logging sheet.</p></div>
+  </div>
+  <div class="notice" style="margin-top:var(--sp-4)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg><p><strong>Install kit included</strong> with Starter, Standard and Pro: <a href="https://github.com/nyyoautomation/nyyo-inbox-ai">nyyo-inbox-ai on GitHub</a> (dry run by default).</p></div>
+</section>
+
+<section class="container sd-section" aria-labelledby="plug-title">
+  <h2 id="plug-title">Where it plugs in</h2>
+  <ul class="plug-list" aria-label="Integrations">
+    <li><span class="ic" aria-hidden="true">Gm</span>Gmail</li><li><span class="ic" aria-hidden="true">GW</span>Google Workspace</li>
+    <li><span class="ic" aria-hidden="true">Ou</span>Outlook / Microsoft 365</li><li><span class="ic" aria-hidden="true">API</span>Helpdesk webhook</li><li><span class="ic" aria-hidden="true">Sl</span>Slack</li>
+  </ul>
+  <div class="notice"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg><p><strong>Official APIs only.</strong> Gmail API or Microsoft Graph; no password sharing.</p></div>
+</section>
+
+<section class="container sd-section" aria-labelledby="setup-title">
+  <h2 id="setup-title">How the build works</h2>
+  <div class="sd-grid-3">
+    <div class="card-plain"><h3>1 · You send</h3><p>Mailbox access (or exports) and the labels you want: billing, support, spam…</p></div>
+    <div class="card-plain"><h3>2 · We build</h3><p>Sorting, drafts and labels wired through the official APIs.</p></div>
+    <div class="card-plain"><h3>3 · You get</h3><p>Working labels and drafts, plus a handover. You keep the mailbox.</p></div>
+  </div>
+  <div class="sd-grid-2" style="margin-top:var(--sp-4)">
+    <div class="card-plain"><h3>We run it</h3><p>An automation host that calls the Gmail or Outlook APIs.</p></div>
+    <div class="card-plain"><h3>On your account</h3><p>n8n or Make on your account, or Apps Script in your Workspace.</p></div>
+  </div>
+</section>
+
+<section class="container sd-section" aria-labelledby="quote-title">
+  <div class="panel">
+    <h2 id="quote-title">Want this on your inbox?</h2>
+    <p class="sd-sub">Fixed scope, from $149. Questions? Ask in your order chat.</p>
+    <div class="btn-row"><a class="btn btn--primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="site-footer__grid">
+    <div><a class="brand" href="https://nyyoautomation.github.io/nyyoautomation/demos/"><svg class="brand__mark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" style="fill:var(--accent)"/><path d="M8.5 19.5V8.5h2.2l6.6 7.4V8.5h2.2v11h-2.2l-6.6-7.4v7.4z" style="fill:var(--on-accent)"/></svg><span>Nyyo Automation</span></a>
+      <p style="margin-top:12px;max-width:42ch">AI assistants and automations built on your own documents. Fixed scope, a human always signs off. <span class="nowrap">Remote · Worldwide</span>.</p></div>
+    <div><h2 class="site-footer__title">Demos</h2><ul><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/">All demos</a></li><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/#industry">Industry demos</a></li><li><a href="https://nyyoautomation.github.io/nyyoautomation/demos/#tools">Automation &amp; data</a></li></ul></div>
+    <div><h2 class="site-footer__title">Contact</h2><ul><li><a href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></li><li><a href="https://laborx.com/freelancers/users/id475124" rel="noopener">LaborX</a></li><li><a href="https://github.com/nyyoautomation">GitHub</a></li></ul></div>
+  </div>
+  <div class="site-footer__legal"><span>© 2026 Nyyo Automation · Noah Vasseur</span><span>All demo data is fictional.</span></div>
+</div></footer>
+<div class="cta-bar"><a class="btn btn--secondary" href="#demo">Try the demo</a><a class="btn btn--primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Request a quote</a></div>
+<script src="./js/classify.js"></script>
+<script>
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const SAMPLES = [
 `Hi,
 
 This is unacceptable. Order #A19-7742 for the Growth plan ($290) on 2026-09-12 never arrived.
@@ -166,32 +154,28 @@ Please check.
 
 Maya Chen
 maya@studio.demo`
-    ];
-    document.querySelectorAll("[data-sample]").forEach(btn=>{
-      btn.onclick=()=>{ document.getElementById("mail").value = SAMPLES[Number(btn.dataset.sample)]; analyze(); };
-    });
-    function analyze(){
-      const text = document.getElementById("mail").value;
-      const r = NyyoInboxAI.analyze(text);
-      document.getElementById("label").textContent = r.label;
-      const tb = document.getElementById("fields");
-      const entries = Object.entries(r.fields);
-      tb.innerHTML = entries.length ? entries.map(([k,v])=>`<tr><th>${k}</th><td>${v}</td></tr>`).join("") : "<tr><td colspan=2>No fields detected</td></tr>";
-      document.getElementById("reply").textContent = r.draft_reply;
-      document.getElementById("engine").textContent = r.engine + " · confidence " + r.confidence;
-      // append to session table log
-      const log = JSON.parse(sessionStorage.getItem("nyyo_inbox_log")||"[]");
-      log.unshift({label:r.label, fields:r.fields, at:new Date().toISOString()});
-      sessionStorage.setItem("nyyo_inbox_log", JSON.stringify(log.slice(0,20)));
-    }
-    document.getElementById("go").onclick = analyze;
-    document.getElementById("mail").value = SAMPLES[0];
-    analyze();
-  </script>
-  <div class="mobile-cta" aria-label="Hire shortcut">
-    <a class="btn btn-primary" href="https://laborx.com/freelancers/users/id475124" rel="noopener">Hire me on LaborX</a>
-  </div>
-
-  <script>document.addEventListener("DOMContentLoaded",function(){if(window.lucide)lucide.createIcons();});</script>
+  ];
+  const chips = document.querySelectorAll("[data-sample]");
+  chips.forEach((btn) => {
+    btn.onclick = () => {
+      chips.forEach((c) => c.setAttribute("aria-pressed", String(c === btn)));
+      document.getElementById("mail").value = SAMPLES[Number(btn.dataset.sample)];
+      analyze();
+    };
+  });
+  function analyze() {
+    const r = NyyoInboxAI.analyze(document.getElementById("mail").value);
+    document.getElementById("label").textContent = r.label;
+    const entries = Object.entries(r.fields);
+    document.getElementById("fields").innerHTML = entries.length
+      ? entries.map(([k, v]) => `<tr><th scope="row" class="mono">${esc(k)}</th><td>${esc(v)}</td></tr>`).join("")
+      : '<tr><td colspan="2">No fields detected</td></tr>';
+    document.getElementById("reply").textContent = r.draft_reply;
+    document.getElementById("engine").textContent = r.engine + " · confidence " + r.confidence;
+  }
+  document.getElementById("go").onclick = analyze;
+  document.getElementById("mail").value = SAMPLES[0];
+  analyze();
+</script>
 </body>
 </html>

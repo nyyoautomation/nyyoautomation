@@ -25,7 +25,7 @@
     if (email) fields.email = email[0];
     const order = text.match(/\b(?:order)\s*#?\s*([A-Z0-9-]{4,})/i);
     if (order) fields.order_id = order[1];
-    const money = text.match(/(?:\$|€|USD|EUR)\s*([0-9]+(?:[.,][0-9]{2})?)|([0-9]+(?:[.,][0-9]{2})?)\s*(?:\$|€|USD|EUR)/i);
+    const money = text.match(/(?:\$|\u20ac|USD|EUR)\s*([0-9]+(?:[.,][0-9]{2})?)|([0-9]+(?:[.,][0-9]{2})?)\s*(?:\$|\u20ac|USD|EUR)/i);
     if (money) fields.amount = (money[1] || money[2] || "").replace(",", ".");
     const date = text.match(/\b(\d{4}-\d{2}-\d{2}|\d{1,2}[\/.-]\d{1,2}[\/.-]\d{2,4})\b/);
     if (date) fields.date = date[1];
@@ -39,8 +39,8 @@
   const REPLIES = {
     complaint: "Hi — sorry about this. I've flagged your case as priority. Please confirm order id and preferred refund or replacement. — Support",
     support: "Hi — thanks for the details. We're looking into it. Meanwhile try clearing cache / resetting the password link. — Support",
-    quote: "Hi — thanks for your interest. We can share a fixed-scope quote within 24h if you send goal, deadline and budget. — Nyyo Automation",
-    billing: "Hi — we received your billing note. Our finance queue will check the charge and reply within one business day. — Billing",
+    quote: "Hi — thanks for your interest. Could you send your goal, deadline and budget? We'll come back with a fixed-scope quote. — Sales",
+    billing: "Hi — we received your billing note. Our billing team will check the charge and get back to you. — Billing",
     general: "Hi — thanks for writing. We've logged your message and will get back shortly. — Support",
   };
 
