@@ -73,11 +73,11 @@ function speakLine(key, fallbackText) {
 
 function parseIntent(text) {
   const t = (text || "").toLowerCase();
-  if (/hello|hi|bonjour|hey/.test(t)) return { type: "greet" };
-  if (/cancel|annul/.test(t)) return { type: "cancel" };
-  if (/hour|open|horaire/.test(t)) return { type: "hours" };
-  if (/appoint|rdv|book|reserv|jeudi|thursday|vendredi|friday|slot|rendez/.test(t)) {
-    let day = /fri|vendredi/.test(t) ? "Fri" : "Thu";
+  if (/hello|hi|hey/.test(t)) return { type: "greet" };
+  if (/cancel/.test(t)) return { type: "cancel" };
+  if (/hour|open/.test(t)) return { type: "hours" };
+  if (/appoint|book|reserv|thursday|friday|slot/.test(t)) {
+    let day = /fri/.test(t) ? "Fri" : "Thu";
     const available = HOURS.filter((h) => h.startsWith(day) && slots[h]);
     return { type: "book", day, available };
   }
